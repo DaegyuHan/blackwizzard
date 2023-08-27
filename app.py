@@ -236,6 +236,23 @@ def notice_get():
 
 
 
+@app.route("/sundaymaple", methods=["POST"])
+def sunday_post():
+    sunday_receive = request.form['sunday_give']
+    doc = {
+        'sunday_text':sunday_receive
+    }
+    db.sundaymaple.insert_one(doc)
+
+    return jsonify({'msg': '선데이메이플 저장 완료'})
+
+@app.route("/sundaymaple", methods=["GET"])
+def sunday_get():
+    all_sunday = list(db.sundaymaple.find({},{'_id':False}))
+    return jsonify({'result': all_sunday})
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

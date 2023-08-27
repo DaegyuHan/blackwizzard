@@ -168,7 +168,6 @@
             height: 200px;
             margin: 10px auto 5px auto;
         }
-        
     </style>
     <style>
         .container1 {
@@ -1387,6 +1386,16 @@
                 url("https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%8E%80%EC%B9%98%ED%82%B9.png?updatedAt=1691506519744")
         }
     </style>
+    <style>
+        .sunday-input-btn {
+            width: 50px;
+            height: 30px;
+        }
+
+        .sunday-inputarea {
+            width: 300px;
+        }
+    </style>
     <script>
 
         $(document).ready(function () {
@@ -1403,6 +1412,7 @@
             show_btn63()
             checkMidnight()
             show_notice()
+            show_sunday()
 
         });
         let today = new Date();
@@ -1591,6 +1601,8 @@
         }
 
 
+
+
         function toggleArea993() {
             var expanded = document.getElementById("expand991-3")
 
@@ -1605,7 +1617,8 @@
 
         function openImageWindow() {
             // 선데이메이플 URL
-            var imageUrl = 'https://lwi.nexon.com/maplestory/2023/0804_board/D35968CA16FBAF7A.jpg';
+            var inputUrl = document.getElementById('imageUrlInput').value;
+            var imageUrl = inputUrl;
 
             // 새 이미지 객체를 생성하여 실제 크기를 구합니다.
             var tempImage = new Image();
@@ -1635,30 +1648,57 @@
 
 
         function save_notice() {
-      let notice_text = $('#noticetext').val()
+            let notice_text = $('#noticetext').val()
 
-      let formData = new FormData();
-      formData.append("notice_give", notice_text);
+            let formData = new FormData();
+            formData.append("notice_give", notice_text);
 
-      fetch('/notice', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
-        alert(data["msg"]);
-        window.location.reload();
-      });
-    }
+            fetch('/notice', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                alert(data["msg"]);
+                window.location.reload();
+            });
+        }
 
 
-    function show_notice() {
-      fetch('/notice').then(res => res.json()).then(data => {
-        let rows = data['result']
-        let view = rows[rows.length - 1]['notice_text']
-        console.log(view)
-  
-          let temp_html = `${view}`
-          $('#noticetext').append(temp_html)
+        function show_notice() {
+            fetch('/notice').then(res => res.json()).then(data => {
+                let rows = data['result']
+                let view = rows[rows.length - 1]['notice_text']
 
-      })
-       
-    }
+
+                let temp_html = `${view}`
+                $('#noticetext').append(temp_html)
+
+            })
+
+        }
+
+        function save_sunday() {
+            let sunday_text = $('#imageUrlInput').val()
+            console.log(sunday_text)
+
+            let formData = new FormData();
+            formData.append("sunday_give", sunday_text);
+
+            fetch('/sundaymaple', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                alert(data["msg"]);
+                window.location.reload();
+            });
+        }
+
+
+        function show_sunday() {
+            fetch('/sundaymaple').then(res => res.json()).then(data => {
+                let rows = data['result']
+                let view = rows[rows.length - 1]['sunday_text']
+
+
+                let temp_html = `${view}`
+                $('#imageUrlInput').append(temp_html)
+
+            })
+
+        }
 
 
 
@@ -1687,7 +1727,7 @@
                 <label name="option" value="6" id="tab6-label" class="tab-label tab00"
                     onclick="showTab('tab6')">로비</label>
                 <label name="option" value="7" id="tab7-label" class="tab-label tab99"
-                    onclick="showTab('tab7')">설정</label>
+                    onclick="showTab('tab7')">관리</label>
             </p>
             <label name="option" value="1" id="tab1-label" class="tab-label tab33" onclick="showTab('tab1')">대뀨짱</label>
             <label name="option" value="2" id="tab2-label" class="tab-label tab14" onclick="showTab('tab2')">이찬웅</label>
@@ -1698,19 +1738,21 @@
         </div>
 
 
+        <!-- --------------------------로비---------------------------------- -->
+        <!-- --------------------------로비---------------------------------- -->
+        <!-- --------------------------로비---------------------------------- -->
+        <!-- --------------------------로비---------------------------------- -->
 
         <div id="tab6" class="tab">
             <div class="form-floating">
                 <div class="notice">
                     ※ 공지사항 ※
                 </div>
-                <textarea class="noticetext flex-row" id="noticetext"> </textarea>
-                <!-- <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                    style="height: 200px; width: 400px; margin-left:50px; margin-top: 10px; margin-bottom: 10px;">준비 중</textarea>
-                <label for="floatingTextarea2" style="margin-left: 50px;"></label> -->
+                <textarea class="noticetext flex-row" id="noticetext"></textarea>
 
             </div>
-            <button type="button" class="btn btn-dark flex-row" style="margin:0px auto 10px auto;" onclick="save_notice()">저장</button>
+            <button type="button" class="save-btn btn-dark flex-row" style="margin:0px auto 10px auto;"
+                onclick="save_notice()">저장</button>
 
             <div class="btn-area">
                 <div class="btn-text flex-row" onclick="toggleArea991()">경험치 도핑</div>
@@ -1769,6 +1811,8 @@
                             onclick="toggleProgressBar991(this)"></button>
                         <button class="button999-3 boss_doping" id="button993-3"
                             onclick="toggleProgressBar991(this)"></button>
+                        <button class="button999-6-1 boss_doping" id="button993-6-1"
+                            onclick="toggleProgressBar991(this)"></button>
                     </p>
                     <p class="flex-row">
                         <button class="button999-4 boss_doping" id="button993-4"
@@ -1779,7 +1823,7 @@
                             onclick="toggleProgressBar991(this)"></button>
                     </p>
                     <p class="flex-row">
-                        <button class="button999-6-1 boss_doping" id="button993-6-1"
+                        <button class="button999-7 boss_doping" id="button993-7"
                             onclick="toggleProgressBar991(this)"></button>
                         <button class="button999-8 boss_doping" id="button993-8"
                             onclick="toggleProgressBar991(this)"></button>
@@ -1825,8 +1869,32 @@
             </div>
         </div>
 
+
+
+        <!-- --------------------------관리---------------------------------- -->
+        <!-- --------------------------관리---------------------------------- -->
+        <!-- --------------------------관리---------------------------------- -->
+
+
         <div id="tab7" class="tab">
-                -v1.1.1 배포 시작
+            <p class="sunday-input flex-row">
+                sunday
+                <textarea class="sunday-inputarea" id="imageUrlInput"></textarea>
+                <button class="sunday-input-btn" onclick="save_sunday()">저장</button>
+            </p>
+            <div>
+                2023.08.27 v1.1.2
+                <p>
+                    (tab63) 핑크빈버튼 에러 수정, 로비 저장 버튼 영역 확대, (tab7) 이름 관리로 변경,
+                    선데이메이플 url 입력 기능 추가
+                </p>
+                2023.08.24 v1.1.1
+                <p>
+                    테스트 배포 시작
+                </p>
+
+            </div>
+
         </div>
 
 
@@ -5746,7 +5814,7 @@
                             <button class="button4-8 weekwork kjb" id="button634-8"
                                 onclick="toggleProgressBar634(this)"></button>
                             <button class="button4-9 weekwork kjb" id="button634-9"
-                                onclick="toggleProgressBa634(this)"></button>
+                                onclick="toggleProgressBar634(this)"></button>
                         </p>
                         <p>
                             <button class="button4-10 weekwork kjb" id="button634-10"
