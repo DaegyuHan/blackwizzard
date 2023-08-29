@@ -35,6 +35,7 @@ def chrstat_post():
 
 
 
+
     URL2 = "https://maple.gg/u/%EC%9D%B4%EC%B0%AC%EC%9B%85"
     headers2 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     data2 = requests.get(URL2,headers=headers2)

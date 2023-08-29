@@ -23,7 +23,8 @@
         }
 
         body {
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://mblogthumb-phinf.pstatic.net/MjAxOTAyMDZfNjQg/MDAxNTQ5Mzg3NzUyMTE0.bUyAPOp6LWwKc5UJdP3EEz0sk2cpYpViaMOfzhl8R1gg.GXliafvcJgxKpbk8LGLKEeJpDXt2GsmfY1H_pTzfXEIg.JPEG.kcl100/%EA%B2%80%EC%9D%80_%EB%A7%88%EB%B2%95%EC%82%AC_%EB%A6%AC%EB%A9%98_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8_%EA%B3%A0%ED%99%94%EC%A7%88_%EA%B0%9C%EC%84%A0%EB%B3%B8.jpg?type=w420');
+            /* background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://mblogthumb-phinf.pstatic.net/MjAxOTAyMDZfNjQg/MDAxNTQ5Mzg3NzUyMTE0.bUyAPOp6LWwKc5UJdP3EEz0sk2cpYpViaMOfzhl8R1gg.GXliafvcJgxKpbk8LGLKEeJpDXt2GsmfY1H_pTzfXEIg.JPEG.kcl100/%EA%B2%80%EC%9D%80_%EB%A7%88%EB%B2%95%EC%82%AC_%EB%A6%AC%EB%A9%98_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8_%EA%B3%A0%ED%99%94%EC%A7%88_%EA%B0%9C%EC%84%A0%EB%B3%B8.jpg?type=w420'); */
+            background-image: url(https://ik.imagekit.io/wlalafg7g/a6ae8dcb-09e5-4785-a5a4-174d70f45529.png?updatedAt=1693287404305);
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -99,6 +100,8 @@
             background-image: url('https://ik.imagekit.io/wlalafg7g/%EB%A1%9C%EA%B3%A02(1).png?updatedAt=1691906577549');
             background-repeat: no-repeat;
             background-size: cover;
+            border: 1px solid black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 
         }
 
@@ -111,10 +114,11 @@
 
         .wrap {
             width: 500px;
-            height: 3000px;
+            height: 2800px;
             margin: 0px auto;
             border: 1px solid;
             background-color: white;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 
         }
 
@@ -1051,6 +1055,18 @@
             background-color: black;
             color: white;
         }
+
+        .lobby-save-btn {
+            width: 120px;
+            height: 100px;
+            background-image: url(https://ik.imagekit.io/wlalafg7g/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A1%9C%EA%B3%A0_02.png?updatedAt=1691905507733);
+            background-size: cover;
+            margin: 10px auto 10px;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+
+
     </style>
     <!-- 보스도핑 -->
     <style>
@@ -1413,11 +1429,29 @@
             checkMidnight()
             show_notice()
             show_sunday()
-
+            finish_pressButton()
         });
         let today = new Date();
         let month = today.getMonth() + 1;
         let date = today.getDate();
+        let day = today.getDay();
+
+
+        function weekly_reset() {
+
+            unpressButton2()
+            unpressButton142()
+            unpressButton272()
+            unpressButton712()
+            unpressButton632()
+
+
+        }
+
+
+
+
+
 
 
 
@@ -1444,6 +1478,7 @@
                 $('#tab1-level').empty()
                 $('#tab1-union').empty()
                 // $('#tab1-img1').empty()
+                console.log(data['result']['image'][0])
 
                 let temp_html1 = `${data['result']['level'][0]}`
                 let temp_html2 = `유니온 : ${data['result']['union'][0]}`
@@ -1491,6 +1526,8 @@
 
             }
             )
+
+
 
 
 
@@ -1700,6 +1737,16 @@
 
         }
 
+        function finish_pressButton(buttonId) {
+                    // var buttons = document.querySelectorAll('button');
+                    var buttons = document.getElementsByClassName("finish");
+                    console.log(buttons)
+
+                    Array.from(buttons).forEach(function (button) {
+                        button.click();
+                    });
+                }
+
 
 
 
@@ -1751,8 +1798,8 @@
                 <textarea class="noticetext flex-row" id="noticetext"></textarea>
 
             </div>
-            <button type="button" class="save-btn btn-dark flex-row" style="margin:0px auto 10px auto;"
-                onclick="save_notice()">저장</button>
+            <div class="lobby-save-btn flex-row"
+                onclick="save_notice()"></div>
 
             <div class="btn-area">
                 <div class="btn-text flex-row" onclick="toggleArea991()">경험치 도핑</div>
@@ -1882,7 +1929,15 @@
                 <textarea class="sunday-inputarea" id="imageUrlInput"></textarea>
                 <button class="sunday-input-btn" onclick="save_sunday()">저장</button>
             </p>
+            <div class="flex-row">
+                <button type="button" onclick=weekly_reset() class="save-btn btn-dark">주간 초기화</button>
+            </div>
             <div>
+                2023.08.29 v1.1.3
+                <p>
+                    도메인 구매 및 연결, 주간 초기화 버튼 통합화, 졸업 심볼지역 자동 클릭 기능 추가,
+                    로비 저장 버튼 디자인 변경, 배경 디자인 변경
+                </p>
                 2023.08.27 v1.1.2
                 <p>
                     (tab63) 핑크빈버튼 에러 수정, 로비 저장 버튼 영역 확대, (tab7) 이름 관리로 변경,
@@ -1960,28 +2015,26 @@
                     </div>
                 </div>
                 <button type="button" onclick=handleSaveButtonClick() class="save-btn  btn-dark">저장</button>
-                <button type="button" onclick=unpressButton2() class="save-btn btn-dark">주간 초기화</button>
-
                 <!-- --------------------------------------------------일일퀘스트------------------------------------------------ -->
 
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea1()">일일퀘스트</div>
                     <div id="expand1" style="display: none;">
                         <p>
-                            <button class="button daywork hdg" id="button1-1" onclick="toggleProgressBar1(this)"><img
+                            <button class="button finish" id="button1-1" onclick="toggleProgressBar1(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
-                            <button class="button daywork hdg" id="button1-2" onclick="toggleProgressBar1(this)"><img
+                            <button class="button finish" id="button1-2" onclick="toggleProgressBar1(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
-                            <button class="button daywork hdg" id="button1-3" onclick="toggleProgressBar1(this)"><img
+                            <button class="button finish" id="button1-3" onclick="toggleProgressBar1(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
-                            <button class="button daywork hdg" id="button1-4" onclick="toggleProgressBar1(this)"><img
+                            <button class="button finish" id="button1-4" onclick="toggleProgressBar1(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
-                            <button class="button daywork hdg" id="button1-5" onclick="toggleProgressBar1(this)"><img
+                            <button class="button finish" id="button1-5" onclick="toggleProgressBar1(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9D%BC.png?updatedAt=1691020683677"></button>
                         </p>
                         <p>
 
-                            <button class="button daywork hdg" id="button1-6" onclick="toggleProgressBar1(this)"><img
+                            <button class="button finish" id="button1-6" onclick="toggleProgressBar1(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9D%BC.png?updatedAt=1691020683677"></button>
                             <button class="button daywork hdg" id="button1-7" onclick="toggleProgressBar1(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%84%B8%EB%A5%B4%EB%8B%88%EC%9B%80.png?updatedAt=1691020694907"></button>
@@ -2074,19 +2127,19 @@
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea3()">주간퀘스트</div>
                     <div id="expand3" style="display: none;">
-                        <button class="button3-1 weekwork hdg" id="button3-1"
+                        <button class="button3-1 finish" id="button3-1"
                             onclick="toggleProgressBar3(this)"></button>
-                        <button class="button3-2 weekwork hdg" id="button3-2"
+                        <button class="button3-2 finish" id="button3-2"
                             onclick="toggleProgressBar3(this)"></button>
-                        <button class="button3-3 weekwork hdg" id="button3-3"
+                        <button class="button3-3 finish" id="button3-3"
                             onclick="toggleProgressBar3(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-4 weekwork hdg" id="button3-4"
+                            <button class="button3-4 finish" id="button3-4"
                                 onclick="toggleProgressBar3(this)"></button>
-                            <button class="button3-5 weekwork hdg" id="button3-5"
+                            <button class="button3-5 finish" id="button3-5"
                                 onclick="toggleProgressBar3(this)"></button>
-                            <button class="button3-6 weekwork hdg" id="button3-6"
+                            <button class="button3-6 finish" id="button3-6"
                                 onclick="toggleProgressBar3(this)"></button>
 
                         </p>
@@ -2474,7 +2527,7 @@
 
 
 
-                    alert('초기화되었습니다.')
+                    alert('일일 초기화되었습니다.')
                     let formData = new FormData();
 
                     Array.from(buttons).forEach(function (button) {
@@ -2622,7 +2675,7 @@
             .tab2-img1 {
                 width: 150px;
                 height: 150px;
-                background-image: url(https://avatar.maplestory.nexon.com/Character/IOGOKCCNJFKMHCGGELCKHDFKNCFBBALIIPKNJHCKCFCGNMHHOEFHMEKEGMBMPFKHKNHBKLKJCBOECOGBFJOIFHHJLEFAHHICEFOMLOBGJPEGHOIOPKDJBKFFHLPOAAEMIJPLAEACFHJCNDDGAIMHECHAHDBPJGGDGDNODLNCCBLGBCGBBFDIOMNKACBECPMLCKHBEJIMMEDKKMEHOPNAMAIINNDJPJJEBKCACJKDALBKOAFNJPJCINPGDDBPJKOA.png);
+                background-image: url(https://avatar.maplestory.nexon.com/Character/COJCFKIPFLHGLNIMEOOOADEDAMKKCDCPFAOOMIANPBPLLFNOODLKAABPAAGJOPMNBBCNHDMNGFOKMKHJGBFNHKBJKMFIBBINBDBHKFNLEBEBJPNCPJIGGMBOGENENBNCHEBPMGNOBGJDDKKDCJDEANNOAIPBMBBIKEEJAMBPMHAAELDGAPNAOABIDOGCABECKGPPPMCODAMEDNGAHABMAIGMBBAACAEKNJLIOAPFAABKPCFANEAKOCBADOAMNBKE.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 box-shadow: 0px 1px 1px 1px gray;
@@ -2999,31 +3052,30 @@
                     </div>
                 </div>
                 <button type="button" onclick=handleSaveButtonClick14() class="save-btn  btn-dark">저장</button>
-                <button type="button" onclick=unpressButton142() class="save-btn btn-dark">주간 초기화</button>
 
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea141()">일일퀘스트</div>
                     <div id="expand14-1" style="display: none;">
                         <p>
-                            <button class="button daywork lcw" id="button141-1"
+                            <button class="button finish" id="button141-1"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
-                            <button class="button daywork lcw" id="button141-2"
+                            <button class="button finish" id="button141-2"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%B8%84%EC%B8%84.png?updatedAt=1686989076337"></button>
-                            <button class="button daywork lcw" id="button141-3"
+                            <button class="button finish" id="button141-3"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1686989076403"></button>
-                            <button class="button daywork lcw" id="button141-4"
+                            <button class="button finish" id="button141-4"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
-                            <button class="button daywork lcw" id="button141-5"
+                            <button class="button finish" id="button141-5"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%AA%A8%EB%9D%BC%EC%8A%A4.png?updatedAt=1691020668112"></button>
                         </p>
                         <p>
 
-                            <button class="button daywork lcw" id="button141-6"
+                            <button class="button finish" id="button141-6"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9D%BC.png?updatedAt=1691020683677"></button>
                             <button class="button daywork lcw" id="button141-7"
@@ -3121,19 +3173,19 @@
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea143()">주간퀘스트</div>
                     <div id="expand14-3" style="display: none;">
-                        <button class="button3-1 weekwork lcw" id="button143-1"
+                        <button class="button3-1 finish" id="button143-1"
                             onclick="toggleProgressBar143(this)"></button>
-                        <button class="button3-2 weekwork lcw" id="button143-2"
+                        <button class="button3-2 finish" id="button143-2"
                             onclick="toggleProgressBar143(this)"></button>
-                        <button class="button3-3 weekwork lcw" id="button143-3"
+                        <button class="button3-3 finish" id="button143-3"
                             onclick="toggleProgressBar143(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-4 weekwork lcw" id="button143-4"
+                            <button class="button3-4 finish" id="button143-4"
                                 onclick="toggleProgressBar143(this)"></button>
-                            <button class="button3-5 weekwork lcw" id="button143-5"
+                            <button class="button3-5 finish" id="button143-5"
                                 onclick="toggleProgressBar143(this)"></button>
-                            <button class="button3-6 weekwork lcw" id="button143-6"
+                            <button class="button3-6 finish" id="button143-6"
                                 onclick="toggleProgressBar143(this)"></button>
                         </p>
                         <p>
@@ -3380,7 +3432,6 @@
 
 
 
-                    alert('주간 갱신되었습니다.')
                     let formData = new FormData();
 
                     Array.from(buttons).forEach(function (button) {
@@ -3504,7 +3555,7 @@
             .tab3-img1 {
                 width: 150px;
                 height: 150px;
-                background-image: url(https://avatar.maplestory.nexon.com/Character/NFJJOHKICDOPNLJNNMMPNKIKFFEMCNDPNJKEBIMDOHFEBEHNAKHEBGGHNPNNBOOJGEMPJMFNOIIMMAGEIHIFDCJOGNEPKMNCJHPFOKPCJNLFBPKDINMPCHACIGMMAHGLHIDPCLBMGPCJMAKHBHELDKDHOHCGAPDNAKGLMBCJPPPDHJFPKHEJMLFDEKPPBOPNEFDPMBNBMADMOLFKJLMHHCIJKMKEMADAOAKMJIJIIPMPGLJOADEKBGIKKCLFBCPC.png);
+                background-image: url(https://avatar.maplestory.nexon.com/Character/GHOKDPCANPHBFMLIKLHEPPHHBPPBHKCEBLBKMCIIHFKIFAOKFGLFDFKJEOLDJNLNENLJFPEJCBLIBMOLJEPENNPNBJOPFHKFHNFLMLKFELAPCDCLEIMMFMAFJLNFGPCEPMFDBGCBNJIIALIHOPELHMJABHEGBBCPAOFPBNNNBBLGGMPGHNKAELDDGFFGGNLPDFMJGNPNHJFEMOPMJJJOEELLPABBNKAKKAEOKMGHOOKPGMHJLOBKKDOHPBKLHNHN.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 box-shadow: 0px 1px 1px 1px gray;
@@ -3882,7 +3933,6 @@
                     </div>
                 </div>
                 <button type="button" onclick=handleSaveButtonClick27() class="save-btn  btn-dark">저장</button>
-                <button type="button" onclick=unpressButton272() class="save-btn btn-dark">주간 초기화</button>
 
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea271()">일일퀘스트</div>
@@ -4264,7 +4314,6 @@
 
 
 
-                    alert('주간 갱신되었습니다.')
                     let formData = new FormData();
 
                     Array.from(buttons).forEach(function (button) {
@@ -4381,7 +4430,7 @@
             .tab4-img1 {
                 width: 150px;
                 height: 150px;
-                background-image: url(https://avatar.maplestory.nexon.com/Character/CALHELOKBNMBKICJJMOCMDEFPKFPKOCEMEPOIHNIMJKKCGBLBELMONEJADNONFMKJBFOOIJAPFIIIJPKJPLFPALDDNAEKGLGDBIEGJCOCEKBHGILIHGEBJODEOFPFACIGNPNNKFDANCMPHPLOKECEGACNEHCNPLOMMPGFHIHJKDMMEKMGJBKBJLFLOGNAKAALMCPIAGMJGONDKHAGJBEGOIMLNAOKGBIIKENEGPBPIKBLNPKCNLDOKMPOCIMCMHN.png);
+                background-image: url(https://avatar.maplestory.nexon.com/Character/FOACGIBDPLHIKDNMNMPHNPBJKFBHGDDPBPDOLPLJKHFMGIGBNDGKPAHIAGIOPDGFECKNBCLJGBNOAOLDDJAEININJKEDFOEIDGDPAONIKBFDINEBOKMLGFGLHNJOEHMJDHNGIJCMAMKMNPKJJJNDCKFLAMEHKLHCAKGJPPCDIGPAMBGBCMAOHGHKHJNELKBGFMAHHDBGJALOHDKEBCJIHADAMCGLGLNFJPCHFHBHNFMBJNLNCDHICEGBEJNMIPCI.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 box-shadow: 0px 1px 1px 1px gray;
@@ -4759,7 +4808,6 @@
                     </div>
                 </div>
                 <button type="button" onclick=handleSaveButtonClick71() class="save-btn  btn-dark">저장</button>
-                <button type="button" onclick=unpressButton712() class="save-btn btn-dark">주간 초기화</button>
 
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea711()">일일퀘스트</div>
@@ -5142,7 +5190,6 @@
 
 
 
-                    alert('주간 갱신되었습니다.')
                     let formData = new FormData();
 
                     Array.from(buttons).forEach(function (button) {
@@ -5631,7 +5678,6 @@
                     </div>
                 </div>
                 <button type="button" onclick=handleSaveButtonClick63() class="save-btn  btn-dark">저장</button>
-                <button type="button" onclick=unpressButton632() class="save-btn btn-dark">주간 초기화</button>
 
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea631()">일일퀘스트</div>
@@ -6011,7 +6057,6 @@
 
 
 
-                    alert('주간 갱신되었습니다.')
                     let formData = new FormData();
 
                     Array.from(buttons).forEach(function (button) {
