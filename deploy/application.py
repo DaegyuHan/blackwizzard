@@ -14,7 +14,7 @@ ca = certifi.where()
 client = MongoClient('mongodb+srv://sparta:test@cluster0.edvfknb.mongodb.net/?retryWrites=true&w=majority',tlsCAFile=ca)
 db = client.blackwizzard
 
-app = Flask(__name__)
+application = app = Flask(__name__)
 
 
 @app.route('/')
@@ -31,6 +31,7 @@ def chrstat_post():
     image1 = soup1.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
     level1 = soup1.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union1 = soup1.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
+
 
 
 
@@ -54,6 +55,18 @@ def chrstat_post():
     level3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union3 = soup3.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
 
+    URL27 = "https://maple.gg/u/%EC%A0%9C41%EB%8C%80"
+    headers27 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    data27 = requests.get(URL27,headers=headers27)
+    soup27 = BeautifulSoup(data27.text, 'html.parser')
+
+    image27 = soup27.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    level27 = soup27.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
+
+
+
+
+
     URL4 = "https://maple.gg/u/%ED%99%A9%EA%B8%88%EB%AA%A8%EB%9E%98%ED%8F%AD%ED%92%8D"
     headers4 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     data4 = requests.get(URL4,headers=headers4)
@@ -74,7 +87,7 @@ def chrstat_post():
 
 
 
-    level = [level1, level2, level3, level4, level5]
+    level = [level1, level2, level27, level4, level5]
     union = [union1, union2, union3, union4, union5]
     image = [image1, image2, image3, image4, image5]
 
@@ -93,12 +106,14 @@ def btn_post():
     btn_receive = request.form['btn_give']
     date_receive = request.form['date_give']
     onlydate_receive = request.form['onlydate_give']
+    text_receive = request.form['text_give']
 
     doc = {
         'name':name_receive,
         'date':date_receive,
         'onlydate':onlydate_receive,
-        'btn_id':btn_receive
+        'btn_id':btn_receive,
+        'text':text_receive
 
     }
     db.blackwizzard.insert_one(doc)
@@ -120,12 +135,14 @@ def btn_post14():
     btn_receive = request.form['btn_give']
     date_receive = request.form['date_give']
     onlydate_receive = request.form['onlydate_give']
+    text_receive = request.form['text_give']
 
     doc = {
         'name':name_receive,
         'date':date_receive,
         'onlydate':onlydate_receive,
-        'btn_id':btn_receive
+        'btn_id':btn_receive,
+        'text':text_receive
 
     }
     db.blackwizzard14.insert_one(doc)
@@ -147,12 +164,14 @@ def btn_post27():
     btn_receive = request.form['btn_give']
     date_receive = request.form['date_give']
     onlydate_receive = request.form['onlydate_give']
+    text_receive = request.form['text_give']
 
     doc = {
         'name':name_receive,
         'date':date_receive,
         'onlydate':onlydate_receive,
-        'btn_id':btn_receive
+        'btn_id':btn_receive,
+        'text':text_receive
 
     }
     db.blackwizzard27.insert_one(doc)
@@ -175,12 +194,14 @@ def btn_post71():
     btn_receive = request.form['btn_give']
     date_receive = request.form['date_give']
     onlydate_receive = request.form['onlydate_give']
+    text_receive = request.form['text_give']
 
     doc = {
         'name':name_receive,
         'date':date_receive,
         'onlydate':onlydate_receive,
-        'btn_id':btn_receive
+        'btn_id':btn_receive,
+        'text':text_receive
 
     }
     db.blackwizzard71.insert_one(doc)
@@ -200,12 +221,14 @@ def btn_post63():
     btn_receive = request.form['btn_give']
     date_receive = request.form['date_give']
     onlydate_receive = request.form['onlydate_give']
+    text_receive = request.form['text_give']
 
     doc = {
         'name':name_receive,
         'date':date_receive,
         'onlydate':onlydate_receive,
-        'btn_id':btn_receive
+        'btn_id':btn_receive,
+        'text':text_receive
 
     }
     db.blackwizzard63.insert_one(doc)
@@ -255,4 +278,4 @@ def sunday_get():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run()

@@ -12,7 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <title>blackwizzard</title>
+    <title>검마 딱 대</title>
+
+    <meta property="og:title" content="나의 해방일지" />
+    <meta property="og:description" content="검은 마법사를 잡아봅시다" />
+    <meta property="og:image" content="https://ik.imagekit.io/wlalafg7g/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A1%9C%EA%B3%A0_02.png?updatedAt=1691905507733" />
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Noto+Sans+KR&display=swap');
@@ -1416,6 +1421,12 @@
         }
     </style> -->
     <style>
+        .tab-text {
+            width: 300px;
+            height: 100px;
+            margin: 3px auto 3px auto;
+        }
+
         .sunday-input-btn {
             width: 50px;
             height: 30px;
@@ -1428,6 +1439,23 @@
         .update-notice {
             width: 450px;
             margin: 10px auto 10px auto;
+        }
+
+        .counter-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .counter-button {
+            height: 60px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0px 3px 0px 3px;
+            font-size: 25px;
+            align-items: center;
         }
     </style>
     <script>
@@ -1814,7 +1842,7 @@
                 <div class="notice">
                     ※ 공지사항 ※
                 </div>
-                <textarea class="noticetext flex-row" id="noticetext"></textarea>
+                <textarea class="noticetext flex-row" id="noticetext" placeholder="아무나 입력하는 공지사항"></textarea>
 
             </div>
             <div class="lobby-save-btn flex-row" onclick="save_notice()"></div>
@@ -1955,7 +1983,14 @@
                 <button type="button" onclick=weekly_reset() class="save-btn btn-dark">주간 초기화</button>
             </div>
             <div class="update-notice">
-                2023.08.30 v1.1.4
+                2023.08.31 v1.1.4
+                <p>
+                    tab1~5 '오늘의 메업적' 입력 textarea 추가 및 데이터베이스 연동 ( 자동 초기화 기능 추가),
+                    tab6 공지사항 textarea placeholder 속성 추가
+                    정식 배포 시작
+                    og 태그 추가
+                </p>
+                2023.08.30
                 <p>
                     tab6 버튼 삭제 ( vip 쿠폰, 레범몬 ),
                     tab6 버튼 추가 ( 경험치 부스트링, 엘 클리어, 엘 페일, 츄츄 슬러시 ),
@@ -2043,6 +2078,14 @@
                         <div id="progress4"></div>
                     </div>
                 </div>
+
+                <!-- <div class="counter-container">
+                    오늘 재획 :
+                    <button class="counter-button" id="decrease33">-</button>
+                    <span id="level-up-time33">0시간 00분</span>
+                    <button class="counter-button" id="increase33">+</button>
+                </div> -->
+                <textarea class="tab-text flex-row" id="text33" placeholder="오늘의 메업적"></textarea>
                 <button type="button" onclick=handleSaveButtonClick() class="save-btn  btn-dark">저장</button>
                 <!-- --------------------------------------------------일일퀘스트------------------------------------------------ -->
 
@@ -2289,9 +2332,65 @@
 
 
             <script>
+                // -------------------------11재획 기능11----------------------------
+                // -------------------------11재획 기능11----------------------------
+                // -------------------------11재획 기능11----------------------------
+                // -------------------------11재획 기능11----------------------------
+                
+
+                // const decreaseButton = document.getElementById('decrease33');
+                // const increaseButton = document.getElementById('increase33');
+                // const timeElement = document.getElementById('level-up-time33');
+
+                // let hours = 0;
+                // let minutes = 0;
+
+                // decreaseButton.addEventListener('click', () => {
+                //     if (hours === 0 && minutes === 0) {
+                //         return; // Do nothing when time is 0시간 00분
+                //     }
+
+                //     minutes -= 30;
+                //     if (minutes < 0) {
+                //         hours--;
+                //         minutes += 60;
+                //     }
+                //     updateDisplay33();
+                // });
+
+                // increaseButton.addEventListener('click', () => {
+                //     minutes += 30;
+                //     if (minutes >= 60) {
+                //         hours++;
+                //         minutes -= 60;
+                //     }
+                //     updateDisplay33();
+                // });
+
+                // function updateDisplay33() {
+                //     timeElement.textContent = `${hours}시간 ${formatMinutes(minutes)}분`;
+
+                //     // Disable the decrease button when time is 0시간 00분
+                //     if (hours === 0 && minutes === 0) {
+                //         decreaseButton.disabled = true;
+                //     } else {
+                //         decreaseButton.disabled = false;
+                //     }
+                // }
+
+                // function formatMinutes(mins) {
+                //     return mins < 10 ? `0${mins}` : mins;
+                // }
+
+
+
+
+
+// -------------------------------------------------------------------------------
                 let progressBar1 = document.getElementById("progress1");
                 let currentProgress1 = 0;
                 let day_quest_count = 0;
+
 
                 function countnum(button) {
                     $('#dd1').empty()
@@ -2519,6 +2618,7 @@
                     let now = month + '월' + date + '일'
                     let onlydate = date
                     let name33 = '1'
+                    let text33 = $('#text33').val()
 
 
                     alert('[대뀨짱] 저장되었습니다.')
@@ -2533,6 +2633,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text33)
                     fetch('/savebtn', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     });
@@ -2547,6 +2648,11 @@
                     let now = month + '월' + date + '일'
                     let onlydate = date
                     let name33 = '1'
+                    
+                    $('#text33').empty()
+                    let text33 = $('#text33').val()
+
+                    
 
 
 
@@ -2563,6 +2669,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text33)
                     fetch('/savebtn', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     });
@@ -2581,7 +2688,7 @@
                     currentProgress4 = 0;
                     week_boss_count = 0;
                     week_quest_count = 0;
-
+                    let text33 = $('#text33').val()
 
 
 
@@ -2598,6 +2705,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text33)
                     fetch('/savebtn', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     })
@@ -2612,6 +2720,7 @@
                         var arr = [];
                         var btnIdArr = btnIdValue.split(",");
                         var length = btnIdArr.length
+                        $('#text33').empty()
 
                         for (i = 0; i < length; i++)
                             arr.push(btnIdArr[i])
@@ -2619,7 +2728,11 @@
                         for (j = 0; j < arr.length; j++)
                             pressButton(arr[j])
 
+                        var lasttext = lastDictionary.text
+                        let temp_html = `${lasttext}`
+                        $('#text33').append(temp_html)
                     })
+                        
                 }
                 function unpressButton(buttonId) {
                     // var buttons = document.querySelectorAll('button');
@@ -2652,8 +2765,9 @@
 
 
 
-
             </script>
+
+
         </div>
 
 
@@ -3074,6 +3188,7 @@
                         <div id="progress144"></div>
                     </div>
                 </div>
+                <textarea class="tab-text flex-row" id="text14" placeholder="오늘의 메업적"></textarea>
                 <button type="button" onclick=handleSaveButtonClick14() class="save-btn  btn-dark">저장</button>
 
                 <div class="btn-area">
@@ -3375,6 +3490,7 @@
                     let now14 = month + '월' + date + '일'
                     let onlydate14 = date
                     let name14 = '2'
+                    let text14 = $('#text14').val()
 
 
 
@@ -3392,6 +3508,7 @@
                     formData.append("btn_give", btnarr14);
                     formData.append("date_give", now14);
                     formData.append("onlydate_give", onlydate14)
+                    formData.append("text_give", text14)
                     fetch('/savebtn14', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
 
@@ -3408,6 +3525,9 @@
                     let now = month + '월' + date + '일'
                     let onlydate = date
 
+                    $('#text14').empty()
+                    let text14 = $('#text14').val()
+
 
 
 
@@ -3423,6 +3543,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text14)
                     fetch('/savebtn14', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     });
@@ -3441,6 +3562,7 @@
                     currentProgress4 = 0;
                     week_boss_count = 0;
                     week_quest_count = 0;
+                    let text14 = $('#text14').val()
 
 
 
@@ -3457,6 +3579,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text14)
                     fetch('/savebtn14', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     })
@@ -3471,12 +3594,17 @@
                         var arr14 = [];
                         var btnIdArr14 = btnIdValue14.split(",");
                         var length14 = btnIdArr14.length
+                        $('#text14').empty()
 
                         for (i = 0; i < length14; i++)
                             arr14.push(btnIdArr14[i])
 
                         for (j = 0; j < arr14.length; j++)
                             pressButton14(arr14[j])
+
+                        var lasttext = lastDictionary14.text
+                        let temp_html = `${lasttext}`
+                        $('#text14').append(temp_html)
 
                     })
                 }
@@ -3946,6 +4074,7 @@
                         <div id="progress274"></div>
                     </div>
                 </div>
+                <textarea class="tab-text flex-row" id="text27" placeholder="오늘의 메업적"></textarea>
                 <button type="button" onclick=handleSaveButtonClick27() class="save-btn  btn-dark">저장</button>
 
                 <div class="btn-area">
@@ -4257,6 +4386,8 @@
                     let now27 = month + '월' + date + '일'
                     let onlydate27 = date
                     let name27 = '3'
+                    let text27 = $('#text27').val()
+
 
 
 
@@ -4274,6 +4405,7 @@
                     formData.append("btn_give", btnarr27);
                     formData.append("date_give", now27);
                     formData.append("onlydate_give", onlydate27)
+                    formData.append("text_give", text27)
                     fetch('/savebtn27', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
 
@@ -4290,6 +4422,9 @@
                     let now = month + '월' + date + '일'
                     let onlydate = date
 
+                    $('#text27').empty()
+                    let text27 = $('#text27').val()
+
 
 
 
@@ -4305,6 +4440,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text27)
                     fetch('/savebtn27', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     });
@@ -4323,6 +4459,7 @@
                     currentProgress4 = 0;
                     week_boss_count = 0;
                     week_quest_count = 0;
+                    let text27 = $('#text27').val()
 
 
 
@@ -4339,6 +4476,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text27)
                     fetch('/savebtn27', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     })
@@ -4353,6 +4491,7 @@
                         var arr27 = [];
                         var btnIdArr27 = btnIdValue27.split(",");
                         var length27 = btnIdArr27.length
+                        $('#text27').empty()
 
                         for (i = 0; i < length27; i++)
                             arr27.push(btnIdArr27[i])
@@ -4360,6 +4499,9 @@
                         for (j = 0; j < arr27.length; j++)
                             pressButton27(arr27[j])
 
+                            var lasttext = lastDictionary27.text
+                        let temp_html = `${lasttext}`
+                        $('#text27').append(temp_html)
                     })
                 }
 
@@ -4821,6 +4963,7 @@
                         <div id="progress714"></div>
                     </div>
                 </div>
+                <textarea class="tab-text flex-row" id="text71" placeholder="오늘의 메업적"></textarea>
                 <button type="button" onclick=handleSaveButtonClick71() class="save-btn  btn-dark">저장</button>
 
                 <div class="btn-area">
@@ -5132,6 +5275,7 @@
                     let now71 = month + '월' + date + '일'
                     let onlydate71 = date
                     let name71 = '4'
+                    let text71 = $('#text71').val()
 
 
 
@@ -5149,6 +5293,7 @@
                     formData.append("btn_give", btnarr71);
                     formData.append("date_give", now71);
                     formData.append("onlydate_give", onlydate71)
+                    formData.append("text_give", text71)
                     fetch('/savebtn71', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
 
@@ -5164,6 +5309,9 @@
                     var btnarr = [];
                     let now = month + '월' + date + '일'
                     let onlydate = date
+
+                    $('#text71').empty()
+                    let text71 = $('#text71').val()
 
 
 
@@ -5181,6 +5329,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text71)
                     fetch('/savebtn71', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     });
@@ -5199,6 +5348,7 @@
                     currentProgress4 = 0;
                     week_boss_count = 0;
                     week_quest_count = 0;
+                    let text71 = $('#text71').val()
 
 
 
@@ -5215,6 +5365,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text71)
                     fetch('/savebtn71', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     })
@@ -5229,12 +5380,17 @@
                         var arr71 = [];
                         var btnIdArr71 = btnIdValue71.split(",");
                         var length71 = btnIdArr71.length
+                        $('#text71').empty()
 
                         for (i = 0; i < length71; i++)
                             arr71.push(btnIdArr71[i])
 
                         for (j = 0; j < arr71.length; j++)
                             pressButton71(arr71[j])
+
+                            var lasttext = lastDictionary71.text
+                        let temp_html = `${lasttext}`
+                        $('#text71').append(temp_html)
 
                     })
                 }
@@ -5691,6 +5847,7 @@
                         <div id="progress634"></div>
                     </div>
                 </div>
+                <textarea class="tab-text flex-row" id="text63" placeholder="오늘의 메업적"></textarea>
                 <button type="button" onclick=handleSaveButtonClick63() class="save-btn  btn-dark">저장</button>
 
                 <div class="btn-area">
@@ -6001,6 +6158,7 @@
                     let now63 = month + '월' + date + '일'
                     let onlydate63 = date
                     let name63 = '5'
+                    let text63 = $('#text63').val()
 
 
 
@@ -6018,6 +6176,7 @@
                     formData.append("btn_give", btnarr63);
                     formData.append("date_give", now63);
                     formData.append("onlydate_give", onlydate63)
+                    formData.append("text_give", text63)
                     fetch('/savebtn63', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
 
@@ -6033,6 +6192,9 @@
                     var btnarr = [];
                     let now = month + '월' + date + '일'
                     let onlydate = date
+
+                    $('#text63').empty()
+                    let text63 = $('#text63').val()
 
 
 
@@ -6050,6 +6212,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text63)
                     fetch('/savebtn63', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     });
@@ -6068,6 +6231,7 @@
                     currentProgress4 = 0;
                     week_boss_count = 0;
                     week_quest_count = 0;
+                    let text63 = $('#text63').val()
 
 
 
@@ -6084,6 +6248,7 @@
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text63)
                     fetch('/savebtn63', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     })
@@ -6098,12 +6263,17 @@
                         var arr63 = [];
                         var btnIdArr63 = btnIdValue63.split(",");
                         var length63 = btnIdArr63.length
+                        $('#text63').empty()
 
                         for (i = 0; i < length63; i++)
                             arr63.push(btnIdArr63[i])
 
                         for (j = 0; j < arr63.length; j++)
                             pressButton63(arr63[j])
+
+                            var lasttext = lastDictionary63.text
+                        let temp_html = `${lasttext}`
+                        $('#text63').append(temp_html)
 
                     })
                 }
