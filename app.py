@@ -107,13 +107,17 @@ def btn_post():
     date_receive = request.form['date_give']
     onlydate_receive = request.form['onlydate_give']
     text_receive = request.form['text_give']
+    timeh_receive = request.form['timeh_give']
+    timem_receive = request.form['timem_give']
 
     doc = {
         'name':name_receive,
         'date':date_receive,
         'onlydate':onlydate_receive,
         'btn_id':btn_receive,
-        'text':text_receive
+        'text':text_receive,
+        'timeh':timeh_receive,
+        'timem':timem_receive
 
     }
     db.blackwizzard.insert_one(doc)

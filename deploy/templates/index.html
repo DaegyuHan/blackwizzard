@@ -12,11 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <title>검마 딱 대</title>
+    <title>나의 해방일지</title>
 
     <meta property="og:title" content="나의 해방일지" />
     <meta property="og:description" content="검은 마법사를 잡아봅시다" />
-    <meta property="og:image" content="https://ik.imagekit.io/wlalafg7g/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A1%9C%EA%B3%A0_02.png?updatedAt=1691905507733" />
+    <meta property="og:image"
+        content="https://ik.imagekit.io/wlalafg7g/%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A1%9C%EA%B3%A0_02.png?updatedAt=1691905507733" />
 
 
     <style>
@@ -285,6 +286,17 @@
 
         .button1-5 {
             background-image: url("https://ik.imagekit.io/wlalafg7g/20230830/%EC%B8%84%EC%B8%84%EC%8A%AC%EB%9F%AC%EC%8B%9C.png?updatedAt=1693396561036");
+            background-size: cover;
+        }
+
+        .button1-6.active {
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
+                url("https://ik.imagekit.io/wlalafg7g/20230830/%ED%99%A9%EA%B8%88%EB%A7%88%EC%B0%A8.png?updatedAt=1693396561051")
+        }
+
+        .button1-6 {
+            background-image: url("https://ik.imagekit.io/wlalafg7g/20230830/%ED%99%A9%EA%B8%88%EB%A7%88%EC%B0%A8.png?updatedAt=1693396561051");
             background-size: cover;
         }
     </style>
@@ -1449,24 +1461,46 @@
         }
 
         .counter-button {
-            height: 60px;
-            padding: 10px 20px;
+            height: 4cap;
+            width: 30px;
             font-size: 16px;
             cursor: pointer;
-            margin: 0px 3px 0px 3px;
+            margin: 7px 7px 7px 7px;
             font-size: 25px;
             align-items: center;
-        }
-    </style>
-    <script>
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            align-items: center;
+            background-color: #d1cfcf;
 
+        }
+
+        .counter-button:hover {
+            height: 4cap;
+            width: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 7px 7px 7px 7px;
+            font-size: 25px;
+            align-items: center;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            align-items: center;
+            background-color: #eeeded;
+        }
+        .counter-title{
+            font-size: 15px;
+        }
+
+    </style>
+
+
+    <script>
         $(document).ready(function () {
             chrStat();
             chrStat14()
             chrStat27()
             chrStat71()
             chrStat63()
-            showTab("tab6")
+            showTab("tab1")
             show_btn()
             show_btn14()
             show_btn27()
@@ -1493,6 +1527,8 @@
 
 
         }
+
+
 
 
 
@@ -1786,11 +1822,14 @@
         function finish_pressButton(buttonId) {
             // var buttons = document.querySelectorAll('button');
             var buttons = document.getElementsByClassName("finish");
-            console.log(buttons)
 
             Array.from(buttons).forEach(function (button) {
                 button.click();
             });
+        }
+
+        function formatMinutes(mins) {
+            return mins < 10 ? `0${mins}` : mins;
         }
 
 
@@ -1820,7 +1859,7 @@
                 <label name="option" value="6" id="tab6-label" class="tab-label tab00"
                     onclick="showTab('tab6')">로비</label>
                 <label name="option" value="7" id="tab7-label" class="tab-label tab99"
-                    onclick="showTab('tab7')">관리</label>
+                    onclick="showTab('tab7')">v1.1.6</label>
             </p>
             <label name="option" value="1" id="tab1-label" class="tab-label tab33" onclick="showTab('tab1')">대뀨짱</label>
             <label name="option" value="2" id="tab2-label" class="tab-label tab14" onclick="showTab('tab2')">이찬웅</label>
@@ -1983,6 +2022,17 @@
                 <button type="button" onclick=weekly_reset() class="save-btn btn-dark">주간 초기화</button>
             </div>
             <div class="update-notice">
+                2023.09.04 v.1.1.6
+                <p>
+                    사이트 이름 <검마 딱 대> → <나의 해방일지> 변경
+                    tab14 캐릭터 이미지 업데이트,
+                    tab71 캐릭터 이미지 업데이트,
+                    재획 카운터 기능 추가 중 (미완)
+                </p>
+                2023.09.03
+                <p>
+                    tab1~5 일일퀘스트 황금마차 버튼 추가
+                </p>
                 2023.09.01 v1.1.5
                 <p>
                     tab14 퍼스널 컬러 변경, 캐릭터 이미지 업데이트,
@@ -2057,7 +2107,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd1"> :0/15</div>
+                    <div id="dd1"> :0/16</div>
                     <div id="progressBar1">
                         <div id="progress1"></div>
                     </div>
@@ -2084,12 +2134,17 @@
                     </div>
                 </div>
 
-                <!-- <div class="counter-container">
-                    오늘 재획 :
-                    <button class="counter-button" id="decrease33">-</button>
-                    <span id="level-up-time33">0시간 00분</span>
-                    <button class="counter-button" id="increase33">+</button>
-                </div> -->
+                <div class="counter-container">
+                    <div class="counter-title">
+                        오늘 재획 :
+                    </div>
+                    <div class="counter-button" id="decrease33">-</div>
+                    <span id="level-up-time33" class="flex-row">
+                        <div id="time33-h">0</div>시간
+                        <div id="time33-m">00</div>분
+                    </span>
+                    <div class="counter-button" id="increase33">+</div>
+                </div>
                 <textarea class="tab-text flex-row" id="text33" placeholder="오늘의 메업적"></textarea>
                 <button type="button" onclick=handleSaveButtonClick() class="save-btn  btn-dark">저장</button>
                 <!-- --------------------------------------------------일일퀘스트------------------------------------------------ -->
@@ -2133,6 +2188,9 @@
                                 onclick="toggleProgressBar1(this)"></button>
                             <button class="button1-5 daywork hdg" id="button1-15"
                                 onclick="toggleProgressBar1(this)"></button>
+                            <button class="button1-6 daywork hdg" id="button1-16"
+                                onclick="toggleProgressBar1(this)"></button>
+
                         </p>
                     </div>
 
@@ -2334,64 +2392,9 @@
                 </div>
             </div>
 
-
-
             <script>
-                // -------------------------11재획 기능11----------------------------
-                // -------------------------11재획 기능11----------------------------
-                // -------------------------11재획 기능11----------------------------
-                // -------------------------11재획 기능11----------------------------
-                
-
-                // const decreaseButton = document.getElementById('decrease33');
-                // const increaseButton = document.getElementById('increase33');
-                // const timeElement = document.getElementById('level-up-time33');
-
-                // let hours = 0;
-                // let minutes = 0;
-
-                // decreaseButton.addEventListener('click', () => {
-                //     if (hours === 0 && minutes === 0) {
-                //         return; // Do nothing when time is 0시간 00분
-                //     }
-
-                //     minutes -= 30;
-                //     if (minutes < 0) {
-                //         hours--;
-                //         minutes += 60;
-                //     }
-                //     updateDisplay33();
-                // });
-
-                // increaseButton.addEventListener('click', () => {
-                //     minutes += 30;
-                //     if (minutes >= 60) {
-                //         hours++;
-                //         minutes -= 60;
-                //     }
-                //     updateDisplay33();
-                // });
-
-                // function updateDisplay33() {
-                //     timeElement.textContent = `${hours}시간 ${formatMinutes(minutes)}분`;
-
-                //     // Disable the decrease button when time is 0시간 00분
-                //     if (hours === 0 && minutes === 0) {
-                //         decreaseButton.disabled = true;
-                //     } else {
-                //         decreaseButton.disabled = false;
-                //     }
-                // }
-
-                // function formatMinutes(mins) {
-                //     return mins < 10 ? `0${mins}` : mins;
-                // }
 
 
-
-
-
-// -------------------------------------------------------------------------------
                 let progressBar1 = document.getElementById("progress1");
                 let currentProgress1 = 0;
                 let day_quest_count = 0;
@@ -2399,13 +2402,13 @@
 
                 function countnum(button) {
                     $('#dd1').empty()
-                    let temp_num = `:${day_quest_count}/15`
+                    let temp_num = `:${day_quest_count}/16`
                     $('#dd1').append(temp_num)
                 }
 
                 function toggleProgressBar1(button) {
 
-                    var buttonProgress1 = 100 / 15;
+                    var buttonProgress1 = 100 / 16;
 
                     if (button.classList.contains("active")) {
                         // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -2617,6 +2620,53 @@
                     countnum4()
 
                 }
+
+                // -------------------------11재획 기능11----------------------------
+                // -------------------------11재획 기능11----------------------------
+                // -------------------------11재획 기능11----------------------------
+                // -------------------------11재획 기능11----------------------------
+                const decreaseButton33 = document.getElementById('decrease33');
+                const increaseButton33 = document.getElementById('increase33');
+                
+
+                let time33 = 0;
+
+                decreaseButton33.addEventListener('click', () => {
+                    if (time33 == 0) {
+                        return;
+                    }
+                    time33 -= 30;
+                    updateDisplay33()
+                })
+
+                increaseButton33.addEventListener('click', () => {
+                    time33 += 30;
+                    updateDisplay33()
+                })
+
+                function updateDisplay33() {
+                    var hours = Math.floor((time33) / 60);
+                    var minutes = (time33) % 60;
+                    $('#time33-h').empty()
+                    $('#time33-m').empty()
+                    temp_html1 = `${hours}`
+                    temp_html2 = `${formatMinutes(minutes)}`
+                    $('#time33-h').append(temp_html1)
+                    $('#time33-m').append(temp_html2)
+
+                    let time33_h = document.getElementById("time33-h")
+                    // let content = time33_h.textContent;
+                    // content = content.replace(/[^0]/g, '');
+                    // time33_h.textContent = content;
+                    console.log(
+                        time33_h
+                    )
+
+                }
+                // -------------------------------------------------------------------------------
+
+
+
                 function handleSaveButtonClick() {
                     var buttons = document.getElementsByClassName('hdg');
                     var btnarr = [];
@@ -2624,6 +2674,13 @@
                     let onlydate = date
                     let name33 = '1'
                     let text33 = $('#text33').val()
+                    let time33_h = $('#time33-h').val()
+                    let time33_m = $('#time33-m').val()
+
+                    
+
+
+
 
 
                     alert('[대뀨짱] 저장되었습니다.')
@@ -2637,8 +2694,11 @@
                     formData.append("name_give", name33);
                     formData.append("btn_give", btnarr);
                     formData.append("date_give", now);
-                    formData.append("onlydate_give", onlydate)
-                    formData.append("text_give", text33)
+                    formData.append("onlydate_give", onlydate);
+                    formData.append("text_give", text33);
+                    formDate.append("timeh_give", time33_h);
+                    formDate.append("timem_give", time33_m);
+
                     fetch('/savebtn', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     });
@@ -2653,11 +2713,11 @@
                     let now = month + '월' + date + '일'
                     let onlydate = date
                     let name33 = '1'
-                    
+
                     $('#text33').empty()
                     let text33 = $('#text33').val()
 
-                    
+
 
 
 
@@ -2737,7 +2797,7 @@
                         let temp_html = `${lasttext}`
                         $('#text33').append(temp_html)
                     })
-                        
+
                 }
                 function unpressButton(buttonId) {
                     // var buttons = document.querySelectorAll('button');
@@ -2817,7 +2877,7 @@
             .tab2-img1 {
                 width: 150px;
                 height: 150px;
-                background-image: url(https://avatar.maplestory.nexon.com/Character/KADHIEENCLHBFAHGMJCKGBOFBGAJMFFIGNOLLFIAEAFHPDMANMBMGPIIPAAOIFOMEAMEJGGGKEGJBDOFKHFLMNLLIIPMIPNPAJIJALHDHADJEIGJGFEMFAMBOHLKCMPINKEDHJGEJILKDBNBGGHKEFHIGFMODEFFEDJPECEAKEMJLBJOKBLGKAKDBKCHGPHMGFCBHGDJBLHAHIFGDKGNKCFNGNFEPBFKCGNDPOFMIGAGBAHHMJLMICDDLAEFOJDM.png);
+                background-image: url(https://avatar.maplestory.nexon.com/Character/MCPPJBFHFEDINEEKACIIFJNLBBBAJPLIOMGDFEDDECJIAPJPHJDBGHMGEFNKANEDBKDNKNMNCJJLHLKDDKNJANBFHBDOIGPFDLHPJEBIEEGGAHBNGFIAJBMGBGMOFHLCAMNPALMNHKABLAMDNFMNOACIIDJEBHOKBEBJMCCOINBLFAILBJFCPEFNFOJEDAPNABGBDHMGOHEMFBCEBCJMCFGEMGHOGIIFMPLCCKLDFEKLMMHPGGPEKHIJOJGKDCBL.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 box-shadow: 0px 1px 1px 1px gray;
@@ -2946,13 +3006,13 @@
 
             function countnum14(button) {
                 $('#dd141').empty()
-                let temp_num = `:${day_quest_count14}/15`
+                let temp_num = `:${day_quest_count14}/16`
                 $('#dd141').append(temp_num)
             }
 
             function toggleProgressBar141(button) {
 
-                var buttonProgress141 = 100 / 15;
+                var buttonProgress141 = 100 / 16;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -3167,7 +3227,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd141"> :0/15</div>
+                    <div id="dd141"> :0/16</div>
                     <div id="progressBar141">
                         <div id="progress141"></div>
                     </div>
@@ -3238,6 +3298,8 @@
                             <button class="button1-4 daywork lcw" id="button141-14"
                                 onclick="toggleProgressBar141(this)"></button>
                             <button class="button1-5 daywork lcw" id="button141-15"
+                                onclick="toggleProgressBar141(this)"></button>
+                            <button class="button1-6 daywork lcw" id="button141-16"
                                 onclick="toggleProgressBar141(this)"></button>
                         </p>
                     </div>
@@ -3832,13 +3894,13 @@
 
             function countnum27(button) {
                 $('#dd271').empty()
-                let temp_num = `:${day_quest_count27}/15`
+                let temp_num = `:${day_quest_count27}/16`
                 $('#dd271').append(temp_num)
             }
 
             function toggleProgressBar271(button) {
 
-                var buttonProgress271 = 100 / 15;
+                var buttonProgress271 = 100 / 16;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -4053,7 +4115,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd271"> :0/15</div>
+                    <div id="dd271"> :0/16</div>
                     <div id="progressBar271">
                         <div id="progress271"></div>
                     </div>
@@ -4130,6 +4192,8 @@
                             <button class="button1-4 daywork ath" id="button271-14"
                                 onclick="toggleProgressBar271(this)"></button>
                             <button class="button1-5 daywork ath" id="button271-15"
+                                onclick="toggleProgressBar271(this)"></button>
+                            <button class="button1-6 daywork ath" id="button271-16"
                                 onclick="toggleProgressBar271(this)"></button>
                         </p>
                     </div>
@@ -4504,7 +4568,7 @@
                         for (j = 0; j < arr27.length; j++)
                             pressButton27(arr27[j])
 
-                            var lasttext = lastDictionary27.text
+                        var lasttext = lastDictionary27.text
                         let temp_html = `${lasttext}`
                         $('#text27').append(temp_html)
                     })
@@ -4591,7 +4655,7 @@
             .tab4-img1 {
                 width: 150px;
                 height: 150px;
-                background-image: url(https://avatar.maplestory.nexon.com/Character/FOACGIBDPLHIKDNMNMPHNPBJKFBHGDDPBPDOLPLJKHFMGIGBNDGKPAHIAGIOPDGFECKNBCLJGBNOAOLDDJAEININJKEDFOEIDGDPAONIKBFDINEBOKMLGFGLHNJOEHMJDHNGIJCMAMKMNPKJJJNDCKFLAMEHKLHCAKGJPPCDIGPAMBGBCMAOHGHKHJNELKBGFMAHHDBGJALOHDKEBCJIHADAMCGLGLNFJPCHFHBHNFMBJNLNCDHICEGBEJNMIPCI.png);
+                background-image: url(https://avatar.maplestory.nexon.com/Character/HLBLGNHIGIFFGEGIKPKAPLAMPPCDFPEPCBKMOFHBJPIFOOAKNDIDBFBEIKGLLKIHKAGEGCAPEHHCMAEOPJOGHNNDAAELMLCHHKHAEGJIHPBCKEBABPKMBBHBGCBCDEFPHEHEIPJNCPMMEHJMANDIEPIAAGIGBCLFOMKMFLEDDAMFBDHGOEAFPCOFMAIGHDKCMCECCCBMFGBNFICNGIJPBOELADGDGCNNHPEPPCMDKLKLGKICDDLEPFCEFKEKCNMI.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 box-shadow: 0px 1px 1px 1px gray;
@@ -4721,13 +4785,13 @@
 
             function countnum71(button) {
                 $('#dd711').empty()
-                let temp_num = `:${day_quest_count71}/15`
+                let temp_num = `:${day_quest_count71}/16`
                 $('#dd711').append(temp_num)
             }
 
             function toggleProgressBar711(button) {
 
-                var buttonProgress711 = 100 / 15;
+                var buttonProgress711 = 100 / 16;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -4942,7 +5006,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd711"> :0/15</div>
+                    <div id="dd711"> :0/16</div>
                     <div id="progressBar711">
                         <div id="progress711"></div>
                     </div>
@@ -5019,6 +5083,8 @@
                             <button class="button1-4 daywork ycj" id="button711-14"
                                 onclick="toggleProgressBar711(this)"></button>
                             <button class="button1-5 daywork ycj" id="button711-15"
+                                onclick="toggleProgressBar711(this)"></button>
+                            <button class="button1-6 daywork ycj" id="button711-16"
                                 onclick="toggleProgressBar711(this)"></button>
                         </p>
                     </div>
@@ -5393,7 +5459,7 @@
                         for (j = 0; j < arr71.length; j++)
                             pressButton71(arr71[j])
 
-                            var lasttext = lastDictionary71.text
+                        var lasttext = lastDictionary71.text
                         let temp_html = `${lasttext}`
                         $('#text71').append(temp_html)
 
@@ -5624,13 +5690,13 @@
 
             function countnum63(button) {
                 $('#dd631').empty()
-                let temp_num = `:${day_quest_count63}/15`
+                let temp_num = `:${day_quest_count63}/16`
                 $('#dd631').append(temp_num)
             }
 
             function toggleProgressBar631(button) {
 
-                var buttonProgress631 = 100 / 15;
+                var buttonProgress631 = 100 / 16;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -5826,7 +5892,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd631"> :0/15</div>
+                    <div id="dd631"> :0/16</div>
                     <div id="progressBar631">
                         <div id="progress631"></div>
                     </div>
@@ -5903,6 +5969,8 @@
                             <button class="button1-4 daywork kjb" id="button631-14"
                                 onclick="toggleProgressBar631(this)"></button>
                             <button class="button1-5 daywork kjb" id="button631-15"
+                                onclick="toggleProgressBar631(this)"></button>
+                            <button class="button1-6 daywork kjb" id="button631-16"
                                 onclick="toggleProgressBar631(this)"></button>
                         </p>
                     </div>
@@ -6276,7 +6344,7 @@
                         for (j = 0; j < arr63.length; j++)
                             pressButton63(arr63[j])
 
-                            var lasttext = lastDictionary63.text
+                        var lasttext = lastDictionary63.text
                         let temp_html = `${lasttext}`
                         $('#text63').append(temp_html)
 
