@@ -109,6 +109,7 @@ def btn_post():
     text_receive = request.form['text_give']
     timeh_receive = request.form['timeh_give']
     timem_receive = request.form['timem_give']
+    timea_receive = request.form['timea_give']
 
     doc = {
         'name':name_receive,
@@ -117,7 +118,8 @@ def btn_post():
         'btn_id':btn_receive,
         'text':text_receive,
         'timeh':timeh_receive,
-        'timem':timem_receive
+        'timem':timem_receive,
+        'timea':timea_receive
 
     }
     db.blackwizzard.insert_one(doc)

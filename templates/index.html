@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="shortcut icon" href="#">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -1486,10 +1488,16 @@
             align-items: center;
             background-color: #eeeded;
         }
-        .counter-title{
+
+        .counter-title {
             font-size: 15px;
         }
 
+        .level-info {
+            font-size: 12px;
+            margin-left: 5px;
+            
+        }
     </style>
 
 
@@ -1859,7 +1867,7 @@
                 <label name="option" value="6" id="tab6-label" class="tab-label tab00"
                     onclick="showTab('tab6')">로비</label>
                 <label name="option" value="7" id="tab7-label" class="tab-label tab99"
-                    onclick="showTab('tab7')">v1.1.6</label>
+                    onclick="showTab('tab7')">v1.1.7</label>
             </p>
             <label name="option" value="1" id="tab1-label" class="tab-label tab33" onclick="showTab('tab1')">대뀨짱</label>
             <label name="option" value="2" id="tab2-label" class="tab-label tab14" onclick="showTab('tab2')">이찬웅</label>
@@ -2022,11 +2030,17 @@
                 <button type="button" onclick=weekly_reset() class="save-btn btn-dark">주간 초기화</button>
             </div>
             <div class="update-notice">
+                2023.09.05 v.1.1.7
+                <p>
+                    tab7 이름 [관리] → [version] 변경,
+                    tab2~5 일일퀘스트 츄츄,레헬른,아르카나 버튼 에러 수정 완료
+                    tab1 재획 카운터 기능 추가
+                </p>
                 2023.09.04 v.1.1.6
                 <p>
-                    사이트 이름 <검마 딱 대> → <나의 해방일지> 변경
-                    tab14 캐릭터 이미지 업데이트,
-                    tab71 캐릭터 이미지 업데이트,
+                    사이트 이름 [검마 딱 대] → [나의 해방일지] 변경
+                    tab2 캐릭터 이미지 업데이트,
+                    tab4 캐릭터 이미지 업데이트,
                     재획 카운터 기능 추가 중 (미완)
                 </p>
                 2023.09.03
@@ -2035,12 +2049,12 @@
                 </p>
                 2023.09.01 v1.1.5
                 <p>
-                    tab14 퍼스널 컬러 변경, 캐릭터 이미지 업데이트,
-                    tab27 퍼스널 컬러 변경, 캐릭터 이미지 업데이트
+                    tab2 퍼스널 컬러 변경, 캐릭터 이미지 업데이트,
+                    tab3 퍼스널 컬러 변경, 캐릭터 이미지 업데이트
                 </p>
                 2023.08.31 v1.1.4
                 <p>
-                    tab1~5 '오늘의 메업적' 입력 textarea 추가 및 데이터베이스 연동 ( 자동 초기화 기능 추가),
+                    tab1~5 '오늘의 메업적' 입력 textarea 추가 및 데이터베이스 연동 ( 자동 초기화 기능 추가 ),
                     tab6 공지사항 textarea placeholder 속성 추가,
                     정식 배포 시작,
                     og 태그 추가
@@ -2050,7 +2064,7 @@
                     tab6 버튼 삭제 ( vip 쿠폰, 레범몬 ),
                     tab6 버튼 추가 ( 경험치 부스트링, 엘 클리어, 엘 페일, 츄츄 슬러시 ),
                     각 tab 이벤트 container 이름 이벤트(종료) 로 변경 후 닫음,
-                    tab27 너보 → 제41대 변경 ( 이미지 수정 및 app.py 서버 내 level27 추가 )
+                    tab3 너보 → 제41대 변경 ( 이미지 수정 및 app.py 서버 내 level27 추가 )
                 </p>
                 2023.08.29 v1.1.3
                 <p>
@@ -2059,7 +2073,7 @@
                 </p>
                 2023.08.27 v1.1.2
                 <p>
-                    (tab63) 핑크빈버튼 에러 수정, 로비 저장 버튼 영역 확대, (tab7) 이름 관리로 변경,
+                    (tab5) 핑크빈버튼 에러 수정, 로비 저장 버튼 영역 확대, (tab7) 이름 관리로 변경,
                     선데이메이플 url 입력 기능 추가
                 </p>
                 2023.08.24 v1.1.1
@@ -2144,6 +2158,7 @@
                         <div id="time33-m">00</div>분
                     </span>
                     <div class="counter-button" id="increase33">+</div>
+                        <div class="level-info">(유니온 육성 포함)</div>
                 </div>
                 <textarea class="tab-text flex-row" id="text33" placeholder="오늘의 메업적"></textarea>
                 <button type="button" onclick=handleSaveButtonClick() class="save-btn  btn-dark">저장</button>
@@ -2625,11 +2640,16 @@
                 // -------------------------11재획 기능11----------------------------
                 // -------------------------11재획 기능11----------------------------
                 // -------------------------11재획 기능11----------------------------
+                //  fetch('/savebtn').then(res => res.json()).then(data => {
+                //          let rows = data['result']
+                //          var lastDictionary = rows[rows.length - 1];
+                //          let time33_a = lastDictionary.timea
+
                 const decreaseButton33 = document.getElementById('decrease33');
                 const increaseButton33 = document.getElementById('increase33');
-                
 
-                let time33 = 0;
+
+                let time33 = 0
 
                 decreaseButton33.addEventListener('click', () => {
                     if (time33 == 0) {
@@ -2643,7 +2663,7 @@
                     time33 += 30;
                     updateDisplay33()
                 })
-
+                // })
                 function updateDisplay33() {
                     var hours = Math.floor((time33) / 60);
                     var minutes = (time33) % 60;
@@ -2654,13 +2674,10 @@
                     $('#time33-h').append(temp_html1)
                     $('#time33-m').append(temp_html2)
 
-                    let time33_h = document.getElementById("time33-h")
-                    // let content = time33_h.textContent;
-                    // content = content.replace(/[^0]/g, '');
-                    // time33_h.textContent = content;
-                    console.log(
-                        time33_h
-                    )
+
+
+
+
 
                 }
                 // -------------------------------------------------------------------------------
@@ -2674,10 +2691,11 @@
                     let onlydate = date
                     let name33 = '1'
                     let text33 = $('#text33').val()
-                    let time33_h = $('#time33-h').val()
-                    let time33_m = $('#time33-m').val()
+                    var time33_h = document.getElementById("time33-h").innerHTML
+                    var time33_m = document.getElementById("time33-m").innerHTML
+                    var time33_a = Number(time33_h) * 60 + Number(time33_m)
 
-                    
+
 
 
 
@@ -2696,8 +2714,9 @@
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate);
                     formData.append("text_give", text33);
-                    formDate.append("timeh_give", time33_h);
-                    formDate.append("timem_give", time33_m);
+                    formData.append("timeh_give", time33_h);
+                    formData.append("timem_give", time33_m);
+                    formData.append("timea_give", time33_a);
 
                     fetch('/savebtn', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
@@ -2717,6 +2736,14 @@
                     $('#text33').empty()
                     let text33 = $('#text33').val()
 
+                    $('#time33-h').empty()
+                    $('#time33-m').empty()
+                    var time33_h = 0
+                    var time33_m = 0
+                    var time33_a = Number(time33_h) * 60 + Number(time33_m)
+
+
+
 
 
 
@@ -2735,6 +2762,10 @@
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
                     formData.append("text_give", text33)
+                    formData.append("timeh_give", time33_h);
+                    formData.append("timem_give", time33_m);
+                    formData.append("timea_give", time33_a);
+
                     fetch('/savebtn', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     });
@@ -2754,6 +2785,9 @@
                     week_boss_count = 0;
                     week_quest_count = 0;
                     let text33 = $('#text33').val()
+                    var time33_h = document.getElementById("time33-h").innerHTML
+                    var time33_m = document.getElementById("time33-m").innerHTML
+                    var time33_a = Number(time33_h) * 60 + Number(time33_m)
 
 
 
@@ -2771,6 +2805,10 @@
                     formData.append("date_give", now);
                     formData.append("onlydate_give", onlydate)
                     formData.append("text_give", text33)
+                    formData.append("timeh_give", time33_h);
+                    formData.append("timem_give", time33_m);
+                    formData.append("timea_give", time33_a);
+
                     fetch('/savebtn', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
                         window.location.reload()
                     })
@@ -2786,6 +2824,8 @@
                         var btnIdArr = btnIdValue.split(",");
                         var length = btnIdArr.length
                         $('#text33').empty()
+                        $('#time33-h').empty()
+                        $('#time33-m').empty()
 
                         for (i = 0; i < length; i++)
                             arr.push(btnIdArr[i])
@@ -2796,6 +2836,13 @@
                         var lasttext = lastDictionary.text
                         let temp_html = `${lasttext}`
                         $('#text33').append(temp_html)
+
+                        var lasttime_h = lastDictionary.timeh
+                        var lasttime_m = lastDictionary.timem
+                        let temp_html1 = `${lasttime_h}`
+                        let temp_html2 = `${lasttime_m}`
+                        $('#time33-h').append(temp_html1)
+                        $('#time33-m').append(temp_html2)
                     })
 
                 }
@@ -3263,9 +3310,9 @@
                             <button class="button finish" id="button141-1" onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
                             <button class="button finish" id="button141-2" onclick="toggleProgressBar141(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%B8%84%EC%B8%84.png?updatedAt=1686989076337"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
                             <button class="button finish" id="button141-3" onclick="toggleProgressBar141(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1686989076403"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
                             <button class="button finish" id="button141-4" onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
                             <button class="button finish" id="button141-5" onclick="toggleProgressBar141(this)"><img
@@ -4153,10 +4200,10 @@
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
                             <button class="button daywork ath" id="button271-2"
                                 onclick="toggleProgressBar271(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%B8%84%EC%B8%84.png?updatedAt=1686989076337"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
                             <button class="button daywork ath" id="button271-3"
                                 onclick="toggleProgressBar271(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1686989076403"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
                             <button class="button daywork ath" id="button271-4"
                                 onclick="toggleProgressBar271(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
@@ -5044,13 +5091,13 @@
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
                             <button class="button daywork ycj" id="button711-2"
                                 onclick="toggleProgressBar711(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%B8%84%EC%B8%84.png?updatedAt=1686989076337"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
                             <button class="button daywork ycj" id="button711-3"
                                 onclick="toggleProgressBar711(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1686989076403"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
                             <button class="button daywork ycj" id="button711-4"
                                 onclick="toggleProgressBar711(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EB%AA%A8%EB%9D%BC%EC%8A%A4.png?updatedAt=1686989076436"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
                             <button class="button daywork ycj" id="button711-5"
                                 onclick="toggleProgressBar711(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%AA%A8%EB%9D%BC%EC%8A%A4.png?updatedAt=1691020668112"></button>
@@ -5930,10 +5977,10 @@
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
                             <button class="button daywork kjb" id="button631-2"
                                 onclick="toggleProgressBar631(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%B8%84%EC%B8%84.png?updatedAt=1686989076337"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
                             <button class="button daywork kjb" id="button631-3"
                                 onclick="toggleProgressBar631(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1686989076403"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
                             <button class="button daywork kjb" id="button631-4"
                                 onclick="toggleProgressBar631(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
