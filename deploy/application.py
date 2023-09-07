@@ -14,7 +14,7 @@ ca = certifi.where()
 client = MongoClient('mongodb+srv://sparta:test@cluster0.edvfknb.mongodb.net/?retryWrites=true&w=majority',tlsCAFile=ca)
 db = client.blackwizzard
 
-application = app = Flask(__name__)
+app = application = Flask(__name__)
 
 
 @app.route('/')
@@ -85,11 +85,29 @@ def chrstat_post():
     level5 = soup5.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union5 = soup5.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
 
+    URL6 = "https://maple.gg/u/%EC%A0%95%EB%80%A8%EC%9A%B0s"
+    headers6 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    data6 = requests.get(URL6,headers=headers5)
+    soup6 = BeautifulSoup(data6.text, 'html.parser')
+
+    image6 = soup6.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    level6 = soup6.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
+    union6 = soup6.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
 
 
-    level = [level1, level2, level27, level4, level5]
-    union = [union1, union2, union3, union4, union5]
-    image = [image1, image2, image3, image4, image5]
+    URL7 = "https://maple.gg/u/%EB%80%A8%EB%AF%B8%EB%BB%AC%EC%96%B4"
+    headers7 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    data7 = requests.get(URL7,headers=headers5)
+    soup7 = BeautifulSoup(data7.text, 'html.parser')
+
+    image7 = soup7.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    level7 = soup7.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
+    union7 = soup7.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
+
+
+    level = [level1, level2, level27, level4, level5, level6, level7]
+    union = [union1, union2, union3, union4, union5, union6, union7]
+    image = [image1, image2, image3, image4, image5, image6, image7]
 
     stat = {
         'level' : level,
@@ -271,6 +289,75 @@ def btn_post63():
 def btn_get63():
     all_btns63 = list(db.blackwizzard63.find({},{'_id':False}))
     return jsonify({'result': all_btns63})
+
+
+@app.route("/savebtn35", methods=["POST"])
+def btn_post35():
+    name_receive = request.form['name_give']
+    btn_receive = request.form['btn_give']
+    date_receive = request.form['date_give']
+    onlydate_receive = request.form['onlydate_give']
+    text_receive = request.form['text_give']
+    timeh_receive = request.form['timeh_give']
+    timem_receive = request.form['timem_give']
+    timea_receive = request.form['timea_give']
+
+    doc = {
+        'name':name_receive,
+        'date':date_receive,
+        'onlydate':onlydate_receive,
+        'btn_id':btn_receive,
+        'text':text_receive,
+        'timeh':timeh_receive,
+        'timem':timem_receive,
+        'timea':timea_receive
+
+    }
+    db.blackwizzard35.insert_one(doc)
+    
+
+    return jsonify({'msg': '등록 완료!'})
+
+
+@app.route("/savebtn35", methods=["GET"])
+def btn_get35():
+    all_btns35 = list(db.blackwizzard35.find({},{'_id':False}))
+    return jsonify({'result': all_btns35})
+
+
+@app.route("/savebtn45", methods=["POST"])
+def btn_post45():
+    name_receive = request.form['name_give']
+    btn_receive = request.form['btn_give']
+    date_receive = request.form['date_give']
+    onlydate_receive = request.form['onlydate_give']
+    text_receive = request.form['text_give']
+    timeh_receive = request.form['timeh_give']
+    timem_receive = request.form['timem_give']
+    timea_receive = request.form['timea_give']
+
+    doc = {
+        'name':name_receive,
+        'date':date_receive,
+        'onlydate':onlydate_receive,
+        'btn_id':btn_receive,
+        'text':text_receive,
+        'timeh':timeh_receive,
+        'timem':timem_receive,
+        'timea':timea_receive
+
+    }
+    db.blackwizzard45.insert_one(doc)
+    
+
+    return jsonify({'msg': '등록 완료!'})
+
+
+@app.route("/savebtn45", methods=["GET"])
+def btn_get45():
+    all_btns45 = list(db.blackwizzard45.find({},{'_id':False}))
+    return jsonify({'result': all_btns45})
+
 
 @app.route("/notice", methods=["POST"])
 def notice_post():
