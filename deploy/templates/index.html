@@ -1071,8 +1071,8 @@
         }
 
         .tab99 {
-            width: 80px;
-            background-color: black;
+            width: 85px;
+            background-color: rgb(0, 0, 0);
             color: white;
             text-align: center;
             margin-top: 10px;
@@ -1440,14 +1440,21 @@
             height: 100px;
             margin: 3px auto 3px auto;
         }
+        .sunday-input {
+            border-top: 1px solid black;
+        }
 
         .sunday-input-btn {
             width: 50px;
             height: 30px;
+            
         }
 
         .sunday-inputarea {
             width: 300px;
+            margin: 5px 3px 0px 3px;
+            
+            
         }
 
         .update-notice {
@@ -1508,12 +1515,16 @@
             chrStat27()
             chrStat71()
             chrStat63()
-            showTab("tab6")
+            chrStat35()
+            chrStat45()
+            showTab("tab00")
             show_btn()
             show_btn14()
             show_btn27()
             show_btn71()
             show_btn63()
+            show_btn35()
+            show_btn45()
             checkMidnight()
             show_notice()
             show_sunday()
@@ -1532,7 +1543,8 @@
             unpressButton272()
             unpressButton712()
             unpressButton632()
-
+            unpressButton352()
+            unpressButton452()
 
         }
 
@@ -1543,7 +1555,8 @@
             unpressButton273()
             unpressButton713()
             unpressButton633()
-
+            unpressButton353()
+            unpressButton453()
 
         }
 
@@ -1621,6 +1634,8 @@
                     handleSaveButtonClick712()
                     unpressButton63()
                     handleSaveButtonClick632()
+                    unpressButton35()
+                    handleSaveButtonClick352()
 
 
                 }
@@ -1897,18 +1912,25 @@
 
     <div class="wrap">
         <div>
-            <p>
-                <label name="option" value="6" id="tab6-label" class="tab-label tab00"
-                    onclick="showTab('tab6')">로비</label>
-                <label name="option" value="7" id="tab7-label" class="tab-label tab99"
-                    onclick="showTab('tab7')">v1.2.1</label>
-            </p>
+            
+                <label name="option" value="00" id="tab00-label" class="tab-label tab00"
+                    onclick="showTab('tab00')">로비</label>
+                    <label name="option" value="99" id="tab99-label" class="tab-label tab99"
+                    onclick="showTab('tab99')">v1.3.1</label>
+                <br>
+            
+            
+                <label name="option" value="6" id="tab6-label" class="tab-label tab35" onclick="showTab('tab6')">한정규</label>
+                <label name="option" value="7" id="tab7-label" class="tab-label tab45" onclick="showTab('tab7')">뀨미뻬어</label>
+                
+            <br>
             <label name="option" value="1" id="tab1-label" class="tab-label tab33" onclick="showTab('tab1')">대뀨짱</label>
             <label name="option" value="2" id="tab2-label" class="tab-label tab14" onclick="showTab('tab2')">이찬웅</label>
             <label name="option" value="3" id="tab3-label" class="tab-label tab27"
                 onclick="showTab('tab3')">제41대</label>
             <label name="option" value="4" id="tab4-label" class="tab-label tab71" onclick="showTab('tab4')">황모풍</label>
             <label name="option" value="5" id="tab5-label" class="tab-label tab63" onclick="showTab('tab5')">호떡</label>
+            
 
         </div>
 
@@ -1918,7 +1940,7 @@
         <!-- --------------------------로비---------------------------------- -->
         <!-- --------------------------로비---------------------------------- -->
 
-        <div id="tab6" class="tab">
+        <div id="tab00" class="tab">
             <div class="form-floating">
                 <div class="notice">
                     ※ 공지사항 ※
@@ -1928,16 +1950,21 @@
             </div>
             <div class="lobby-save-btn flex-row" onclick="save_notice()"></div>
 
-            <div class="btn-area" style="background-color: #d8cef3;">
-                <div class="btn-text flex-row" onclick="toggleArea990()">v1.2.1 업데이트</div>
+            <div class="btn-area" style="background-color: #95b6ff;">
+                <div class="btn-text flex-row" onclick="toggleArea990()">v1.3.1 업데이트</div>
                 <div id="expand991-0" style="margin: 0px 0px 5px 5px;">
-                    1. 재획 카운터 기능 추가<br>
+                    1. 재획 카운터 기능<br>
                     (저장 후 재설정시 + 버튼을 눌러 재설정)<br>
-                    2. 월요일 초기화 기능 추가 (수로, 플래그)
+                    2. 주간퀘스트 초기화 월요일초기화 버튼 통합<br>
+                    3. 한정규,뀨미베어 탭 추가<br>
+                    4. 황모풍 주간퀘스트 핑크빈버튼 오류 수정
+                    <br>
+                    5. label 디자인 수정<br>
+                    6. 로비 업데이트, 도핑버튼 색상 입력
                 </div>
             </div>
 
-            <div class="btn-area">
+            <div class="btn-area" style="background-color: #71c6ff;">
                 <div class="btn-text flex-row" onclick="toggleArea991()">경험치 도핑</div>
                 <div id="expand991-1" style="display: none;">
                     <p class="flex-row" margin-bottom="50px">
@@ -1971,7 +1998,7 @@
                 </div>
             </div>
 
-            <div class="btn-area">
+            <div class="btn-area" style="background-color: #fffd7c;">
                 <div class="btn-text flex-row" onclick="toggleArea992()">재획 도핑</div>
                 <div id="expand991-2" style="display: none;">
                     <p class="flex-row" margin-bottom="50px">
@@ -1987,7 +2014,7 @@
                 </div>
             </div>
 
-            <div class="btn-area">
+            <div class="btn-area" style="background-color: #fc6060;">
                 <div class="btn-text flex-row" onclick="toggleArea993()">보스 도핑</div>
                 <div id="expand991-3" style="display: none;">
                     <p margin-bottom="50px">
@@ -2063,9 +2090,10 @@
         <!-- --------------------------관리---------------------------------- -->
 
 
-        <div id="tab7" class="tab">
+        <div id="tab99" class="tab">
             <p class="sunday-input flex-row">
-                sunday
+                <tr></tr>
+                Sunday
                 <textarea class="sunday-inputarea" id="imageUrlInput"></textarea>
                 <button class="sunday-input-btn" onclick="save_sunday()">저장</button>
             </p>
@@ -2078,10 +2106,25 @@
                 <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용 확인하기</div>
                 <div id="expand77" style="display: none;">
                     <div style="margin-left: 5px;">
+                        2023.09.12 
+                        <p>
+                            한정규 닉네임 변경으로 인한 서버 주소 변경,
+                            tab2~7 일일퀘스트 오디움 삭제
+                        </p>
+                        2023.09.07  v1.3.1
+                        <p>
+                            주간퀘스트 주간초기화 → 월요일초기화 기능 수정,
+                            tab4 주간퀘스트 핑크빈버튼 오류 수정,
+                            기존 [tab6], [tab7] 이름 → [tab99], [tab00] 변경,
+                            tab6,tab7 추가,
+                            label 디자인 간격 수정
+                            로비 container 색상 입력
+                        </p>
                         2023.09.06 v.1.2.1
                         <p>
                             tab2~5 재획 카운터 기능 추가,
                             수로,플래그 월요일 초기화 기능 추가 ( tab7 월요일 초기화 버튼 추가 )
+                            로비화면 업데이트 공지란 추가
                         </p>
                         2023.09.05 v.1.1.7
                         <p>
@@ -2345,9 +2388,9 @@
 
                         </p>
                         <p>
-                            <button class="button3-7 weekwork hdg" id="button3-7"
+                            <button class="button3-7 mondaywork hdg" id="button3-7"
                                 onclick="toggleProgressBar3(this)"></button>
-                            <button class="button3-8 weekwork hdg" id="button3-8"
+                            <button class="button3-8 mondaywork hdg" id="button3-8"
                                 onclick="toggleProgressBar3(this)"></button>
                         </p>
                         <p>
@@ -3036,7 +3079,7 @@
             .tab2-img1 {
                 width: 150px;
                 height: 150px;
-                background-image: url(https://avatar.maplestory.nexon.com/Character/MCPPJBFHFEDINEEKACIIFJNLBBBAJPLIOMGDFEDDECJIAPJPHJDBGHMGEFNKANEDBKDNKNMNCJJLHLKDDKNJANBFHBDOIGPFDLHPJEBIEEGGAHBNGFIAJBMGBGMOFHLCAMNPALMNHKABLAMDNFMNOACIIDJEBHOKBEBJMCCOINBLFAILBJFCPEFNFOJEDAPNABGBDHMGOHEMFBCEBCJMCFGEMGHOGIIFMPLCCKLDFEKLMMHPGGPEKHIJOJGKDCBL.png);
+                background-image: url(https://avatar.maplestory.nexon.com/Character/BDHPPLGJKMLJNNOEKLOFACEGAILPPJIMIDKBEFFELIONOMCJICNBMGHKJIOJFLBAKLKMIOAJDFPDAKJIJMIILOPIKBEAHKHOGDNDGHBLFGLAEFFCDJOALOKBCILFJFPLCKKBNAIHCHHHGHGGKGCLDMEFLOCMCOOADHIAGLOHKAPLDGKDIHCPBGFELKAPDMOOCFLCJMBLBOOBPLFDGDJFBKLLFNIMEEBPPKLBHJPHGGHINOGJLLHODPPHCLCGBABF.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 box-shadow: 0px 1px 1px 1px gray;
@@ -3165,13 +3208,13 @@
 
             function countnum14(button) {
                 $('#dd141').empty()
-                let temp_num = `:${day_quest_count14}/16`
+                let temp_num = `:${day_quest_count14}/15`
                 $('#dd141').append(temp_num)
             }
 
             function toggleProgressBar141(button) {
 
-                var buttonProgress141 = 100 / 16;
+                var buttonProgress141 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -3386,7 +3429,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd141"> :0/16</div>
+                    <div id="dd141"> :0/15</div>
                     <div id="progressBar141">
                         <div id="progress141"></div>
                     </div>
@@ -3454,9 +3497,9 @@
                             <button class="button daywork lcw" id="button141-8"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork lcw" id="button141-9"
+                            <!-- <button class="button daywork lcw" id="button141-9"
                                 onclick="toggleProgressBar141(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork lcw" id="button141-10"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -3558,9 +3601,9 @@
                                 onclick="toggleProgressBar143(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-7 weekwork lcw" id="button143-7"
+                            <button class="button3-7 mondaywork lcw" id="button143-7"
                                 onclick="toggleProgressBar143(this)"></button>
-                            <button class="button3-8 weekwork lcw" id="button143-8"
+                            <button class="button3-8 mondaywork lcw" id="button143-8"
                                 onclick="toggleProgressBar143(this)"></button>
                         </p>
                         <p>
@@ -4196,13 +4239,13 @@
 
             function countnum27(button) {
                 $('#dd271').empty()
-                let temp_num = `:${day_quest_count27}/16`
+                let temp_num = `:${day_quest_count27}/15`
                 $('#dd271').append(temp_num)
             }
 
             function toggleProgressBar271(button) {
 
-                var buttonProgress271 = 100 / 16;
+                var buttonProgress271 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -4417,7 +4460,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd271"> :0/16</div>
+                    <div id="dd271"> :0/15</div>
                     <div id="progressBar271">
                         <div id="progress271"></div>
                     </div>
@@ -4491,9 +4534,9 @@
                             <button class="button daywork ath" id="button271-8"
                                 onclick="toggleProgressBar271(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork ath" id="button271-9"
+                            <!-- <button class="button daywork ath" id="button271-9"
                                 onclick="toggleProgressBar271(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork ath" id="button271-10"
                                 onclick="toggleProgressBar271(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -4582,25 +4625,25 @@
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea273()">주간퀘스트</div>
                     <div id="expand27-3" style="display: none;">
-                        <button class="button3-1 weekwork ath" id="button273-1"
+                        <button class="button3-1 mondaywork ath" id="button273-1"
                             onclick="toggleProgressBar273(this)"></button>
-                        <button class="button3-2 weekwork ath" id="button273-2"
+                        <button class="button3-2 mondaywork ath" id="button273-2"
                             onclick="toggleProgressBar273(this)"></button>
-                        <button class="button3-3 weekwork ath" id="button273-3"
+                        <button class="button3-3 mondaywork ath" id="button273-3"
                             onclick="toggleProgressBar273(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-4 weekwork ath" id="button273-4"
+                            <button class="button3-4 mondaywork ath" id="button273-4"
                                 onclick="toggleProgressBar273(this)"></button>
-                            <button class="button3-5 weekwork ath" id="button273-5"
+                            <button class="button3-5 mondaywork ath" id="button273-5"
                                 onclick="toggleProgressBar273(this)"></button>
-                            <button class="button3-6 weekwork ath" id="button273-6"
+                            <button class="button3-6 mondaywork ath" id="button273-6"
                                 onclick="toggleProgressBar273(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-7 weekwork ath" id="button273-7"
+                            <button class="button3-7 mondaywork ath" id="button273-7"
                                 onclick="toggleProgressBar273(this)"></button>
-                            <button class="button3-8 weekwork ath" id="button273-8"
+                            <button class="button3-8 mondaywork ath" id="button273-8"
                                 onclick="toggleProgressBar273(this)"></button>
                         </p>
                         <p>
@@ -5228,13 +5271,13 @@
 
             function countnum71(button) {
                 $('#dd711').empty()
-                let temp_num = `:${day_quest_count71}/16`
+                let temp_num = `:${day_quest_count71}/15`
                 $('#dd711').append(temp_num)
             }
 
             function toggleProgressBar711(button) {
 
-                var buttonProgress711 = 100 / 16;
+                var buttonProgress711 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -5449,7 +5492,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd711"> :0/16</div>
+                    <div id="dd711"> :0/15</div>
                     <div id="progressBar711">
                         <div id="progress711"></div>
                     </div>
@@ -5523,9 +5566,9 @@
                             <button class="button daywork ycj" id="button711-8"
                                 onclick="toggleProgressBar711(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork ycj" id="button711-9"
+                            <!-- <button class="button daywork ycj" id="button711-9"
                                 onclick="toggleProgressBar711(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork ycj" id="button711-10"
                                 onclick="toggleProgressBar711(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -5614,25 +5657,25 @@
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea713()">주간퀘스트</div>
                     <div id="expand71-3" style="display: none;">
-                        <button class="button3-1 weekwork ycj" id="button713-1"
+                        <button class="button3-1 mondaywork ycj" id="button713-1"
                             onclick="toggleProgressBar713(this)"></button>
-                        <button class="button3-2 weekwork ycj" id="button713-2"
+                        <button class="button3-2 mondaywork ycj" id="button713-2"
                             onclick="toggleProgressBar713(this)"></button>
-                        <button class="button3-3 weekwork ycj" id="button713-3"
+                        <button class="button3-3 mondaywork ycj" id="button713-3"
                             onclick="toggleProgressBar713(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-4 weekwork ycj" id="button713-4"
+                            <button class="button3-4 mondaywork ycj" id="button713-4"
                                 onclick="toggleProgressBar713(this)"></button>
-                            <button class="button3-5 weekwork ycj" id="button713-5"
+                            <button class="button3-5 mondaywork ycj" id="button713-5"
                                 onclick="toggleProgressBar713(this)"></button>
-                            <button class="button3-6 weekwork ycj" id="button713-6"
+                            <button class="button3-6 mondaywork ycj" id="button713-6"
                                 onclick="toggleProgressBar713(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-7 weekwork ycj" id="button713-7"
+                            <button class="button3-7 mondaywork ycj" id="button713-7"
                                 onclick="toggleProgressBar713(this)"></button>
-                            <button class="button3-8 weekwork ycj" id="button713-8"
+                            <button class="button3-8 mondaywork ycj" id="button713-8"
                                 onclick="toggleProgressBar713(this)"></button>
                         </p>
                         <p>
@@ -5678,7 +5721,7 @@
                             <button class="button4-8 weekwork ycj" id="button714-8"
                                 onclick="toggleProgressBar714(this)"></button>
                             <button class="button4-9 weekwork ycj" id="button714-9"
-                                onclick="toggleProgressBa714(this)"></button>
+                                onclick="toggleProgressBar714(this)"></button>
                         </p>
                         <p>
                             <button class="button4-10 weekwork ycj" id="button714-10"
@@ -6270,13 +6313,13 @@
 
             function countnum63(button) {
                 $('#dd631').empty()
-                let temp_num = `:${day_quest_count63}/16`
+                let temp_num = `:${day_quest_count63}/15`
                 $('#dd631').append(temp_num)
             }
 
             function toggleProgressBar631(button) {
 
-                var buttonProgress631 = 100 / 16;
+                var buttonProgress631 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -6472,7 +6515,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd631"> :0/16</div>
+                    <div id="dd631"> :0/15</div>
                     <div id="progressBar631">
                         <div id="progress631"></div>
                     </div>
@@ -6546,9 +6589,9 @@
                             <button class="button daywork kjb" id="button631-8"
                                 onclick="toggleProgressBar631(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork kjb" id="button631-9"
+                            <!-- <button class="button daywork kjb" id="button631-9"
                                 onclick="toggleProgressBar631(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork kjb" id="button631-10"
                                 onclick="toggleProgressBar631(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -6637,25 +6680,25 @@
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea633()">주간퀘스트</div>
                     <div id="expand63-3" style="display: none;">
-                        <button class="button3-1 weekwork kjb" id="button633-1"
+                        <button class="button3-1 mondaywork kjb" id="button633-1"
                             onclick="toggleProgressBar633(this)"></button>
-                        <button class="button3-2 weekwork kjb" id="button633-2"
+                        <button class="button3-2 mondaywork kjb" id="button633-2"
                             onclick="toggleProgressBar633(this)"></button>
-                        <button class="button3-3 weekwork kjb" id="button633-3"
+                        <button class="button3-3 mondaywork kjb" id="button633-3"
                             onclick="toggleProgressBar633(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-4 weekwork kjb" id="button633-4"
+                            <button class="button3-4 mondaywork kjb" id="button633-4"
                                 onclick="toggleProgressBar633(this)"></button>
-                            <button class="button3-5 weekwork kjb" id="button633-5"
+                            <button class="button3-5 mondaywork kjb" id="button633-5"
                                 onclick="toggleProgressBar633(this)"></button>
-                            <button class="button3-6 weekwork kjb" id="button633-6"
+                            <button class="button3-6 mondaywork kjb" id="button633-6"
                                 onclick="toggleProgressBar633(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-7 weekwork kjb" id="button633-7"
+                            <button class="button3-7 mondaywork kjb" id="button633-7"
                                 onclick="toggleProgressBar633(this)"></button>
-                            <button class="button3-8 weekwork kjb" id="button633-8"
+                            <button class="button3-8 mondaywork kjb" id="button633-8"
                                 onclick="toggleProgressBar633(this)"></button>
                         </p>
                         <p>
@@ -7117,6 +7160,2062 @@
         </div>
 
 
+
+
+
+
+
+
+
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+        <!-- --------------------------6666666666666666666666666666---------------------------------- -->
+
+        <style>
+            .tab35.checked {
+                background-color: #D8D8D8;
+                color: black
+            }
+
+            .tab35:hover {
+                background-color: #D8D8D8;
+                border-bottom: #ccc;
+            }
+
+            .tab6-chr {
+                background-color: #D8D8D8;
+                margin: 0px auto 10px auto;
+                width: 480px;
+                height: 200px;
+                box-shadow: 0px 0px 2px 0px gray;
+
+            }
+
+            .tab6-img1 {
+                width: 150px;
+                height: 150px;
+                background-image: url(https://avatar.maplestory.nexon.com/Character/KEBAJNNAEPEBMNKJPCCACHGJBGPDCCPAIGEIMGAJHFLBPHLEICPMFHDONPPABIIIEHDBELABALHHIPHIPACPEBFAEBCNMCIKABFPKHLALENFADIEBDBMMPKLPOCLCCFNBKBBILEHLNDEMECLDGBNCHBGOJNCOFGJLGFJBCABIHKGPBBDIJLEBHEPFAANLNHGKALIGKADFPLEMJDNFJMBECGCBOGGNNEEBICNGJKLAFLGOOFCADFAIFGHKGLPEPOE.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                box-shadow: 0px 1px 1px 1px gray;
+                margin-right: 50px;
+            }
+
+
+            #progressBar351 {
+                width: 300px;
+                height: 30px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                margin: 20px 0px 20px 10px;
+            }
+
+            #progress351 {
+                width: 0;
+                height: 100%;
+                background-color: #7351d1;
+            }
+
+            #progressBar352 {
+                width: 300px;
+                height: 30px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                margin: 20px 0px 20px 10px;
+            }
+
+            #progress352 {
+                width: 0;
+                height: 100%;
+                background-color: #7351d1;
+            }
+
+            #progressBar353 {
+                width: 300px;
+                height: 30px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                margin: 20px 0px 20px 10px;
+            }
+
+            #progress353 {
+                width: 0;
+                height: 100%;
+                background-color: #d1517c;
+            }
+
+            #progressBar354 {
+                width: 300px;
+                height: 30px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                margin: 20px 0px 20px 10px;
+            }
+
+            #progress354 {
+                width: 0;
+                height: 100%;
+                background-color: #d1517c;
+            }
+        </style>
+        <script>
+            function toggleArea351() {
+                var expanded = document.getElementById("expand35-1")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function toggleArea352() {
+                var expanded = document.getElementById("expand35-2")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function toggleArea353() {
+                var expanded = document.getElementById("expand35-3")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function toggleArea354() {
+                var expanded = document.getElementById("expand35-4")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function toggleArea355() {
+                var expanded = document.getElementById("expand35-5")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function chrStat35() {
+                let formData = new FormData();
+
+                fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
+                    $('#tab6-level').empty()
+                    $('#tab6-union').empty()
+                    // $('#tab1-img1').empty()
+
+                    let temp_html1 = `${data['result']['level'][5]}`
+                    let temp_html2 = `유니온 : ${data['result']['union'][5]}`
+                    $('#tab6-level').append(temp_html1)
+                    $('#tab6-union').append(temp_html2)
+
+
+
+                });
+            }
+            let progressBar351 = document.getElementById("progress351");
+            let currentProgress351 = 0;
+            let day_quest_count35 = 0;
+
+            function countnum35(button) {
+                $('#dd351').empty()
+                let temp_num = `:${day_quest_count35}/15`
+                $('#dd351').append(temp_num)
+            }
+
+            function toggleProgressBar351(button) {
+
+                var buttonProgress351 = 100 / 15;
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                    buttonProgress351 *= -1;
+                    button.classList.remove("active");
+                    day_quest_count35 -= 1;
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+                    day_quest_count35 += 1;
+                }
+
+                currentProgress351 += buttonProgress351;
+
+                // 진행바가 0보다 작으면 0으로 설정
+                if (currentProgress351 < 0) {
+                    currentProgress351 = 0;
+                }
+
+                // 진행바가 100보다 크면 100으로 설정
+                if (currentProgress351 > 100) {
+                    currentProgress351 = 100;
+                }
+
+                progress351.style.width = currentProgress351 + "%";
+                countnum35()
+
+            }
+
+            let progressBar352 = document.getElementById("progress352");
+            let currentProgress352 = 0;
+            var day_boss_count35 = 0;
+
+            function countnum352(button) {
+                $('#dd352').empty()
+                let temp_num = `:${day_boss_count35}/14`
+                $('#dd352').append(temp_num)
+            }
+
+            function toggleProgressBar352(button) {
+
+                var buttonProgress352 = 100 / 14;
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                    buttonProgress352 *= -1;
+                    button.classList.remove("active");
+                    day_boss_count35 -= 1;
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+                    day_boss_count35 += 1;
+                }
+
+                currentProgress352 += buttonProgress352;
+
+                // 진행바가 0보다 작으면 0으로 설정
+                if (currentProgress352 < 0) {
+                    currentProgress352 = 0;
+                }
+
+                // 진행바가 100보다 크면 100으로 설정
+                if (currentProgress352 > 100) {
+                    currentProgress352 = 100;
+                }
+
+                progress352.style.width = currentProgress352 + "%";
+                countnum352()
+            }
+
+            let progressBar353 = document.getElementById("progress353");
+            let currentProgress353 = 0;
+            let week_quest_count35 = 0;
+
+            function countnum353(button) {
+                $('#dd353').empty()
+                let temp_num = `:${week_quest_count35}/10`
+                $('#dd353').append(temp_num)
+            }
+
+            function toggleProgressBar353(button) {
+
+                var buttonProgress353 = 100 / 10;
+
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                    buttonProgress353 *= -1;
+                    button.classList.remove("active");
+                    week_quest_count35 -= 1;
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+                    week_quest_count35 += 1;
+
+                }
+
+                currentProgress353 += buttonProgress353;
+
+                // 진행바가 0보다 작으면 0으로 설정
+                if (currentProgress353 < 0) {
+                    currentProgress353 = 0;
+                }
+
+                // 진행바가 100보다 크면 100으로 설정
+                if (currentProgress353 > 100) {
+                    currentProgress353 = 100;
+                }
+
+                progress353.style.width = currentProgress353 + "%";
+                countnum353()
+            }
+
+            let progressBar354 = document.getElementById("progress354");
+            var currentProgress354 = 0;
+            var week_boss_count35 = 0;
+
+            function countnum354(button) {
+                $('#dd354').empty()
+                let temp_num = `:${week_boss_count35}/18`
+                $('#dd354').append(temp_num)
+            }
+
+            function toggleProgressBar354(button) {
+
+                var buttonProgress354 = 100 / 18;
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                    buttonProgress354 *= -1;
+                    button.classList.remove("active");
+                    week_boss_count35 -= 1;
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+                    week_boss_count35 += 1;
+                }
+
+                currentProgress354 += buttonProgress354;
+
+                // 진행바가 0보다 작으면 0으로 설정
+                if (currentProgress354 < 0) {
+                    currentProgress354 = 0;
+                }
+
+                // 진행바가 100보다 크면 100으로 설정
+                if (currentProgress354 > 100) {
+                    currentProgress354 = 100;
+                }
+
+                progress354.style.width = currentProgress354 + "%";
+                countnum354()
+
+            }
+
+            function toggleProgressBar355(button) {
+
+
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+
+                    button.classList.remove("active");
+
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+
+                }
+
+
+
+            }
+
+        </script>
+
+        <div id="tab6" class="tab">
+            <div class="tab6-chr flex-row">
+                <div class="tab6-img1"></div>
+                <div class="tab1-stat">
+                    <div id="tab6-level" class="level1">Lv.</div>
+                    <div>직업 : 나이트로드</div>
+                    <div id="tab6-union">유니온 : </div>
+                    <!-- <div>주스탯 : </div>
+                    <div>보스공격력 : %</div>
+                    <div>크리티컬 데미지 : %</div>
+                    <div>방어율무시 : %</div> -->
+                </div>
+            </div>
+
+
+
+            <div class="container1">
+                <div class="progress-wrap flex-row">
+                    <div class="dd1">일일퀘스트</div>
+                    <div id="dd351"> :0/15</div>
+                    <div id="progressBar351">
+                        <div id="progress351"></div>
+                    </div>
+                </div>
+                <div class="progress-wrap flex-row">
+                    <div class="dd2">일일보스</div>
+                    <div id="dd352"> :0/14</div>
+                    <div id="progressBar352">
+                        <div id="progress352"></div>
+                    </div>
+                </div>
+                <div class="progress-wrap flex-row">
+                    <div class="dd3">주간퀘스트</div>
+                    <div id="dd353"> :0/10</div>
+                    <div id="progressBar353">
+                        <div id="progress353"></div>
+                    </div>
+                </div>
+                <div class="progress-wrap flex-row">
+                    <div class="dd4">주간보스</div>
+                    <div id="dd354"> :0/18</div>
+                    <div id="progressBar354">
+                        <div id="progress354"></div>
+                    </div>
+                </div>
+
+                <div class="counter-container">
+                    <div class="counter-title">
+                        오늘 재획 :
+                    </div>
+                    <div class="counter-button" id="decrease35">-</div>
+                    <span id="level-up-time35" class="flex-row">
+                        <div id="time35-h">0</div>시간
+                        <div id="time35-m">00</div>분
+                    </span>
+                    <div class="counter-button" id="increase35">+</div>
+                    <div class="level-info">(유니온 육성 포함)</div>
+                </div>
+
+                <textarea class="tab-text flex-row" id="text35" placeholder="오늘의 메업적"></textarea>
+                <button type="button" onclick=handleSaveButtonClick35() class="save-btn  btn-dark">저장</button>
+
+                <div class="btn-area">
+                    <div class="btn-text" onclick="toggleArea351()">일일퀘스트</div>
+                    <div id="expand35-1" style="display: none;">
+                        <p>
+                            <button class="button daywork hjk" id="button351-1"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
+                            <button class="button daywork hjk" id="button351-2"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
+                            <button class="button daywork hjk" id="button351-3"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
+                            <button class="button daywork hjk" id="button351-4"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
+                            <button class="button daywork hjk" id="button351-5"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%AA%A8%EB%9D%BC%EC%8A%A4.png?updatedAt=1691020668112"></button>
+                        </p>
+                        <p>
+
+                            <button class="button daywork hjk" id="button351-6"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9D%BC.png?updatedAt=1691020683677"></button>
+                            <button class="button daywork hjk" id="button351-7"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%84%B8%EB%A5%B4%EB%8B%88%EC%9B%80.png?updatedAt=1691020694907"></button>
+                            <button class="button daywork hjk" id="button351-8"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
+                            <!-- <button class="button daywork hjk" id="button351-9"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
+                            <button class="button daywork hjk" id="button351-10"
+                                onclick="toggleProgressBar351(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
+                        </p>
+                        <p margin-bottom="50px">
+                            <button class="button1-1 daywork hjk" id="button351-11"
+                                onclick="toggleProgressBar351(this)"></button>
+                            <button class="button1-2 daywork hjk" id="button351-12"
+                                onclick="toggleProgressBar351(this)"></button>
+                            <button class="button1-3 daywork hjk" id="button351-13"
+                                onclick="toggleProgressBar351(this)"></button>
+                            <button class="button1-4 daywork hjk" id="button351-14"
+                                onclick="toggleProgressBar351(this)"></button>
+                            <button class="button1-5 daywork hjk" id="button351-15"
+                                onclick="toggleProgressBar351(this)"></button>
+                            <button class="button1-6 daywork hjk" id="button351-16"
+                                onclick="toggleProgressBar351(this)"></button>
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------666일일보스666------------------------------------------------ -->
+
+            <div class="container1">
+
+                <div class="btn-area2">
+                    <div class="btn-text" onclick="toggleArea352()">일일보스</div>
+                    <div id="expand35-2" style="display: none;">
+                        <p>
+                            <button class="button2-1 daywork hjk" id="button352-1"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-2 daywork hjk" id="button352-2"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-3 daywork hjk" id="button352-3"
+                                onclick="toggleProgressBar352(this)"></button>
+
+                        </p>
+                        <p>
+                            <button class="button2-4 daywork hjk" id="button352-4"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-5 daywork hjk" id="button352-5"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-6 daywork hjk" id="button352-6"
+                                onclick="toggleProgressBar352(this)"></button>
+
+                        </p>
+                        <p>
+                            <button class="button2-7 daywork hjk" id="button352-7"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-8 daywork hjk" id="button352-8"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-9 daywork hjk" id="button352-9"
+                                onclick="toggleProgressBar352(this)"></button>
+
+                        </p>
+                        <p>
+                            <button class="button2-10 daywork hjk" id="button352-10"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-11 daywork hjk" id="button352-11"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-12 daywork hjk" id="button352-12"
+                                onclick="toggleProgressBar352(this)"></button>
+
+                        </p>
+                        <p>
+                            <button class="button2-13 daywork hjk" id="button352-13"
+                                onclick="toggleProgressBar352(this)"></button>
+                            <button class="button2-14 daywork hjk" id="button352-14"
+                                onclick="toggleProgressBar352(this)"></button>
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------666주간퀘스트666------------------------------------------------ -->
+
+
+            <div class="container1">
+
+                <div class="btn-area">
+                    <div class="btn-text" onclick="toggleArea353()">주간퀘스트</div>
+                    <div id="expand35-3" style="display: none;">
+                        <button class="button3-1 mondaywork hjk" id="button353-1"
+                            onclick="toggleProgressBar353(this)"></button>
+                        <button class="button3-2 mondaywork hjk" id="button353-2"
+                            onclick="toggleProgressBar353(this)"></button>
+                        <button class="button3-3 mondaywork hjk" id="button353-3"
+                            onclick="toggleProgressBar353(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button3-4 mondaywork hjk" id="button353-4"
+                                onclick="toggleProgressBar353(this)"></button>
+                            <button class="button3-5 mondaywork hjk" id="button353-5"
+                                onclick="toggleProgressBar353(this)"></button>
+                            <button class="button3-6 mondaywork hjk" id="button353-6"
+                                onclick="toggleProgressBar353(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button3-7 mondaywork hjk" id="button353-7"
+                                onclick="toggleProgressBar353(this)"></button>
+                            <button class="button3-8 mondaywork hjk" id="button353-8"
+                                onclick="toggleProgressBar353(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button3-9 mondaywork hjk" id="button353-9"
+                                onclick="toggleProgressBar353(this)"></button>
+                            <button class="button3-10 mondaywork hjk" id="button353-10"
+                                onclick="toggleProgressBar353(this)"></button>
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------666주간보스666------------------------------------------------ -->
+
+            <div class="container1">
+
+                <div class="btn-area4">
+                    <div class="btn-text" onclick="toggleArea354()">주간보스</div>
+                    <div id="expand35-4" style="display: none;">
+                        <p>
+                            <button class="button4-1 weekwork hjk" id="button354-1"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-2 weekwork hjk" id="button354-2"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-3 weekwork hjk" id="button354-3"
+                                onclick="toggleProgressBar354(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-4 weekwork hjk" id="button354-4"
+                                onclick="toggleProgressBar354(this)">
+                            </button>
+                            <button class="button4-5 weekwork hjk" id="button354-5"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-6 weekwork hjk" id="button354-6"
+                                onclick="toggleProgressBar354(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-7 weekwork hjk" id="button354-7"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-8 weekwork hjk" id="button354-8"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-9 weekwork hjk" id="button354-9"
+                                onclick="toggleProgressBar354(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-10 weekwork hjk" id="button354-10"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-11 weekwork hjk" id="button354-11"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-12 weekwork hjk" id="button354-12"
+                                onclick="toggleProgressBar354(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-13 weekwork hjk" id="button354-13"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-14 weekwork hjk" id="button354-14"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-15 weekwork hjk" id="button354-15"
+                                onclick="toggleProgressBar354(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-16 weekwork hjk" id="button354-16"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-17 weekwork hjk" id="button354-17"
+                                onclick="toggleProgressBar354(this)"></button>
+                            <button class="button4-18 weekwork hjk" id="button354-18"
+                                onclick="toggleProgressBar354(this)"></button>
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------66이벤트66------------------------------------------------ -->
+
+            <div class="container1">
+
+                <div class="btn-area">
+                    <div class="btn-text">이벤트(종료)</div>
+                    <div id="expand35-5" style="display: none;">
+                        <p class="flex-row">
+                            <button class="button5-1 weekwork event hjk" id="button355-1"
+                                onclick="toggleProgressBar355(this)"></button>
+                            <button class="button5-2 weekwork event hjk" id="button355-2"
+                                onclick="toggleProgressBar355(this)"></button>
+                            <button class="button5-3 weekwork event hjk" id="button355-3"
+                                onclick="toggleProgressBar355(this)"></button>
+                        </p>
+                        <p class="flex-row">
+                            <button class="button5-4 weekwork event hjk" id="button355-4"
+                                onclick="toggleProgressBar355(this)"></button>
+                            <button class="button5-5 weekwork event hjk" id="button355-5"
+                                onclick="toggleProgressBar355(this)"></button>
+                            <button class="button5-6 weekwork event hjk" id="button355-6"
+                                onclick="toggleProgressBar355(this)"></button>
+                        </p>
+                        <p class="flex-row">
+                            <button class="button5-7 weekwork event hjk" id="button355-7"
+                                onclick="toggleProgressBar355(this)"></button>
+                            <button class="button5-8 weekwork event hjk" id="button355-8"
+                                onclick="toggleProgressBar355(this)"></button>
+                            <button class="button5-9 weekwork event hjk" id="button355-9"
+                                onclick="toggleProgressBar355(this)"></button>
+                        </p>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <script>
+
+                var clickedButtons35 = [];
+
+                function changeColor(buttonId) {
+                    var button35 = document.getElementById(buttonId);
+                    if (!button35.classList.contains(".active")) {
+                        button35.classList.add(".active");
+                        clickedButtons35.push(buttonId);
+                    } else {
+                        button35.classList.remove(".active");
+                        clickedButtons35.splice(clickedButtons35.indexOf(buttonId), 1);
+                    }
+                    console.log(clickedButtons35)
+                }
+
+                function saveData() {
+                    var buttonData = {
+                        buttons: clickedButtons
+                    };
+
+                    fetch('/save', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(buttonData)
+                    })
+                        .then(response => response.text())
+                        .then(data => {
+                            console.log(data);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                }
+
+
+
+
+                // -------------------------66재획 기능66----------------------------
+                // -------------------------66재획 기능66----------------------------
+                // -------------------------66재획 기능66----------------------------
+                // -------------------------66재획 기능66----------------------------
+                //  fetch('/savebtn').then(res => res.json()).then(data => {
+                //          let rows = data['result']
+                //          var lastDictionary = rows[rows.length - 1];
+                //          let time33_a = lastDictionary.timea
+
+                const decreaseButton35 = document.getElementById('decrease35');
+                const increaseButton35 = document.getElementById('increase35');
+
+
+                let time35 = 0
+
+                decreaseButton35.addEventListener('click', () => {
+                    if (time35 == 0) {
+                        return;
+                    }
+                    time35 -= 30;
+                    updateDisplay35()
+                })
+
+                increaseButton35.addEventListener('click', () => {
+                    time35 += 30;
+                    updateDisplay35()
+                })
+                // })
+                function updateDisplay35() {
+                    var hours = Math.floor((time35) / 60);
+                    var minutes = (time35) % 60;
+                    $('#time35-h').empty()
+                    $('#time35-m').empty()
+                    temp_html1 = `${hours}`
+                    temp_html2 = `${formatMinutes(minutes)}`
+                    $('#time35-h').append(temp_html1)
+                    $('#time35-m').append(temp_html2)
+
+
+
+
+
+
+                }
+                // -------------------------------------------------------------------------------
+
+
+
+
+
+                function handleSaveButtonClick35() {
+                    var buttons35 = document.getElementsByClassName('hjk');
+                    var btnarr35 = [];
+                    let now35 = month + '월' + date + '일'
+                    let onlydate35 = date
+                    let name35 = '6'
+                    let text35 = $('#text35').val()
+                    var time35_h = document.getElementById("time35-h").innerHTML
+                    var time35_m = document.getElementById("time35-m").innerHTML
+                    var time35_a = Number(time35_h) * 60 + Number(time35_m)
+
+
+
+
+
+                    alert('[한정규] 저장되었습니다.')
+                    let formData = new FormData();
+
+                    Array.from(buttons35).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            btnarr35.push(button.id)
+                        }
+                    });
+                    formData.append("name_give", name35)
+                    formData.append("btn_give", btnarr35);
+                    formData.append("date_give", now35);
+                    formData.append("onlydate_give", onlydate35)
+                    formData.append("text_give", text35)
+                    formData.append("timeh_give", time35_h);
+                    formData.append("timem_give", time35_m);
+                    formData.append("timea_give", time35_a);
+                    fetch('/savebtn35', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                        window.location.reload()
+
+                    });
+                    showTab("tab8")
+
+
+                }
+
+                function handleSaveButtonClick352() {
+                    let name35 = '6'
+                    var buttons = document.getElementsByClassName('hjk');
+                    var btnarr = [];
+                    let now = month + '월' + date + '일'
+                    let onlydate = date
+
+                    $('#text35').empty()
+                    let text35 = $('#text35').val()
+
+                    $('#time35-h').empty()
+                    $('#time35-m').empty()
+                    var time35_h = 0
+                    var time35_m = 0
+                    var time35_a = Number(time35_h) * 60 + Number(time35_m)
+
+
+
+
+
+                    let formData = new FormData();
+
+                    Array.from(buttons).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            // 서버로 버튼 상태 전송 코드 작성
+                            btnarr.push(button.id)
+                        }
+                    });
+                    formData.append("name_give", name35)
+                    formData.append("btn_give", btnarr);
+                    formData.append("date_give", now);
+                    formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text35)
+                    formData.append("timeh_give", time35_h);
+                    formData.append("timem_give", time35_m);
+                    formData.append("timea_give", time35_a);
+                    fetch('/savebtn35', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                        window.location.reload()
+                    });
+
+
+
+                }
+
+                function handleSaveButtonClick353() {
+                    let name35 = '6'
+                    var buttons = document.getElementsByClassName('hjk');
+                    var btnarr = [];
+                    let now = month + '월' + date + '일'
+                    let onlydate = date
+                    currentProgress3 = 0;
+                    currentProgress4 = 0;
+                    week_boss_count = 0;
+                    week_quest_count = 0;
+                    let text35 = $('#text35').val()
+                    var time35_h = document.getElementById("time35-h").innerHTML
+                    var time35_m = document.getElementById("time35-m").innerHTML
+                    var time35_a = Number(time35_h) * 60 + Number(time35_m)
+
+
+
+
+                    let formData = new FormData();
+
+                    Array.from(buttons).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            btnarr.push(button.id)
+                        }
+                    });
+                    formData.append("name_give", name35)
+                    formData.append("btn_give", btnarr);
+                    formData.append("date_give", now);
+                    formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text35)
+                    formData.append("timeh_give", time35_h);
+                    formData.append("timem_give", time35_m);
+                    formData.append("timea_give", time35_a);
+                    fetch('/savebtn35', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                        window.location.reload()
+                    })
+                }
+
+                function handleSaveButtonClick354() {
+                    let name35 = '6'
+                    var buttons = document.getElementsByClassName('hjk');
+                    var btnarr = [];
+                    let now = month + '월' + date + '일'
+                    let onlydate = date
+                    currentProgress3 = 0;
+                    currentProgress4 = 0;
+                    week_boss_count = 0;
+                    week_quest_count = 0;
+                    let text35 = $('#text35').val()
+                    var time35_h = document.getElementById("time35-h").innerHTML
+                    var time35_m = document.getElementById("time35-m").innerHTML
+                    var time35_a = Number(time35_h) * 60 + Number(time35_m)
+
+
+
+
+                    let formData = new FormData();
+
+                    Array.from(buttons).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            btnarr.push(button.id)
+                        }
+                    });
+                    formData.append("name_give", name35)
+                    formData.append("btn_give", btnarr);
+                    formData.append("date_give", now);
+                    formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text35)
+                    formData.append("timeh_give", time35_h);
+                    formData.append("timem_give", time35_m);
+                    formData.append("timea_give", time35_a);
+                    fetch('/savebtn35', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                        window.location.reload()
+                    })
+                }
+
+
+                function show_btn35() {
+                    fetch('/savebtn35').then(res => res.json()).then(data => {
+                        let rows35 = data['result']
+                        var lastDictionary35 = rows35[rows35.length - 1];
+                        var btnIdValue35 = lastDictionary35.btn_id;
+                        var arr35 = [];
+                        var btnIdArr35 = btnIdValue35.split(",");
+                        var length35 = btnIdArr35.length
+                        $('#text35').empty()
+                        $('#time35-h').empty()
+                        $('#time35-m').empty()
+
+                        for (i = 0; i < length35; i++)
+                            arr35.push(btnIdArr35[i])
+
+                        for (j = 0; j < arr35.length; j++)
+                            pressButton35(arr35[j])
+
+                        var lasttext = lastDictionary35.text
+                        let temp_html = `${lasttext}`
+                        $('#text35').append(temp_html)
+
+
+                        var lasttime_h35 = lastDictionary35.timeh
+                        var lasttime_m35 = lastDictionary35.timem
+                        let temp_html1 = `${lasttime_h35}`
+                        let temp_html2 = `${lasttime_m35}`
+                        $('#time35-h').append(temp_html1)
+                        $('#time35-m').append(temp_html2)
+
+                    })
+                }
+
+                function pressButton35(buttonId) {
+                    var button35 = document.getElementById(buttonId);
+                    if (button35) {
+                        button35.click();
+                    }
+                }
+                function unpressButton35(buttonId) {
+                    // var buttons = document.querySelectorAll('button');
+                    var buttons35 = document.getElementsByClassName("daywork hjk");
+
+                    Array.from(buttons35).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            button.classList.remove("active");
+
+                        }
+                    });
+                }
+
+                function unpressButton352() {
+                    // var buttons = document.querySelectorAll('button');
+                    var buttons35 = document.getElementsByClassName("weekwork hjk");
+
+                    Array.from(buttons35).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            button.classList.remove("active");
+
+                        }
+                    });
+                    handleSaveButtonClick353()
+
+
+                }
+
+
+                function unpressButton353() {
+                    // var buttons = document.querySelectorAll('button');
+                    var buttons = document.getElementsByClassName("mondaywork hjk");
+
+                    Array.from(buttons).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            button.classList.remove("active");
+
+                        }
+                    });
+                    handleSaveButtonClick354()
+
+
+                }
+
+
+
+
+
+
+
+
+            </script>
+        </div>
+
+
+
+
+
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+        <!-- --------------------------7777777777777777777777777777---------------------------------- -->
+
+        <style>
+            .tab45.checked {
+                background-color: #BEF781;
+                color: black
+            }
+
+            .tab45:hover {
+                background-color: #BEF781;
+                border-bottom: #ccc;
+            }
+
+            .tab7-chr {
+                background-color: #BEF781;
+                margin: 0px auto 10px auto;
+                width: 480px;
+                height: 200px;
+                box-shadow: 0px 0px 2px 0px gray;
+
+            }
+
+            .tab7-img1 {
+                width: 150px;
+                height: 150px;
+                background-image: url(https://avatar.maplestory.nexon.com/Character/IGLCEEHNFCEBNHCLHEIEMGMCJFGCJODJBIEBNDILMINAPJICKANHCFAJGPBLLBBICLGOHGBCNHDJCDFAAKPAMNCLBIJJPMDHJAOAGMCEGOLJKNIJGIMONHMJODKAALHPDCJBMJPCMFHJCKNOGJMDICMCAJMPFCNKNBHGMBEEODLOFMHEKKNAOEBACOKNDNNKJFALMDACOPAMMLPJPCKBODPNELEILNEAPANPLJGNAHLAMOAJNPBADHIGLEIAKJEG.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                box-shadow: 0px 1px 1px 1px gray;
+                margin-right: 50px;
+            }
+
+
+            #progressBar451 {
+                width: 300px;
+                height: 30px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                margin: 20px 0px 20px 10px;
+            }
+
+            #progress451 {
+                width: 0;
+                height: 100%;
+                background-color: #7351d1;
+            }
+
+            #progressBar452 {
+                width: 300px;
+                height: 30px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                margin: 20px 0px 20px 10px;
+            }
+
+            #progress452 {
+                width: 0;
+                height: 100%;
+                background-color: #7351d1;
+            }
+
+            #progressBar453 {
+                width: 300px;
+                height: 30px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                margin: 20px 0px 20px 10px;
+            }
+
+            #progress453 {
+                width: 0;
+                height: 100%;
+                background-color: #d1517c;
+            }
+
+            #progressBar454 {
+                width: 300px;
+                height: 30px;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                margin: 20px 0px 20px 10px;
+            }
+
+            #progress454 {
+                width: 0;
+                height: 100%;
+                background-color: #d1517c;
+            }
+        </style>
+        <script>
+            function toggleArea451() {
+                var expanded = document.getElementById("expand45-1")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function toggleArea452() {
+                var expanded = document.getElementById("expand45-2")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function toggleArea453() {
+                var expanded = document.getElementById("expand45-3")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function toggleArea454() {
+                var expanded = document.getElementById("expand45-4")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function toggleArea455() {
+                var expanded = document.getElementById("expand45-5")
+
+                if (expanded.style.display === "none") {
+                    expanded.style.display = "block";
+                } else {
+                    expanded.style.display = "none";
+                }
+
+            }
+
+            function chrStat45() {
+                let formData = new FormData();
+
+                fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
+                    $('#tab7-level').empty()
+                    $('#tab7-union').empty()
+                    // $('#tab1-img1').empty()
+
+                    let temp_html1 = `${data['result']['level'][6]}`
+                    let temp_html2 = `유니온 : ${data['result']['union'][6]}`
+                    $('#tab7-level').append(temp_html1)
+                    $('#tab7-union').append(temp_html2)
+
+
+
+                });
+            }
+            let progressBar451 = document.getElementById("progress451");
+            let currentProgress451 = 0;
+            let day_quest_count45 = 0;
+
+            function countnum45(button) {
+                $('#dd451').empty()
+                let temp_num = `:${day_quest_count45}/15`
+                $('#dd451').append(temp_num)
+            }
+
+            function toggleProgressBar451(button) {
+
+                var buttonProgress451 = 100 / 15;
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                    buttonProgress451 *= -1;
+                    button.classList.remove("active");
+                    day_quest_count45 -= 1;
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+                    day_quest_count45 += 1;
+                }
+
+                currentProgress451 += buttonProgress451;
+
+                // 진행바가 0보다 작으면 0으로 설정
+                if (currentProgress451 < 0) {
+                    currentProgress451 = 0;
+                }
+
+                // 진행바가 100보다 크면 100으로 설정
+                if (currentProgress451 > 100) {
+                    currentProgress451 = 100;
+                }
+
+                progress451.style.width = currentProgress451 + "%";
+                countnum45()
+
+            }
+
+            let progressBar452 = document.getElementById("progress452");
+            let currentProgress452 = 0;
+            var day_boss_count45 = 0;
+
+            function countnum452(button) {
+                $('#dd452').empty()
+                let temp_num = `:${day_boss_count45}/14`
+                $('#dd452').append(temp_num)
+            }
+
+            function toggleProgressBar452(button) {
+
+                var buttonProgress452 = 100 / 14;
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                    buttonProgress452 *= -1;
+                    button.classList.remove("active");
+                    day_boss_count45 -= 1;
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+                    day_boss_count45 += 1;
+                }
+
+                currentProgress452 += buttonProgress452;
+
+                // 진행바가 0보다 작으면 0으로 설정
+                if (currentProgress452 < 0) {
+                    currentProgress452 = 0;
+                }
+
+                // 진행바가 100보다 크면 100으로 설정
+                if (currentProgress452 > 100) {
+                    currentProgress452 = 100;
+                }
+
+                progress452.style.width = currentProgress452 + "%";
+                countnum452()
+            }
+
+            let progressBar453 = document.getElementById("progress453");
+            let currentProgress453 = 0;
+            let week_quest_count45 = 0;
+
+            function countnum453(button) {
+                $('#dd453').empty()
+                let temp_num = `:${week_quest_count45}/10`
+                $('#dd453').append(temp_num)
+            }
+
+            function toggleProgressBar453(button) {
+
+                var buttonProgress453 = 100 / 10;
+
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                    buttonProgress453 *= -1;
+                    button.classList.remove("active");
+                    week_quest_count45 -= 1;
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+                    week_quest_count45 += 1;
+
+                }
+
+                currentProgress453 += buttonProgress453;
+
+                // 진행바가 0보다 작으면 0으로 설정
+                if (currentProgress453 < 0) {
+                    currentProgress453 = 0;
+                }
+
+                // 진행바가 100보다 크면 100으로 설정
+                if (currentProgress453 > 100) {
+                    currentProgress453 = 100;
+                }
+
+                progress453.style.width = currentProgress453 + "%";
+                countnum453()
+            }
+
+            let progressBar454 = document.getElementById("progress454");
+            var currentProgress454 = 0;
+            var week_boss_count45 = 0;
+
+            function countnum454(button) {
+                $('#dd454').empty()
+                let temp_num = `:${week_boss_count45}/18`
+                $('#dd454').append(temp_num)
+            }
+
+            function toggleProgressBar454(button) {
+
+                var buttonProgress454 = 100 / 18;
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                    buttonProgress454 *= -1;
+                    button.classList.remove("active");
+                    week_boss_count45 -= 1;
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+                    week_boss_count45 += 1;
+                }
+
+                currentProgress454 += buttonProgress454;
+
+                // 진행바가 0보다 작으면 0으로 설정
+                if (currentProgress454 < 0) {
+                    currentProgress454 = 0;
+                }
+
+                // 진행바가 100보다 크면 100으로 설정
+                if (currentProgress454 > 100) {
+                    currentProgress454 = 100;
+                }
+
+                progress454.style.width = currentProgress454 + "%";
+                countnum454()
+
+            }
+
+            function toggleProgressBar455(button) {
+
+
+
+                if (button.classList.contains("active")) {
+                    // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+
+                    button.classList.remove("active");
+
+                } else {
+                    // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                    button.classList.add("active");
+
+                }
+
+
+
+            }
+
+        </script>
+
+        <div id="tab7" class="tab">
+            <div class="tab7-chr flex-row">
+                <div class="tab7-img1"></div>
+                <div class="tab1-stat">
+                    <div id="tab7-level" class="level1">Lv.</div>
+                    <div>직업 : 메르세데스</div>
+                    <div id="tab7-union">유니온 : </div>
+                    <!-- <div>주스탯 : </div>
+                    <div>보스공격력 : %</div>
+                    <div>크리티컬 데미지 : %</div>
+                    <div>방어율무시 : %</div> -->
+                </div>
+            </div>
+
+
+
+            <div class="container1">
+                <div class="progress-wrap flex-row">
+                    <div class="dd1">일일퀘스트</div>
+                    <div id="dd451"> :0/15</div>
+                    <div id="progressBar451">
+                        <div id="progress451"></div>
+                    </div>
+                </div>
+                <div class="progress-wrap flex-row">
+                    <div class="dd2">일일보스</div>
+                    <div id="dd452"> :0/14</div>
+                    <div id="progressBar452">
+                        <div id="progress452"></div>
+                    </div>
+                </div>
+                <div class="progress-wrap flex-row">
+                    <div class="dd3">주간퀘스트</div>
+                    <div id="dd453"> :0/10</div>
+                    <div id="progressBar453">
+                        <div id="progress453"></div>
+                    </div>
+                </div>
+                <div class="progress-wrap flex-row">
+                    <div class="dd4">주간보스</div>
+                    <div id="dd454"> :0/18</div>
+                    <div id="progressBar454">
+                        <div id="progress454"></div>
+                    </div>
+                </div>
+
+                <div class="counter-container">
+                    <div class="counter-title">
+                        오늘 재획 :
+                    </div>
+                    <div class="counter-button" id="decrease45">-</div>
+                    <span id="level-up-time45" class="flex-row">
+                        <div id="time45-h">0</div>시간
+                        <div id="time45-m">00</div>분
+                    </span>
+                    <div class="counter-button" id="increase45">+</div>
+                    <div class="level-info">(유니온 육성 포함)</div>
+                </div>
+
+                <textarea class="tab-text flex-row" id="text45" placeholder="오늘의 메업적"></textarea>
+                <button type="button" onclick=handleSaveButtonClick45() class="save-btn  btn-dark">저장</button>
+
+                <div class="btn-area">
+                    <div class="btn-text" onclick="toggleArea451()">일일퀘스트</div>
+                    <div id="expand45-1" style="display: none;">
+                        <p>
+                            <button class="button daywork lka" id="button451-1"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
+                            <button class="button daywork lka" id="button451-2"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
+                            <button class="button daywork lka" id="button451-3"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
+                            <button class="button daywork lka" id="button451-4"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
+                            <button class="button daywork lka" id="button451-5"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%AA%A8%EB%9D%BC%EC%8A%A4.png?updatedAt=1691020668112"></button>
+                        </p>
+                        <p>
+
+                            <button class="button daywork lka" id="button451-6"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9D%BC.png?updatedAt=1691020683677"></button>
+                            <button class="button daywork lka" id="button451-7"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%84%B8%EB%A5%B4%EB%8B%88%EC%9B%80.png?updatedAt=1691020694907"></button>
+                            <button class="button daywork lka" id="button451-8"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
+                            <!-- <button class="button daywork lka" id="button451-9"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
+                            <button class="button daywork lka" id="button451-10"
+                                onclick="toggleProgressBar451(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
+                        </p>
+                        <p margin-bottom="50px">
+                            <button class="button1-1 daywork lka" id="button451-11"
+                                onclick="toggleProgressBar451(this)"></button>
+                            <button class="button1-2 daywork lka" id="button451-12"
+                                onclick="toggleProgressBar451(this)"></button>
+                            <button class="button1-3 daywork lka" id="button451-13"
+                                onclick="toggleProgressBar451(this)"></button>
+                            <button class="button1-4 daywork lka" id="button451-14"
+                                onclick="toggleProgressBar451(this)"></button>
+                            <button class="button1-5 daywork lka" id="button451-15"
+                                onclick="toggleProgressBar451(this)"></button>
+                            <button class="button1-6 daywork lka" id="button451-16"
+                                onclick="toggleProgressBar451(this)"></button>
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------777일일보스777------------------------------------------------ -->
+
+            <div class="container1">
+
+                <div class="btn-area2">
+                    <div class="btn-text" onclick="toggleArea452()">일일보스</div>
+                    <div id="expand45-2" style="display: none;">
+                        <p>
+                            <button class="button2-1 daywork lka" id="button452-1"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-2 daywork lka" id="button452-2"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-3 daywork lka" id="button452-3"
+                                onclick="toggleProgressBar452(this)"></button>
+
+                        </p>
+                        <p>
+                            <button class="button2-4 daywork lka" id="button452-4"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-5 daywork lka" id="button452-5"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-6 daywork lka" id="button452-6"
+                                onclick="toggleProgressBar452(this)"></button>
+
+                        </p>
+                        <p>
+                            <button class="button2-7 daywork lka" id="button452-7"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-8 daywork lka" id="button452-8"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-9 daywork lka" id="button452-9"
+                                onclick="toggleProgressBar452(this)"></button>
+
+                        </p>
+                        <p>
+                            <button class="button2-10 daywork lka" id="button452-10"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-11 daywork lka" id="button452-11"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-12 daywork lka" id="button452-12"
+                                onclick="toggleProgressBar452(this)"></button>
+
+                        </p>
+                        <p>
+                            <button class="button2-13 daywork lka" id="button452-13"
+                                onclick="toggleProgressBar452(this)"></button>
+                            <button class="button2-14 daywork lka" id="button452-14"
+                                onclick="toggleProgressBar452(this)"></button>
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------777주간퀘스트777------------------------------------------------ -->
+
+
+            <div class="container1">
+
+                <div class="btn-area">
+                    <div class="btn-text" onclick="toggleArea453()">주간퀘스트</div>
+                    <div id="expand45-3" style="display: none;">
+                        <button class="button3-1 mondaywork lka" id="button453-1"
+                            onclick="toggleProgressBar453(this)"></button>
+                        <button class="button3-2 mondaywork lka" id="button453-2"
+                            onclick="toggleProgressBar453(this)"></button>
+                        <button class="button3-3 mondaywork lka" id="button453-3"
+                            onclick="toggleProgressBar453(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button3-4 mondaywork lka" id="button453-4"
+                                onclick="toggleProgressBar453(this)"></button>
+                            <button class="button3-5 mondaywork lka" id="button453-5"
+                                onclick="toggleProgressBar453(this)"></button>
+                            <button class="button3-6 mondaywork lka" id="button453-6"
+                                onclick="toggleProgressBar453(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button3-7 mondaywork lka" id="button453-7"
+                                onclick="toggleProgressBar453(this)"></button>
+                            <button class="button3-8 mondaywork lka" id="button453-8"
+                                onclick="toggleProgressBar453(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button3-9 mondaywork lka" id="button453-9"
+                                onclick="toggleProgressBar453(this)"></button>
+                            <button class="button3-10 mondaywork lka" id="button453-10"
+                                onclick="toggleProgressBar453(this)"></button>
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------777주간보스777------------------------------------------------ -->
+
+            <div class="container1">
+
+                <div class="btn-area4">
+                    <div class="btn-text" onclick="toggleArea454()">주간보스</div>
+                    <div id="expand45-4" style="display: none;">
+                        <p>
+                            <button class="button4-1 weekwork lka" id="button454-1"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-2 weekwork lka" id="button454-2"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-3 weekwork lka" id="button454-3"
+                                onclick="toggleProgressBar454(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-4 weekwork lka" id="button454-4"
+                                onclick="toggleProgressBar454(this)">
+                            </button>
+                            <button class="button4-5 weekwork lka" id="button454-5"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-6 weekwork lka" id="button454-6"
+                                onclick="toggleProgressBar454(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-7 weekwork lka" id="button454-7"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-8 weekwork lka" id="button454-8"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-9 weekwork lka" id="button454-9"
+                                onclick="toggleProgressBar454(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-10 weekwork lka" id="button454-10"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-11 weekwork lka" id="button454-11"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-12 weekwork lka" id="button454-12"
+                                onclick="toggleProgressBar454(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-13 weekwork lka" id="button454-13"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-14 weekwork lka" id="button454-14"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-15 weekwork lka" id="button454-15"
+                                onclick="toggleProgressBar454(this)"></button>
+                        </p>
+                        <p>
+                            <button class="button4-16 weekwork lka" id="button454-16"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-17 weekwork lka" id="button454-17"
+                                onclick="toggleProgressBar454(this)"></button>
+                            <button class="button4-18 weekwork lka" id="button454-18"
+                                onclick="toggleProgressBar454(this)"></button>
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------77이벤트77------------------------------------------------ -->
+
+            <div class="container1">
+
+                <div class="btn-area">
+                    <div class="btn-text">이벤트(종료)</div>
+                    <div id="expand45-5" style="display: none;">
+                        <p class="flex-row">
+                            <button class="button5-1 weekwork event lka" id="button455-1"
+                                onclick="toggleProgressBar455(this)"></button>
+                            <button class="button5-2 weekwork event lka" id="button455-2"
+                                onclick="toggleProgressBar455(this)"></button>
+                            <button class="button5-3 weekwork event lka" id="button455-3"
+                                onclick="toggleProgressBar455(this)"></button>
+                        </p>
+                        <p class="flex-row">
+                            <button class="button5-4 weekwork event lka" id="button455-4"
+                                onclick="toggleProgressBar455(this)"></button>
+                            <button class="button5-5 weekwork event lka" id="button455-5"
+                                onclick="toggleProgressBar455(this)"></button>
+                            <button class="button5-6 weekwork event lka" id="button455-6"
+                                onclick="toggleProgressBar455(this)"></button>
+                        </p>
+                        <p class="flex-row">
+                            <button class="button5-7 weekwork event lka" id="button455-7"
+                                onclick="toggleProgressBar455(this)"></button>
+                            <button class="button5-8 weekwork event lka" id="button455-8"
+                                onclick="toggleProgressBar455(this)"></button>
+                            <button class="button5-9 weekwork event lka" id="button455-9"
+                                onclick="toggleProgressBar455(this)"></button>
+                        </p>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <script>
+
+                var clickedButtons45 = [];
+
+                function changeColor(buttonId) {
+                    var button45 = document.getElementById(buttonId);
+                    if (!button45.classList.contains(".active")) {
+                        button45.classList.add(".active");
+                        clickedButtons45.push(buttonId);
+                    } else {
+                        button45.classList.remove(".active");
+                        clickedButtons45.splice(clickedButtons45.indexOf(buttonId), 1);
+                    }
+                    console.log(clickedButtons45)
+                }
+
+                function saveData() {
+                    var buttonData = {
+                        buttons: clickedButtons
+                    };
+
+                    fetch('/save', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(buttonData)
+                    })
+                        .then(response => response.text())
+                        .then(data => {
+                            console.log(data);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                }
+
+
+
+
+                // -------------------------77재획 기능77----------------------------
+                // -------------------------77재획 기능77----------------------------
+                // -------------------------77재획 기능77----------------------------
+                // -------------------------77재획 기능77----------------------------
+                //  fetch('/savebtn').then(res => res.json()).then(data => {
+                //          let rows = data['result']
+                //          var lastDictionary = rows[rows.length - 1];
+                //          let time33_a = lastDictionary.timea
+
+                const decreaseButton45 = document.getElementById('decrease45');
+                const increaseButton45 = document.getElementById('increase45');
+
+
+                let time45 = 0
+
+                decreaseButton45.addEventListener('click', () => {
+                    if (time45 == 0) {
+                        return;
+                    }
+                    time45 -= 30;
+                    updateDisplay45()
+                })
+
+                increaseButton45.addEventListener('click', () => {
+                    time45 += 30;
+                    updateDisplay45()
+                })
+                // })
+                function updateDisplay45() {
+                    var hours = Math.floor((time45) / 60);
+                    var minutes = (time45) % 60;
+                    $('#time45-h').empty()
+                    $('#time45-m').empty()
+                    temp_html1 = `${hours}`
+                    temp_html2 = `${formatMinutes(minutes)}`
+                    $('#time45-h').append(temp_html1)
+                    $('#time45-m').append(temp_html2)
+
+
+
+
+
+
+                }
+                // -------------------------------------------------------------------------------
+
+
+
+
+
+                function handleSaveButtonClick45() {
+                    var buttons45 = document.getElementsByClassName('lka');
+                    var btnarr45 = [];
+                    let now45 = month + '월' + date + '일'
+                    let onlydate45 = date
+                    let name45 = '7'
+                    let text45 = $('#text45').val()
+                    var time45_h = document.getElementById("time45-h").innerHTML
+                    var time45_m = document.getElementById("time45-m").innerHTML
+                    var time45_a = Number(time45_h) * 60 + Number(time45_m)
+
+
+
+
+
+                    alert('[뀨미뻬어] 저장되었습니다.')
+                    let formData = new FormData();
+
+                    Array.from(buttons45).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            btnarr45.push(button.id)
+                        }
+                    });
+                    formData.append("name_give", name45)
+                    formData.append("btn_give", btnarr45);
+                    formData.append("date_give", now45);
+                    formData.append("onlydate_give", onlydate45)
+                    formData.append("text_give", text45)
+                    formData.append("timeh_give", time45_h);
+                    formData.append("timem_give", time45_m);
+                    formData.append("timea_give", time45_a);
+                    fetch('/savebtn45', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                        window.location.reload()
+
+                    });
+                    showTab("tab7")
+
+
+                }
+
+                function handleSaveButtonClick452() {
+                    let name45 = '7'
+                    var buttons = document.getElementsByClassName('lka');
+                    var btnarr = [];
+                    let now = month + '월' + date + '일'
+                    let onlydate = date
+
+                    $('#text45').empty()
+                    let text45 = $('#text45').val()
+
+                    $('#time45-h').empty()
+                    $('#time45-m').empty()
+                    var time45_h = 0
+                    var time45_m = 0
+                    var time45_a = Number(time45_h) * 60 + Number(time45_m)
+
+
+
+
+
+                    let formData = new FormData();
+
+                    Array.from(buttons).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            // 서버로 버튼 상태 전송 코드 작성
+                            btnarr.push(button.id)
+                        }
+                    });
+                    formData.append("name_give", name45)
+                    formData.append("btn_give", btnarr);
+                    formData.append("date_give", now);
+                    formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text45)
+                    formData.append("timeh_give", time45_h);
+                    formData.append("timem_give", time45_m);
+                    formData.append("timea_give", time45_a);
+                    fetch('/savebtn45', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                        window.location.reload()
+                    });
+
+
+
+                }
+
+                function handleSaveButtonClick453() {
+                    let name45 = '7'
+                    var buttons = document.getElementsByClassName('lka');
+                    var btnarr = [];
+                    let now = month + '월' + date + '일'
+                    let onlydate = date
+                    currentProgress3 = 0;
+                    currentProgress4 = 0;
+                    week_boss_count = 0;
+                    week_quest_count = 0;
+                    let text45 = $('#text45').val()
+                    var time45_h = document.getElementById("time45-h").innerHTML
+                    var time45_m = document.getElementById("time45-m").innerHTML
+                    var time45_a = Number(time45_h) * 60 + Number(time45_m)
+
+
+
+
+                    let formData = new FormData();
+
+                    Array.from(buttons).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            btnarr.push(button.id)
+                        }
+                    });
+                    formData.append("name_give", name45)
+                    formData.append("btn_give", btnarr);
+                    formData.append("date_give", now);
+                    formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text45)
+                    formData.append("timeh_give", time45_h);
+                    formData.append("timem_give", time45_m);
+                    formData.append("timea_give", time45_a);
+                    fetch('/savebtn45', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                        window.location.reload()
+                    })
+                }
+
+                function handleSaveButtonClick454() {
+                    let name45 = '7'
+                    var buttons = document.getElementsByClassName('lka');
+                    var btnarr = [];
+                    let now = month + '월' + date + '일'
+                    let onlydate = date
+                    currentProgress3 = 0;
+                    currentProgress4 = 0;
+                    week_boss_count = 0;
+                    week_quest_count = 0;
+                    let text45 = $('#text45').val()
+                    var time45_h = document.getElementById("time45-h").innerHTML
+                    var time45_m = document.getElementById("time45-m").innerHTML
+                    var time45_a = Number(time45_h) * 60 + Number(time45_m)
+
+
+
+
+                    let formData = new FormData();
+
+                    Array.from(buttons).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            btnarr.push(button.id)
+                        }
+                    });
+                    formData.append("name_give", name45)
+                    formData.append("btn_give", btnarr);
+                    formData.append("date_give", now);
+                    formData.append("onlydate_give", onlydate)
+                    formData.append("text_give", text45)
+                    formData.append("timeh_give", time45_h);
+                    formData.append("timem_give", time45_m);
+                    formData.append("timea_give", time45_a);
+                    fetch('/savebtn45', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                        window.location.reload()
+                    })
+                }
+
+
+                function show_btn45() {
+                    fetch('/savebtn45').then(res => res.json()).then(data => {
+                        let rows45 = data['result']
+                        var lastDictionary45 = rows45[rows45.length - 1];
+                        var btnIdValue45 = lastDictionary45.btn_id;
+                        var arr45 = [];
+                        var btnIdArr45 = btnIdValue45.split(",");
+                        var length45 = btnIdArr45.length
+                        $('#text45').empty()
+                        $('#time45-h').empty()
+                        $('#time45-m').empty()
+
+                        for (i = 0; i < length45; i++)
+                            arr45.push(btnIdArr45[i])
+
+                        for (j = 0; j < arr45.length; j++)
+                            pressButton45(arr45[j])
+
+                        var lasttext = lastDictionary45.text
+                        let temp_html = `${lasttext}`
+                        $('#text45').append(temp_html)
+
+
+                        var lasttime_h45 = lastDictionary45.timeh
+                        var lasttime_m45 = lastDictionary45.timem
+                        let temp_html1 = `${lasttime_h45}`
+                        let temp_html2 = `${lasttime_m45}`
+                        $('#time45-h').append(temp_html1)
+                        $('#time45-m').append(temp_html2)
+
+                    })
+                }
+
+                function pressButton45(buttonId) {
+                    var button45 = document.getElementById(buttonId);
+                    if (button45) {
+                        button45.click();
+                    }
+                }
+                function unpressButton45(buttonId) {
+                    // var buttons = document.querySelectorAll('button');
+                    var buttons45 = document.getElementsByClassName("daywork lka");
+
+                    Array.from(buttons45).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            button.classList.remove("active");
+
+                        }
+                    });
+                }
+
+                function unpressButton452() {
+                    // var buttons = document.querySelectorAll('button');
+                    var buttons45 = document.getElementsByClassName("weekwork lka");
+
+                    Array.from(buttons45).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            button.classList.remove("active");
+
+                        }
+                    });
+                    handleSaveButtonClick453()
+
+
+                }
+
+
+                function unpressButton453() {
+                    // var buttons = document.querySelectorAll('button');
+                    var buttons = document.getElementsByClassName("mondaywork lka");
+
+                    Array.from(buttons).forEach(function (button) {
+                        if (button.classList.contains('active')) {
+                            button.classList.remove("active");
+
+                        }
+                    });
+                    handleSaveButtonClick454()
+
+
+                }
+
+
+
+
+
+
+
+
+            </script>
+        </div>
 
 
 </body>

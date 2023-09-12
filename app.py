@@ -85,7 +85,7 @@ def chrstat_post():
     level5 = soup5.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union5 = soup5.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
 
-    URL6 = "https://maple.gg/u/%EC%A0%95%EB%80%A8%EC%9A%B0s"
+    URL6 = "https://maple.gg/u/%ED%95%9C%EC%A0%95%EA%B7%9C"
     headers6 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     data6 = requests.get(URL6,headers=headers5)
     soup6 = BeautifulSoup(data6.text, 'html.parser')

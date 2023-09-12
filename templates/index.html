@@ -1916,7 +1916,7 @@
                 <label name="option" value="00" id="tab00-label" class="tab-label tab00"
                     onclick="showTab('tab00')">로비</label>
                     <label name="option" value="99" id="tab99-label" class="tab-label tab99"
-                    onclick="showTab('tab99')">v1.3.1</label>
+                    onclick="showTab('tab99')">v1.3.2</label>
                 <br>
             
             
@@ -1951,16 +1951,11 @@
             <div class="lobby-save-btn flex-row" onclick="save_notice()"></div>
 
             <div class="btn-area" style="background-color: #95b6ff;">
-                <div class="btn-text flex-row" onclick="toggleArea990()">v1.3.1 업데이트</div>
+                <div class="btn-text flex-row" onclick="toggleArea990()">v1.3.2 업데이트</div>
                 <div id="expand991-0" style="margin: 0px 0px 5px 5px;">
-                    1. 재획 카운터 기능<br>
-                    (저장 후 재설정시 + 버튼을 눌러 재설정)<br>
-                    2. 주간퀘스트 초기화 월요일초기화 버튼 통합<br>
-                    3. 한정규,뀨미베어 탭 추가<br>
-                    4. 황모풍 주간퀘스트 핑크빈버튼 오류 수정
-                    <br>
-                    5. label 디자인 수정<br>
-                    6. 로비 업데이트, 도핑버튼 색상 입력
+                    1. 한정규 스탯 크롤링 서버 업데이트<br>
+                    2. 270레벨 이하 탭 오디움 일일퀘스트 삭제<br>
+                    
                 </div>
             </div>
 
@@ -2106,7 +2101,12 @@
                 <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용 확인하기</div>
                 <div id="expand77" style="display: none;">
                     <div style="margin-left: 5px;">
-                        2023.09.07 
+                        2023.09.12 v1.3.2
+                        <p> 
+                            한정규 닉네임 변경으로 인한 서버 주소 변경,
+                            tab2~7 일일퀘스트 오디움 삭제
+                        </p>
+                        2023.09.07  v1.3.1
                         <p>
                             주간퀘스트 주간초기화 → 월요일초기화 기능 수정,
                             tab4 주간퀘스트 핑크빈버튼 오류 수정,
@@ -3203,13 +3203,13 @@
 
             function countnum14(button) {
                 $('#dd141').empty()
-                let temp_num = `:${day_quest_count14}/16`
+                let temp_num = `:${day_quest_count14}/15`
                 $('#dd141').append(temp_num)
             }
 
             function toggleProgressBar141(button) {
 
-                var buttonProgress141 = 100 / 16;
+                var buttonProgress141 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -3424,7 +3424,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd141"> :0/16</div>
+                    <div id="dd141"> :0/15</div>
                     <div id="progressBar141">
                         <div id="progress141"></div>
                     </div>
@@ -3492,9 +3492,9 @@
                             <button class="button daywork lcw" id="button141-8"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork lcw" id="button141-9"
+                            <!-- <button class="button daywork lcw" id="button141-9"
                                 onclick="toggleProgressBar141(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork lcw" id="button141-10"
                                 onclick="toggleProgressBar141(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -4234,13 +4234,13 @@
 
             function countnum27(button) {
                 $('#dd271').empty()
-                let temp_num = `:${day_quest_count27}/16`
+                let temp_num = `:${day_quest_count27}/15`
                 $('#dd271').append(temp_num)
             }
 
             function toggleProgressBar271(button) {
 
-                var buttonProgress271 = 100 / 16;
+                var buttonProgress271 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -4455,7 +4455,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd271"> :0/16</div>
+                    <div id="dd271"> :0/15</div>
                     <div id="progressBar271">
                         <div id="progress271"></div>
                     </div>
@@ -4529,9 +4529,9 @@
                             <button class="button daywork ath" id="button271-8"
                                 onclick="toggleProgressBar271(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork ath" id="button271-9"
+                            <!-- <button class="button daywork ath" id="button271-9"
                                 onclick="toggleProgressBar271(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork ath" id="button271-10"
                                 onclick="toggleProgressBar271(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -5266,13 +5266,13 @@
 
             function countnum71(button) {
                 $('#dd711').empty()
-                let temp_num = `:${day_quest_count71}/16`
+                let temp_num = `:${day_quest_count71}/15`
                 $('#dd711').append(temp_num)
             }
 
             function toggleProgressBar711(button) {
 
-                var buttonProgress711 = 100 / 16;
+                var buttonProgress711 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -5487,7 +5487,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd711"> :0/16</div>
+                    <div id="dd711"> :0/15</div>
                     <div id="progressBar711">
                         <div id="progress711"></div>
                     </div>
@@ -5561,9 +5561,9 @@
                             <button class="button daywork ycj" id="button711-8"
                                 onclick="toggleProgressBar711(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork ycj" id="button711-9"
+                            <!-- <button class="button daywork ycj" id="button711-9"
                                 onclick="toggleProgressBar711(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork ycj" id="button711-10"
                                 onclick="toggleProgressBar711(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -6308,13 +6308,13 @@
 
             function countnum63(button) {
                 $('#dd631').empty()
-                let temp_num = `:${day_quest_count63}/16`
+                let temp_num = `:${day_quest_count63}/15`
                 $('#dd631').append(temp_num)
             }
 
             function toggleProgressBar631(button) {
 
-                var buttonProgress631 = 100 / 16;
+                var buttonProgress631 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -6510,7 +6510,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd631"> :0/16</div>
+                    <div id="dd631"> :0/15</div>
                     <div id="progressBar631">
                         <div id="progress631"></div>
                     </div>
@@ -6584,9 +6584,9 @@
                             <button class="button daywork kjb" id="button631-8"
                                 onclick="toggleProgressBar631(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork kjb" id="button631-9"
+                            <!-- <button class="button daywork kjb" id="button631-9"
                                 onclick="toggleProgressBar631(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork kjb" id="button631-10"
                                 onclick="toggleProgressBar631(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -7339,13 +7339,13 @@
 
             function countnum35(button) {
                 $('#dd351').empty()
-                let temp_num = `:${day_quest_count35}/16`
+                let temp_num = `:${day_quest_count35}/15`
                 $('#dd351').append(temp_num)
             }
 
             function toggleProgressBar351(button) {
 
-                var buttonProgress351 = 100 / 16;
+                var buttonProgress351 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -7541,7 +7541,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd351"> :0/16</div>
+                    <div id="dd351"> :0/15</div>
                     <div id="progressBar351">
                         <div id="progress351"></div>
                     </div>
@@ -7615,9 +7615,9 @@
                             <button class="button daywork hjk" id="button351-8"
                                 onclick="toggleProgressBar351(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork hjk" id="button351-9"
+                            <!-- <button class="button daywork hjk" id="button351-9"
                                 onclick="toggleProgressBar351(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork hjk" id="button351-10"
                                 onclick="toggleProgressBar351(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
@@ -8366,13 +8366,13 @@
 
             function countnum45(button) {
                 $('#dd451').empty()
-                let temp_num = `:${day_quest_count45}/16`
+                let temp_num = `:${day_quest_count45}/15`
                 $('#dd451').append(temp_num)
             }
 
             function toggleProgressBar451(button) {
 
-                var buttonProgress451 = 100 / 16;
+                var buttonProgress451 = 100 / 15;
 
                 if (button.classList.contains("active")) {
                     // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
@@ -8568,7 +8568,7 @@
             <div class="container1">
                 <div class="progress-wrap flex-row">
                     <div class="dd1">일일퀘스트</div>
-                    <div id="dd451"> :0/16</div>
+                    <div id="dd451"> :0/15</div>
                     <div id="progressBar451">
                         <div id="progress451"></div>
                     </div>
@@ -8642,9 +8642,9 @@
                             <button class="button daywork lka" id="button451-8"
                                 onclick="toggleProgressBar451(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
-                            <button class="button daywork lka" id="button451-9"
+                            <!-- <button class="button daywork lka" id="button451-9"
                                 onclick="toggleProgressBar451(this)"><img
-                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button> -->
                             <button class="button daywork lka" id="button451-10"
                                 onclick="toggleProgressBar451(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
