@@ -53,7 +53,6 @@ def chrstat_post():
 
     image3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
     level3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
-    union3 = soup3.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
 
     URL27 = "https://maple.gg/u/%EC%A0%9C41%EB%8C%80"
     headers27 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
@@ -106,7 +105,7 @@ def chrstat_post():
 
 
     level = [level1, level2, level27, level4, level5, level6, level7]
-    union = [union1, union2, union3, union4, union5, union6, union7]
+    union = [union1, union2, 8512, union4, union5, union6, union7]
     image = [image1, image2, image3, image4, image5, image6, image7]
 
     stat = {
