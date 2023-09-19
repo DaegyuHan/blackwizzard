@@ -1591,13 +1591,17 @@
             fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
                 $('#tab1-level').empty()
                 $('#tab1-union').empty()
+                $('#tab1-mureung').empty()
                 // $('#tab1-img1').empty()
-                console.log(data['result']['image'][0])
+                console.log(data['result']['image'])
 
                 let temp_html1 = `${data['result']['level'][0]}`
                 let temp_html2 = `유니온 : ${data['result']['union'][0]}`
+                let temp_html3 = `무릉 : ${data['result']['mureung'][0]}`
+
                 $('#tab1-level').append(temp_html1)
                 $('#tab1-union').append(temp_html2)
+                $('#tab1-mureung').append(temp_html3)
 
 
             });
@@ -1918,7 +1922,7 @@
                 <label name="option" value="00" id="tab00-label" class="tab-label tab00"
                     onclick="showTab('tab00')">로비</label>
                     <label name="option" value="99" id="tab99-label" class="tab-label tab99"
-                    onclick="showTab('tab99')">v1.3.3</label>
+                    onclick="showTab('tab99')">v1.3.5</label>
                 <br>
             
             
@@ -1955,8 +1959,9 @@
             <div class="btn-area" style="background-color: #95b6ff;">
                 <div class="btn-text flex-row" onclick="toggleArea990()">업데이트</div>
                 <div id="expand991-0" style="margin: 0px 0px 5px 5px;">
-                    1. 각 캐릭터스텟이 안 보이는 오류 수정<br>
-                    2. 업데이트 공지란 버전 숨김
+                    1. 뀨미뻬어 탭 초기화 오류 수정<br>
+                    2. 각 캐릭터 스탯창 무릉 층수 추가<br>
+                    3. 한정규, 뀨미뻬어 탭 심볼 졸업 적용 
                     
                 </div>
             </div>
@@ -2103,6 +2108,17 @@
                 <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용 확인하기</div>
                 <div id="expand77" style="display: none;">
                     <div style="margin-left: 5px;">
+                        2023.09.19 v1.3.5
+                        <p> 
+                            tab7 스탯 정보 수정
+                            tab1, tab4 이미지 변경
+                        </p>
+                        2023.09.18 v1.3.4
+                        <p> 
+                            tab7 초기화 오류 수정,
+                            무릉 층수 기능 추가,
+                            tab6, tab7 심볼 졸업 추가
+                        </p>
                         2023.09.17 v1.3.3
                         <p> 
                             tab 캐릭터 스탯 오류 수정,
@@ -2211,6 +2227,7 @@
                     <div id="tab1-level" class="level1">Lv.</div>
                     <div>직업 : 아델</div>
                     <div id="tab1-union">유니온 : </div>
+                    <div id="tab1-mureung">무릉 : </div>
                     <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -3197,12 +3214,15 @@
                 fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
                     $('#tab2-level').empty()
                     $('#tab2-union').empty()
+                    $('#tab2-mureung').empty()
                     // $('#tab1-img1').empty()
 
                     let temp_html1 = `${data['result']['level'][1]}`
                     let temp_html2 = `유니온 : ${data['result']['union'][1]}`
+                    let temp_html3 = `무릉 : ${data['result']['mureung'][1]}`
                     $('#tab2-level').append(temp_html1)
                     $('#tab2-union').append(temp_html2)
+                    $('#tab2-mureung').append(temp_html3)
 
                 });
             }
@@ -3420,6 +3440,7 @@
                     <div id="tab2-level" class="level1">Lv.</div>
                     <div>직업 : 듀얼블레이드</div>
                     <div id="tab2-union">유니온 : </div>
+                    <div id="tab2-mureung">무릉 : </div>
                     <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -4227,12 +4248,15 @@
                 fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
                     $('#tab3-level').empty()
                     $('#tab3-union').empty()
+                    $('#tab3-mureung').empty()
                     // $('#tab1-img1').empty()
 
                     let temp_html1 = `${data['result']['level'][2]}`
                     let temp_html2 = `유니온 : ${data['result']['union'][2]}`
+                    let temp_html3 = `무릉 : ${data['result']['mureung'][2]}`
                     $('#tab3-level').append(temp_html1)
                     $('#tab3-union').append(temp_html2)
+                    $('#tab3-mureung').append(temp_html3)
 
 
                 });
@@ -4451,6 +4475,7 @@
                     <div id="tab3-level" class="level1">Lv.</div>
                     <div>직업 : 메카닉</div>
                     <div id="tab3-union">유니온 : </div>
+                    <div id="tab3-mureung">무릉 : </div>
                     <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -5145,7 +5170,7 @@
             .tab4-img1 {
                 width: 150px;
                 height: 150px;
-                background-image: url(https://avatar.maplestory.nexon.com/Character/HLBLGNHIGIFFGEGIKPKAPLAMPPCDFPEPCBKMOFHBJPIFOOAKNDIDBFBEIKGLLKIHKAGEGCAPEHHCMAEOPJOGHNNDAAELMLCHHKHAEGJIHPBCKEBABPKMBBHBGCBCDEFPHEHEIPJNCPMMEHJMANDIEPIAAGIGBCLFOMKMFLEDDAMFBDHGOEAFPCOFMAIGHDKCMCECCCBMFGBNFICNGIJPBOELADGDGCNNHPEPPCMDKLKLGKICDDLEPFCEFKEKCNMI.png);
+                background-image: url(https://avatar.maplestory.nexon.com/Character/MJLKJFAJMJFEHOINOHNIDODKNGIAABBCIBIAICKAKCMFNMDPODFGDDFILCBKNEBHCBJLKKNFOIAOOCHONPODBLDBGIJAMGNLDFONIMBMNGECACKPBFCAOKOBDIPMLBHKNBMNLOHMAAJCIIEBKNJFLKKLKAHIMLMLNAOEMLAMNIOPHAEEGNAIMPKNBGKHMFHNBDAGGCMIPHFEBBNDNGFFGAMNAHHOPLPCHDCIAAKOAFDGBDFMLKBGCHFOCIKGBPBL.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 box-shadow: 0px 1px 1px 1px gray;
@@ -5259,12 +5284,15 @@
                 fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
                     $('#tab4-level').empty()
                     $('#tab4-union').empty()
+                    $('#tab4-mureung').empty()
                     // $('#tab1-img1').empty()
 
                     let temp_html1 = `${data['result']['level'][3]}`
                     let temp_html2 = `유니온 : ${data['result']['union'][3]}`
+                    let temp_html3 = `무릉 : ${data['result']['mureung'][3]}`
                     $('#tab4-level').append(temp_html1)
                     $('#tab4-union').append(temp_html2)
+                    $('#tab4-mureung').append(temp_html3)
 
 
                 });
@@ -5483,6 +5511,7 @@
                     <div id="tab4-level" class="level1">Lv.</div>
                     <div>직업 : 칼리</div>
                     <div id="tab4-union">유니온 : </div>
+                    <div id="tab4-mureung">무릉 : </div>
                     <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -6300,12 +6329,15 @@
                 fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
                     $('#tab5-level').empty()
                     $('#tab5-union').empty()
+                    $('#tab5-mureung').empty()
                     // $('#tab1-img1').empty()
 
                     let temp_html1 = `${data['result']['level'][4]}`
                     let temp_html2 = `유니온 : ${data['result']['union'][4]}`
+                    let temp_html3 = `무릉 : ${data['result']['mureung'][4]}`
                     $('#tab5-level').append(temp_html1)
                     $('#tab5-union').append(temp_html2)
+                    $('#tab5-mureung').append(temp_html3)
 
 
 
@@ -6507,6 +6539,7 @@
                     <div id="tab5-level" class="level1">Lv.</div>
                     <div>직업 : 비숍</div>
                     <div id="tab5-union">유니온 : </div>
+                    <div id="tab5-mureung">무릉 : </div>
                     <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -7182,6 +7215,8 @@
         <!-- --------------------------6666666666666666666666666666---------------------------------- -->
         <!-- --------------------------6666666666666666666666666666---------------------------------- -->
 
+
+
         <style>
             .tab35.checked {
                 background-color: #D8D8D8;
@@ -7331,12 +7366,15 @@
                 fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
                     $('#tab6-level').empty()
                     $('#tab6-union').empty()
+                    $('#tab6-mureung').empty()
                     // $('#tab1-img1').empty()
 
                     let temp_html1 = `${data['result']['level'][5]}`
                     let temp_html2 = `유니온 : ${data['result']['union'][5]}`
+                    let temp_html3 = `무릉 : ${data['result']['mureung'][5]}`
                     $('#tab6-level').append(temp_html1)
                     $('#tab6-union').append(temp_html2)
+                    $('#tab6-mureung').append(temp_html3)
 
 
 
@@ -7538,6 +7576,7 @@
                     <div id="tab6-level" class="level1">Lv.</div>
                     <div>직업 : 나이트로드</div>
                     <div id="tab6-union">유니온 : </div>
+                    <div id="tab6-mureung">무릉 : </div>
                     <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -8209,6 +8248,8 @@
         <!-- --------------------------7777777777777777777777777777---------------------------------- -->
         <!-- --------------------------7777777777777777777777777777---------------------------------- -->
 
+
+        
         <style>
             .tab45.checked {
                 background-color: #BEF781;
@@ -8358,12 +8399,15 @@
                 fetch('/', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
                     $('#tab7-level').empty()
                     $('#tab7-union').empty()
+                    $('#tab7-mureung').empty()
                     // $('#tab1-img1').empty()
 
                     let temp_html1 = `${data['result']['level'][6]}`
                     let temp_html2 = `유니온 : ${data['result']['union'][6]}`
+                    let temp_html3 = `무릉 : ${data['result']['mureung'][6]}`
                     $('#tab7-level').append(temp_html1)
                     $('#tab7-union').append(temp_html2)
+                    $('#tab7-mureung').append(temp_html3)
 
 
 
@@ -8565,6 +8609,7 @@
                     <div id="tab7-level" class="level1">Lv.</div>
                     <div>직업 : 메르세데스</div>
                     <div id="tab7-union">유니온 : </div>
+                    <div id="tab7-mureung">무릉 : </div>
                     <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -8624,25 +8669,25 @@
                     <div class="btn-text" onclick="toggleArea451()">일일퀘스트</div>
                     <div id="expand45-1" style="display: none;">
                         <p>
-                            <button class="button finish lka" id="button451-1"
+                            <button class="button finish" id="button451-1"
                                 onclick="toggleProgressBar451(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
-                            <button class="button finish lka" id="button451-2"
+                            <button class="button finish" id="button451-2"
                                 onclick="toggleProgressBar451(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
-                            <button class="button finish lka" id="button451-3"
+                            <button class="button finish" id="button451-3"
                                 onclick="toggleProgressBar451(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
-                            <button class="button finish lka" id="button451-4"
+                            <button class="button finish" id="button451-4"
                                 onclick="toggleProgressBar451(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
-                            <button class="button finish lka" id="button451-5"
+                            <button class="button finish" id="button451-5"
                                 onclick="toggleProgressBar451(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%AA%A8%EB%9D%BC%EC%8A%A4.png?updatedAt=1691020668112"></button>
                         </p>
                         <p>
 
-                            <button class="button finish lka" id="button451-6"
+                            <button class="button finish" id="button451-6"
                                 onclick="toggleProgressBar451(this)"><img
                                     src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9D%BC.png?updatedAt=1691020683677"></button>
                             <button class="button daywork lka" id="button451-7"
@@ -8679,7 +8724,7 @@
                 </div>
             </div>
 
-            <!-- --------------------------------------------------777일일보스777------------------------------------------------ -->
+            <!-- --------------------------------------------------666일일보스666------------------------------------------------ -->
 
             <div class="container1">
 
@@ -8734,7 +8779,7 @@
                 </div>
             </div>
 
-            <!-- --------------------------------------------------777주간퀘스트777------------------------------------------------ -->
+            <!-- --------------------------------------------------666주간퀘스트666------------------------------------------------ -->
 
 
             <div class="container1">
@@ -8742,19 +8787,19 @@
                 <div class="btn-area">
                     <div class="btn-text" onclick="toggleArea453()">주간퀘스트</div>
                     <div id="expand45-3" style="display: none;">
-                        <button class="button3-1 finish lka" id="button453-1"
+                        <button class="button3-1 finish" id="button453-1"
                             onclick="toggleProgressBar453(this)"></button>
-                        <button class="button3-2 finish lka" id="button453-2"
+                        <button class="button3-2 finish" id="button453-2"
                             onclick="toggleProgressBar453(this)"></button>
-                        <button class="button3-3 finish lka" id="button453-3"
+                        <button class="button3-3 finish" id="button453-3"
                             onclick="toggleProgressBar453(this)"></button>
                         </p>
                         <p>
-                            <button class="button3-4 finish lka" id="button453-4"
+                            <button class="button3-4 finish" id="button453-4"
                                 onclick="toggleProgressBar453(this)"></button>
-                            <button class="button3-5 finish lka" id="button453-5"
+                            <button class="button3-5 finish" id="button453-5"
                                 onclick="toggleProgressBar453(this)"></button>
-                            <button class="button3-6 finish lka" id="button453-6"
+                            <button class="button3-6 finish" id="button453-6"
                                 onclick="toggleProgressBar453(this)"></button>
                         </p>
                         <p>
@@ -8775,7 +8820,7 @@
                 </div>
             </div>
 
-            <!-- --------------------------------------------------777주간보스777------------------------------------------------ -->
+            <!-- --------------------------------------------------666주간보스666------------------------------------------------ -->
 
             <div class="container1">
 
@@ -8838,7 +8883,7 @@
                 </div>
             </div>
 
-            <!-- --------------------------------------------------77이벤트77------------------------------------------------ -->
+            <!-- --------------------------------------------------66이벤트66------------------------------------------------ -->
 
             <div class="container1">
 
@@ -8918,10 +8963,10 @@
 
 
 
-                // -------------------------77재획 기능77----------------------------
-                // -------------------------77재획 기능77----------------------------
-                // -------------------------77재획 기능77----------------------------
-                // -------------------------77재획 기능77----------------------------
+                // -------------------------66재획 기능66----------------------------
+                // -------------------------66재획 기능66----------------------------
+                // -------------------------66재획 기능66----------------------------
+                // -------------------------66재획 기능66----------------------------
                 //  fetch('/savebtn').then(res => res.json()).then(data => {
                 //          let rows = data['result']
                 //          var lastDictionary = rows[rows.length - 1];
@@ -8973,7 +9018,7 @@
                     var btnarr45 = [];
                     let now45 = month + '월' + date + '일'
                     let onlydate45 = date
-                    let name45 = '7'
+                    let name45 = '6'
                     let text45 = $('#text45').val()
                     var time45_h = document.getElementById("time45-h").innerHTML
                     var time45_m = document.getElementById("time45-m").innerHTML
@@ -8983,7 +9028,7 @@
 
 
 
-                    alert('[뀨미뻬어] 저장되었습니다.')
+                    alert('[뀨미뼤어] 저장되었습니다.')
                     let formData = new FormData();
 
                     Array.from(buttons45).forEach(function (button) {
@@ -9009,7 +9054,7 @@
                 }
 
                 function handleSaveButtonClick452() {
-                    let name45 = '7'
+                    let name45 = '6'
                     var buttons = document.getElementsByClassName('lka');
                     var btnarr = [];
                     let now = month + '월' + date + '일'
