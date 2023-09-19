@@ -1593,7 +1593,7 @@
                 $('#tab1-union').empty()
                 $('#tab1-mureung').empty()
                 // $('#tab1-img1').empty()
-                console.log(data['result']['image'][0])
+                console.log(data['result']['image'])
 
                 let temp_html1 = `${data['result']['level'][0]}`
                 let temp_html2 = `유니온 : ${data['result']['union'][0]}`
@@ -1922,7 +1922,7 @@
                 <label name="option" value="00" id="tab00-label" class="tab-label tab00"
                     onclick="showTab('tab00')">로비</label>
                     <label name="option" value="99" id="tab99-label" class="tab-label tab99"
-                    onclick="showTab('tab99')">v1.3.4</label>
+                    onclick="showTab('tab99')">v1.3.5</label>
                 <br>
             
             
@@ -2108,6 +2108,11 @@
                 <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용 확인하기</div>
                 <div id="expand77" style="display: none;">
                     <div style="margin-left: 5px;">
+                        2023.09.19 v1.3.5
+                        <p> 
+                            tab7 스탯 정보 수정
+                            tab1, tab4 이미지 변경
+                        </p>
                         2023.09.18 v1.3.4
                         <p> 
                             tab7 초기화 오류 수정,
@@ -5165,7 +5170,7 @@
             .tab4-img1 {
                 width: 150px;
                 height: 150px;
-                background-image: url(https://avatar.maplestory.nexon.com/Character/HLBLGNHIGIFFGEGIKPKAPLAMPPCDFPEPCBKMOFHBJPIFOOAKNDIDBFBEIKGLLKIHKAGEGCAPEHHCMAEOPJOGHNNDAAELMLCHHKHAEGJIHPBCKEBABPKMBBHBGCBCDEFPHEHEIPJNCPMMEHJMANDIEPIAAGIGBCLFOMKMFLEDDAMFBDHGOEAFPCOFMAIGHDKCMCECCCBMFGBNFICNGIJPBOELADGDGCNNHPEPPCMDKLKLGKICDDLEPFCEFKEKCNMI.png);
+                background-image: url(https://avatar.maplestory.nexon.com/Character/MJLKJFAJMJFEHOINOHNIDODKNGIAABBCIBIAICKAKCMFNMDPODFGDDFILCBKNEBHCBJLKKNFOIAOOCHONPODBLDBGIJAMGNLDFONIMBMNGECACKPBFCAOKOBDIPMLBHKNBMNLOHMAAJCIIEBKNJFLKKLKAHIMLMLNAOEMLAMNIOPHAEEGNAIMPKNBGKHMFHNBDAGGCMIPHFEBBNDNGFFGAMNAHHOPLPCHDCIAAKOAFDGBDFMLKBGCHFOCIKGBPBL.png);
                 background-position: center;
                 background-repeat: no-repeat;
                 box-shadow: 0px 1px 1px 1px gray;
@@ -8602,7 +8607,7 @@
                 <div class="tab7-img1"></div>
                 <div class="tab1-stat">
                     <div id="tab7-level" class="level1">Lv.</div>
-                    <div>직업 : 나이트로드</div>
+                    <div>직업 : 메르세데스</div>
                     <div id="tab7-union">유니온 : </div>
                     <div id="tab7-mureung">무릉 : </div>
                     <!-- <div>주스탯 : </div>
