@@ -28,7 +28,7 @@ def chrstat_post():
     data1 = requests.get(URL1,headers=headers1)
     soup1 = BeautifulSoup(data1.text, 'html.parser')
 
-    image1 = soup1.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    image1 = soup1.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level1 = soup1.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union1 = soup1.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     mureung1 = soup1.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
@@ -42,7 +42,7 @@ def chrstat_post():
     data2 = requests.get(URL2,headers=headers2)
     soup2 = BeautifulSoup(data2.text, 'html.parser')
 
-    image2 = soup2.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    image2 = soup2.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level2 = soup2.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union2 = soup2.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     mureung2 = soup2.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
@@ -53,7 +53,7 @@ def chrstat_post():
     data3 = requests.get(URL3,headers=headers3)
     soup3 = BeautifulSoup(data3.text, 'html.parser')
 
-    image3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    image3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
 
     URL27 = "https://maple.gg/u/%EC%A0%9C41%EB%8C%80"
@@ -61,7 +61,7 @@ def chrstat_post():
     data27 = requests.get(URL27,headers=headers27)
     soup27 = BeautifulSoup(data27.text, 'html.parser')
 
-    image27 = soup27.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    image27 = soup27.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level27 = soup27.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     mureung27 = soup27.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
 
@@ -74,7 +74,7 @@ def chrstat_post():
     data4 = requests.get(URL4,headers=headers4)
     soup4 = BeautifulSoup(data4.text, 'html.parser')
 
-    image4 = soup4.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    image4 = soup4.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level4 = soup4.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union4 = soup4.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     mureung4 = soup4.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
@@ -84,7 +84,7 @@ def chrstat_post():
     data5 = requests.get(URL5,headers=headers5)
     soup5 = BeautifulSoup(data5.text, 'html.parser')
 
-    image5 = soup5.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    image5 = soup5.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level5 = soup5.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union5 = soup5.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     mureung5 = soup5.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
@@ -94,7 +94,7 @@ def chrstat_post():
     data6 = requests.get(URL6,headers=headers5)
     soup6 = BeautifulSoup(data6.text, 'html.parser')
 
-    image6 = soup6.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    image6 = soup6.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level6 = soup6.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union6 = soup6.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     # mureung6 = soup6.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
@@ -105,7 +105,7 @@ def chrstat_post():
     data7 = requests.get(URL7,headers=headers5)
     soup7 = BeautifulSoup(data7.text, 'html.parser')
 
-    image7 = soup7.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").string
+    image7 = soup7.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level7 = soup7.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     union7 = soup7.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     # mureung7 = soup7.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
@@ -113,7 +113,7 @@ def chrstat_post():
 
     level = [level1, level2, level27, level4, level5, level6, level7]
     union = [union1, union2, 'Lv.8512', union4, union5, union6, union7]
-    image = [image1, image2, image3, image4, image5, image6, image7]
+    image = [image1, image2, image27, image4, image5, image6, image7]
     mureung = [mureung1, mureung2, mureung27, mureung4, mureung5, '-', '-']
 
     stat = {
