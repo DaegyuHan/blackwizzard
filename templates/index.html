@@ -1481,11 +1481,10 @@
         const currentDate = new Date();
         const currentDay = currentDate.getDay();
 
-        
+
         show_notice()
         show_sunday()
-        checkAndDisplayThursdayMessage()
-        checkAndDisplayMondayMessage()
+
 
         $(document).ready(function () {
             chrStat();
@@ -1503,6 +1502,8 @@
             show_btn63()
             show_btn35()
             show_btn45()
+            checkAndDisplayThursdayMessage()
+            checkAndDisplayMondayMessage()
             checkMidnight()
 
             finish_pressButton()
