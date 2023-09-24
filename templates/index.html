@@ -1476,6 +1476,17 @@
 
 
     <script>
+        let plag_t = localStorage.getItem("plag_t") || "0";
+        let plag_m = localStorage.getItem("plag_m") || "0";
+        const currentDate = new Date();
+        const currentDay = currentDate.getDay();
+
+        
+        show_notice()
+        show_sunday()
+        checkAndDisplayThursdayMessage()
+        checkAndDisplayMondayMessage()
+
         $(document).ready(function () {
             chrStat();
             chrStat14()
@@ -1493,14 +1504,41 @@
             show_btn35()
             show_btn45()
             checkMidnight()
-            show_notice()
-            show_sunday()
+
             finish_pressButton()
+
         });
         let today = new Date();
         let month = today.getMonth() + 1;
         let date = today.getDate();
         let day = today.getDay();
+        console.log(plag_s)
+
+
+
+
+
+
+        function checkAndDisplayThursdayMessage() {
+            if (plag_t === "0" && currentDay == 4) {
+                weekly_reset()
+                localStorage.setItem("plag_t", "1");
+            }
+            else if (plag_t === "1" && currentDay != 4) {
+                localStorage.setItem("plag_t", "0");
+            }
+        }
+
+        function checkAndDisplayMondayMessage() {
+            if (plag_m === "0" && currentDay == 1) {
+                monday_reset()
+                localStorage.setItem("plag_m", "1");
+            }
+            else if (plag_m === "1" && currentDay != 1) {
+                localStorage.setItem("plag_m", "0");
+            }
+        }
+
 
 
         function weekly_reset() {
@@ -1560,7 +1598,6 @@
                 $('#tab1-union').empty()
                 $('#tab1-mureung').empty()
                 // $('#tab1-img1').empty()
-                console.log(data['result']['image'][0])
 
                 var imageContainer33 = document.getElementById("tab1-img1");
                 var imageUrl33 = data['result']['image'][0];
@@ -1897,7 +1934,7 @@
                 <label name="option" value="00" id="tab00-label" class="tab-label tab00"
                     onclick="showTab('tab00')">로비</label>
                 <label name="option" value="99" id="tab99-label" class="tab-label tab99"
-                    onclick="showTab('tab99')">v1.5.1</label>
+                    onclick="showTab('tab99')">v1.6.1</label>
                 <br>
 
 
@@ -1941,9 +1978,7 @@
                     <div class="btn-text flex-row" onclick="toggleArea990()">업데이트</div>
                     <div id="expand991-0" style="margin: 0px 0px 5px 5px;">
                         1. 추석이벤트 업데이트<br>
-                        2. 각 tab 이벤트 버튼 활성화<br>
-                        3. 경험치도핑, 보스도핑 vip버프 추가<br>
-                        4. 캐릭터 스탯창 이미지 자동 변경 기능 추가
+                        2. 월요일, 목요일 자동 초기화 기능 추가
 
                     </div>
                 </div>
@@ -2095,6 +2130,11 @@
                     <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용 확인하기</div>
                     <div id="expand77" style="display: none;">
                         <div style="margin-left: 5px;">
+                            2023.09.24 v1.6.1
+                            <p>
+                                월요일, 목요일 자동 초기화 기능 추가,
+                                함수호출 위치 변경실험 (성능 향상 목적)
+                            </p>
                             2023.09.22 v1.5.1
                             <p>
                                 캐릭터 스탯창 이미지 자동 변경 기능 추가
