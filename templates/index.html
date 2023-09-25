@@ -1484,27 +1484,22 @@
 
         show_notice()
         show_sunday()
-
+        checkMidnight()
+        // checkAndDisplayMondayMessage()
 
         $(document).ready(function () {
-            chrStat();
-            chrStat14()
-            chrStat27()
-            chrStat71()
-            chrStat63()
-            chrStat35()
-            chrStat45()
+
+
+
+
+
+
+
             showTab("tab00")
-            show_btn()
-            show_btn14()
-            show_btn27()
-            show_btn71()
-            show_btn63()
-            show_btn35()
-            show_btn45()
+
             // checkAndDisplayThursdayMessage()
-            // checkAndDisplayMondayMessage()
-            checkMidnight()
+
+
 
             finish_pressButton()
 
@@ -1513,6 +1508,8 @@
         let month = today.getMonth() + 1;
         let date = today.getDate();
         let day = today.getDay();
+
+        console.log(plag_m)
 
 
 
@@ -1534,9 +1531,13 @@
         //         monday_reset()
         //         localStorage.setItem("plag_m", "1");
         //     }
+
+
         //     else if (plag_m === "1" && currentDay != 1) {
         //         localStorage.setItem("plag_m", "0");
+
         //     }
+
         // }
 
 
@@ -1934,7 +1935,7 @@
                 <label name="option" value="00" id="tab00-label" class="tab-label tab00"
                     onclick="showTab('tab00')">로비</label>
                 <label name="option" value="99" id="tab99-label" class="tab-label tab99"
-                    onclick="showTab('tab99')">v1.6.1</label>
+                    onclick="showTab('tab99')">v1.6.2</label>
                 <br>
 
 
@@ -1978,7 +1979,7 @@
                     <div class="btn-text flex-row" onclick="toggleArea990()">업데이트</div>
                     <div id="expand991-0" style="margin: 0px 0px 5px 5px;">
                         1. 추석이벤트 업데이트<br>
-                        2. 월요일, 목요일 자동 초기화 기능 추가
+                        2. 성능 향상 실험 중
 
                     </div>
                 </div>
@@ -2130,10 +2131,15 @@
                     <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용 확인하기</div>
                     <div id="expand77" style="display: none;">
                         <div style="margin-left: 5px;">
+                            2023.09.25 v1.6.2
+                            <p>
+                                월요일, 목요일 자동 초기화 기능 회수,
+                                함수 호출 위치 변경 실험 중
+                            </p>
                             2023.09.24 v1.6.1
                             <p>
-                                월요일, 목요일 자동 초기화 기능 추가,
-                                함수호출 위치 변경실험 (성능 향상 목적)
+                                월요일, 목요일 자동 초기화 기능 추가(실패),
+                                함수 호출 위치 변경 실험 (성능 향상 목적)
                             </p>
                             2023.09.22 v1.5.1
                             <p>
@@ -2574,6 +2580,8 @@
 
                 <script>
 
+                    chrStat();
+                    show_btn()
 
                     let progressBar1 = document.getElementById("progress1");
                     let currentProgress1 = 0;
@@ -3804,6 +3812,9 @@
 
                 <script>
 
+                    chrStat14()
+                    show_btn14()
+
                     var clickedButtons14 = [];
 
                     function changeColor(buttonId) {
@@ -4858,6 +4869,9 @@
 
                 <script>
 
+                    chrStat27()
+                    show_btn27()
+
                     var clickedButtons27 = [];
 
                     function changeColor(buttonId) {
@@ -5903,6 +5917,9 @@
 
                 <script>
 
+                    chrStat71()
+                    show_btn71()
+
                     var clickedButtons71 = [];
 
                     function changeColor(buttonId) {
@@ -6937,6 +6954,9 @@
 
 
                 <script>
+
+                    chrStat63()
+                    show_btn63()
 
                     var clickedButtons63 = [];
 
@@ -7978,6 +7998,9 @@
 
                 <script>
 
+                    chrStat35()
+                    show_btn35()
+
                     var clickedButtons35 = [];
 
                     function changeColor(buttonId) {
@@ -9013,6 +9036,9 @@
 
 
                 <script>
+
+                    chrStat45()
+                    show_btn45()
 
                     var clickedButtons45 = [];
 
