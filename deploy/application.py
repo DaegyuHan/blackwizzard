@@ -48,11 +48,11 @@ def chrstat_post():
     mureung2 = soup2.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
 
 
-    URL3 = "https://maple.gg/u/%EB%84%88%EB%B3%B4"
+    URL3 = "https://maple.gg/u/%EC%9D%B4%EB%A6%84%ED%8C%90%EB%A7%A4%EC%9E%90"
     headers3 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     data3 = requests.get(URL3,headers=headers3)
     soup3 = BeautifulSoup(data3.text, 'html.parser')
-
+    union3 = soup3.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     image3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
 
@@ -111,10 +111,21 @@ def chrstat_post():
     # mureung7 = soup7.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
 
 
-    level = [level1, level2, level27, level4, level5, level6, level7]
-    union = [union1, union2, 'Lv.8512', union4, union5, union6, union7]
-    image = [image1, image2, image27, image4, image5, image6, image7]
-    mureung = [mureung1, mureung2, mureung27, mureung4, mureung5, '-', '-']
+    URL8 = "https://maple.gg/u/%EC%95%84%EA%B8%B0%EC%83%88%EB%B4%89%EB%B6%95"
+    headers8 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    data8 = requests.get(URL8,headers=headers5)
+    soup8 = BeautifulSoup(data8.text, 'html.parser')
+
+    image8 = soup8.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
+    level8 = soup8.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
+    union8 = soup8.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
+    mureung8 = soup8.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
+
+
+    level = [level1, level2, level27, level4, level5, level6, level7, level8]
+    union = [union1, union2, union3, union4, union5, union6, union7, union8]
+    image = [image1, image2, image27, image4, image5, image6, image7, image8]
+    mureung = [mureung1, mureung2, mureung27, mureung4, mureung5, '-', '-', mureung8]
 
     stat = {
         'level' : level,
@@ -365,6 +376,40 @@ def btn_post45():
 def btn_get45():
     all_btns45 = list(db.blackwizzard45.find({},{'_id':False}))
     return jsonify({'result': all_btns45})
+
+
+@app.route("/savebtn95", methods=["POST"])
+def btn_post95():
+    name_receive = request.form['name_give']
+    btn_receive = request.form['btn_give']
+    date_receive = request.form['date_give']
+    onlydate_receive = request.form['onlydate_give']
+    text_receive = request.form['text_give']
+    timeh_receive = request.form['timeh_give']
+    timem_receive = request.form['timem_give']
+    timea_receive = request.form['timea_give']
+
+    doc = {
+        'name':name_receive,
+        'date':date_receive,
+        'onlydate':onlydate_receive,
+        'btn_id':btn_receive,
+        'text':text_receive,
+        'timeh':timeh_receive,
+        'timem':timem_receive,
+        'timea':timea_receive
+
+    }
+    db.blackwizzard95.insert_one(doc)
+    
+
+    return jsonify({'msg': '등록 완료!'})
+
+
+@app.route("/savebtn95", methods=["GET"])
+def btn_get95():
+    all_btns95 = list(db.blackwizzard95.find({},{'_id':False}))
+    return jsonify({'result': all_btns95})
 
 
 @app.route("/notice", methods=["POST"])

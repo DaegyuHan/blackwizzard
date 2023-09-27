@@ -1519,6 +1519,7 @@
             unpressButton632()
             unpressButton352()
             unpressButton452()
+            unpressButton952()
 
         }
 
@@ -1531,6 +1532,7 @@
             unpressButton633()
             unpressButton353()
             unpressButton453()
+            unpressButton953()
 
         }
 
@@ -1713,6 +1715,31 @@
                 $('#tab7-union').append(temp_html452)
                 $('#tab7-mureung').append(temp_html453)
 
+
+                
+
+
+
+
+                $('#tab8-level').empty()
+                $('#tab8-union').empty()
+                $('#tab8-mureung').empty()
+                // $('#tab1-img1').empty()
+
+                var imageContainer95 = document.getElementById("tab8-img1");
+                var imageUrl95 = data['result']['image'][7];
+                var image95 = document.createElement("img");
+                image95.src = imageUrl95;
+                imageContainer95.innerHTML = '';
+                imageContainer95.appendChild(image95)
+
+                let temp_html951 = `${data['result']['level'][7]}`
+                let temp_html952 = `유니온 : ${data['result']['union'][7]}`
+                let temp_html953 = `무릉 : ${data['result']['mureung'][7]}`
+                $('#tab8-level').append(temp_html951)
+                $('#tab8-union').append(temp_html952)
+                $('#tab8-mureung').append(temp_html953)
+
             });
         }
 
@@ -1753,6 +1780,8 @@
                     handleSaveButtonClick352()
                     unpressButton45()
                     handleSaveButtonClick452()
+                    unpressButton95()
+                    handleSaveButtonClick952()
 
 
                 }
@@ -2034,7 +2063,7 @@
                 <label name="option" value="00" id="tab00-label" class="tab-label tab00"
                     onclick="showTab('tab00')">로비</label>
                 <label name="option" value="99" id="tab99-label" class="tab-label tab99"
-                    onclick="showTab('tab99')">v1.6.3</label>
+                    onclick="showTab('tab99')">v1.7.1</label>
                 <br>
 
 
@@ -2042,6 +2071,8 @@
                     onclick="showTab('tab6')">한정규</label>
                 <label name="option" value="7" id="tab7-label" class="tab-label tab45"
                     onclick="showTab('tab7')">뀨미뻬어</label>
+                <label name="option" value="8" id="tab8-label" class="tab-label tab95"
+                    onclick="showTab('tab8')">아기새봉붕</label>
 
                 <br>
                 <label name="option" value="1" id="tab1-label" class="tab-label tab33"
@@ -2078,9 +2109,9 @@
                     <div class="btn-text flex-row" onclick="toggleArea990()">업데이트</div>
                     <div id="expand991-0" style="margin: 0px 0px 5px 5px;">
                         1. 추석이벤트 업데이트<br>
-                        2. 성능 향상 업데이트 (실험 중)<br>
-                        3. 보스도핑 장비제작 명장 버튼 추가<br>
-                        4. 일일퀘스트 피크닉 버튼 이미지화, 보물찾기 버튼 수정
+                        2. 성능 업그레이드<br>
+                        3. 아기새봉붕 추가<br>
+                        4. 캐릭터 스탯창 환산 추가
 
                     </div>
                 </div>
@@ -2234,6 +2265,12 @@
                     <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용 확인하기</div>
                     <div id="expand77" style="display: none;">
                         <div style="margin-left: 5px;">
+                            2023.09.27 v1.7.1
+                            <p>
+                                tab8 아기새봉붕 추가,
+                                스탯창 환산 추가,
+                                tab27 union 서버 주소 변경
+                            </p>
                             2023.09.26 v1.6.3
                             <p>
                                 v1.5.1로 backup(초기화 기능 구현 실패 사유),
@@ -2381,6 +2418,7 @@
                         <div>직업 : 아델</div>
                         <div id="tab1-union">유니온 : </div>
                         <div id="tab1-mureung">무릉 : </div>
+                        <div>환산 : 36684</div>
                         <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -3587,6 +3625,7 @@
                         <div>직업 : 듀얼블레이드</div>
                         <div id="tab2-union">유니온 : </div>
                         <div id="tab2-mureung">무릉 : </div>
+                        <div>환산 : -</div>
                         <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -4629,6 +4668,7 @@
                         <div>직업 : 나이트로드</div>
                         <div id="tab6-union">유니온 : </div>
                         <div id="tab6-mureung">무릉 : </div>
+                        <div>환산 : 39256</div>
                         <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -5640,6 +5680,7 @@
                         <div>직업 : 메르세데스</div>
                         <div id="tab7-union">유니온 : </div>
                         <div id="tab7-mureung">무릉 : </div>
+                        <div>환산 : -</div>
                         <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -6664,6 +6705,7 @@
                         <div>직업 : 칼리</div>
                         <div id="tab4-union">유니온 : </div>
                         <div id="tab4-mureung">무릉 : </div>
+                        <div>환산 : -</div>
                         <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -7327,6 +7369,1036 @@
 
 
 
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+            <!-- --------------------------8888888888888888888888888888---------------------------------- -->
+
+            <style>
+                .tab95.checked {
+                    background-color: #FF3636;
+                    color: black
+                }
+
+                .tab95:hover {
+                    background-color: #FF3636;
+                    border-bottom: #ccc;
+                }
+
+                .tab8-chr {
+                    background-color: #FF3636;
+                    margin: 0px auto 10px auto;
+                    width: 480px;
+                    height: 200px;
+                    box-shadow: 0px 0px 2px 0px gray;
+
+                }
+
+                .tab8-img1 {
+                    width: 150px;
+                    height: 150px;
+                    /* background-image: url("https://avatar.maplestory.nexon.com/Character/FHJICLMHOIBIDJEEPIKNIJAEEMDLHFNBBOGJJJGBLFNDBOKDBOCPNHMDLFAKFJGOCAJCOHOKADCAOEFAKIJOJCKHGDFFAMDGNOOEEFFHEAOAMFJOKEGCKFCMGHLOFGJGEHMJOPAPKNCNKHPDMACDICMLMPKODHNKNLKNACPBGLCCLEBJIIFJBACKMNEMOJKIALKABALKKHCBIPLGNPDKDCGDOHPLDHBODFPMBPNLLKPPNAOIJMEDPPKKAJJMGEOG.png"); */
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    box-shadow: 0px 1px 1px 1px gray;
+                    margin-right: 50px;
+                }
+
+                .tab8-img1 img {
+                    margin: 20px 0 0 27px;
+                }
+
+
+                #progressBar951 {
+                    width: 300px;
+                    height: 30px;
+                    border: 1px solid #ccc;
+                    background-color: #f1f1f1;
+                    margin: 20px 0px 20px 10px;
+                }
+
+                #progress951 {
+                    width: 0;
+                    height: 100%;
+                    background-color: #7351d1;
+                }
+
+                #progressBar952 {
+                    width: 300px;
+                    height: 30px;
+                    border: 1px solid #ccc;
+                    background-color: #f1f1f1;
+                    margin: 20px 0px 20px 10px;
+                }
+
+                #progress952 {
+                    width: 0;
+                    height: 100%;
+                    background-color: #7351d1;
+                }
+
+                #progressBar953 {
+                    width: 300px;
+                    height: 30px;
+                    border: 1px solid #ccc;
+                    background-color: #f1f1f1;
+                    margin: 20px 0px 20px 10px;
+                }
+
+                #progress953 {
+                    width: 0;
+                    height: 100%;
+                    background-color: #d1517c;
+                }
+
+                #progressBar954 {
+                    width: 300px;
+                    height: 30px;
+                    border: 1px solid #ccc;
+                    background-color: #f1f1f1;
+                    margin: 20px 0px 20px 10px;
+                }
+
+                #progress954 {
+                    width: 0;
+                    height: 100%;
+                    background-color: #d1517c;
+                }
+            </style>
+            <script>
+                function toggleArea951() {
+                    var expanded = document.getElementById("expand95-1")
+
+                    if (expanded.style.display === "none") {
+                        expanded.style.display = "block";
+                    } else {
+                        expanded.style.display = "none";
+                    }
+
+                }
+
+                function toggleArea952() {
+                    var expanded = document.getElementById("expand95-2")
+
+                    if (expanded.style.display === "none") {
+                        expanded.style.display = "block";
+                    } else {
+                        expanded.style.display = "none";
+                    }
+
+                }
+
+                function toggleArea953() {
+                    var expanded = document.getElementById("expand95-3")
+
+                    if (expanded.style.display === "none") {
+                        expanded.style.display = "block";
+                    } else {
+                        expanded.style.display = "none";
+                    }
+
+                }
+
+                function toggleArea954() {
+                    var expanded = document.getElementById("expand95-4")
+
+                    if (expanded.style.display === "none") {
+                        expanded.style.display = "block";
+                    } else {
+                        expanded.style.display = "none";
+                    }
+
+                }
+
+                function toggleArea955() {
+                    var expanded = document.getElementById("expand95-5")
+
+                    if (expanded.style.display === "none") {
+                        expanded.style.display = "block";
+                    } else {
+                        expanded.style.display = "none";
+                    }
+
+                }
+
+
+                let progressBar951 = document.getElementById("progress951");
+                let currentProgress951 = 0;
+                let day_quest_count95 = 0;
+
+                function countnum95(button) {
+                    $('#dd951').empty()
+                    let temp_num = `:${day_quest_count95}/17`
+                    $('#dd951').append(temp_num)
+                }
+
+                function toggleProgressBar951(button) {
+
+                    var buttonProgress951 = 100 / 17;
+
+                    if (button.classList.contains("active")) {
+                        // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                        buttonProgress951 *= -1;
+                        button.classList.remove("active");
+                        day_quest_count95 -= 1;
+                    } else {
+                        // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                        button.classList.add("active");
+                        day_quest_count95 += 1;
+                    }
+
+                    currentProgress951 += buttonProgress951;
+
+                    // 진행바가 0보다 작으면 0으로 설정
+                    if (currentProgress951 < 0) {
+                        currentProgress951 = 0;
+                    }
+
+                    // 진행바가 100보다 크면 100으로 설정
+                    if (currentProgress951 > 100) {
+                        currentProgress951 = 100;
+                    }
+
+                    progress951.style.width = currentProgress951 + "%";
+                    countnum95()
+
+                }
+
+                let progressBar952 = document.getElementById("progress952");
+                let currentProgress952 = 0;
+                var day_boss_count95 = 0;
+
+                function countnum952(button) {
+                    $('#dd952').empty()
+                    let temp_num = `:${day_boss_count95}/14`
+                    $('#dd952').append(temp_num)
+                }
+
+                function toggleProgressBar952(button) {
+
+                    var buttonProgress952 = 100 / 14;
+
+                    if (button.classList.contains("active")) {
+                        // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                        buttonProgress952 *= -1;
+                        button.classList.remove("active");
+                        day_boss_count95 -= 1;
+                    } else {
+                        // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                        button.classList.add("active");
+                        day_boss_count95 += 1;
+                    }
+
+                    currentProgress952 += buttonProgress952;
+
+                    // 진행바가 0보다 작으면 0으로 설정
+                    if (currentProgress952 < 0) {
+                        currentProgress952 = 0;
+                    }
+
+                    // 진행바가 100보다 크면 100으로 설정
+                    if (currentProgress952 > 100) {
+                        currentProgress952 = 100;
+                    }
+
+                    progress952.style.width = currentProgress952 + "%";
+                    countnum952()
+                }
+
+                let progressBar953 = document.getElementById("progress953");
+                let currentProgress953 = 0;
+                let week_quest_count95 = 0;
+
+                function countnum953(button) {
+                    $('#dd953').empty()
+                    let temp_num = `:${week_quest_count95}/10`
+                    $('#dd953').append(temp_num)
+                }
+
+                function toggleProgressBar953(button) {
+
+                    var buttonProgress953 = 100 / 10;
+
+
+                    if (button.classList.contains("active")) {
+                        // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                        buttonProgress953 *= -1;
+                        button.classList.remove("active");
+                        week_quest_count95 -= 1;
+                    } else {
+                        // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                        button.classList.add("active");
+                        week_quest_count95 += 1;
+
+                    }
+
+                    currentProgress953 += buttonProgress953;
+
+                    // 진행바가 0보다 작으면 0으로 설정
+                    if (currentProgress953 < 0) {
+                        currentProgress953 = 0;
+                    }
+
+                    // 진행바가 100보다 크면 100으로 설정
+                    if (currentProgress953 > 100) {
+                        currentProgress953 = 100;
+                    }
+
+                    progress953.style.width = currentProgress953 + "%";
+                    countnum953()
+                }
+
+                let progressBar954 = document.getElementById("progress954");
+                var currentProgress954 = 0;
+                var week_boss_count95 = 0;
+
+                function countnum954(button) {
+                    $('#dd954').empty()
+                    let temp_num = `:${week_boss_count95}/18`
+                    $('#dd954').append(temp_num)
+                }
+
+                function toggleProgressBar954(button) {
+
+                    var buttonProgress954 = 100 / 18;
+
+                    if (button.classList.contains("active")) {
+                        // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+                        buttonProgress954 *= -1;
+                        button.classList.remove("active");
+                        week_boss_count95 -= 1;
+                    } else {
+                        // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                        button.classList.add("active");
+                        week_boss_count95 += 1;
+                    }
+
+                    currentProgress954 += buttonProgress954;
+
+                    // 진행바가 0보다 작으면 0으로 설정
+                    if (currentProgress954 < 0) {
+                        currentProgress954 = 0;
+                    }
+
+                    // 진행바가 100보다 크면 100으로 설정
+                    if (currentProgress954 > 100) {
+                        currentProgress954 = 100;
+                    }
+
+                    progress954.style.width = currentProgress954 + "%";
+                    countnum954()
+
+                }
+
+                function toggleProgressBar955(button) {
+
+
+
+                    if (button.classList.contains("active")) {
+                        // 버튼이 활성화된 상태일 때 클릭하면 진행바를 감소시킴
+
+                        button.classList.remove("active");
+
+                    } else {
+                        // 버튼이 비활성화된 상태일 때 클릭하면 진행바를 증가시킴
+                        button.classList.add("active");
+
+                    }
+
+
+
+                }
+
+            </script>
+
+            <div id="tab8" class="tab">
+                <div class="tab8-chr flex-row">
+                    <div class="tab8-img1" id="tab8-img1"></div>
+                    <div class="tab1-stat">
+                        <div id="tab8-level" class="level1">Lv.</div>
+                        <div>직업 : 듀얼블레이드</div>
+                        <div id="tab8-union">유니온 : </div>
+                        <div id="tab8-mureung">무릉 : </div>
+                        <div>환산 : -</div>
+                        <!-- <div>주스탯 : </div>
+                    <div>보스공격력 : %</div>
+                    <div>크리티컬 데미지 : %</div>
+                    <div>방어율무시 : %</div> -->
+                    </div>
+                </div>
+
+
+
+                <div class="container1">
+                    <div class="progress-wrap flex-row">
+                        <div class="dd1">일일퀘스트</div>
+                        <div id="dd951"> :0/17</div>
+                        <div id="progressBar951">
+                            <div id="progress951"></div>
+                        </div>
+                    </div>
+                    <div class="progress-wrap flex-row">
+                        <div class="dd2">일일보스</div>
+                        <div id="dd952"> :0/14</div>
+                        <div id="progressBar952">
+                            <div id="progress952"></div>
+                        </div>
+                    </div>
+                    <div class="progress-wrap flex-row">
+                        <div class="dd3">주간퀘스트</div>
+                        <div id="dd953"> :0/10</div>
+                        <div id="progressBar953">
+                            <div id="progress953"></div>
+                        </div>
+                    </div>
+                    <div class="progress-wrap flex-row">
+                        <div class="dd4">주간보스</div>
+                        <div id="dd954"> :0/18</div>
+                        <div id="progressBar954">
+                            <div id="progress954"></div>
+                        </div>
+                    </div>
+
+                    <div class="counter-container">
+                        <div class="counter-title">
+                            오늘 재획 :
+                        </div>
+                        <div class="counter-button" id="decrease95">-</div>
+                        <span id="level-up-time95" class="flex-row">
+                            <div id="time95-h">0</div>시간
+                            <div id="time95-m">00</div>분
+                        </span>
+                        <div class="counter-button" id="increase95">+</div>
+                        <div class="level-info">(유니온 육성 포함)</div>
+                    </div>
+
+                    <textarea class="tab-text flex-row" id="text95" placeholder="오늘의 메업적"></textarea>
+                    <button type="button" onclick=handleSaveButtonClick95() class="save-btn  btn-dark">저장</button>
+
+                    <div class="btn-area">
+                        <div class="btn-text" onclick="toggleArea951()">일일퀘스트</div>
+                        <div id="expand95-1" style="display: none;">
+                            <p>
+                                <button class="button daywork hdh" id="button951-1"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
+                                <button class="button daywork hdh" id="button951-2"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
+                                <button class="button daywork hdh" id="button951-3"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
+                                <button class="button daywork hdh" id="button951-4"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
+                                <button class="button daywork hdh" id="button951-5"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%AA%A8%EB%9D%BC%EC%8A%A4.png?updatedAt=1691020668112"></button>
+                            </p>
+                            <p>
+
+                                <button class="button daywork hdh" id="button951-6"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9D%BC.png?updatedAt=1691020683677"></button>
+                                <button class="button daywork hdh" id="button951-7"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%84%B8%EB%A5%B4%EB%8B%88%EC%9B%80.png?updatedAt=1691020694907"></button>
+                                <button class="button daywork hdh" id="button951-8"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%ED%81%AC%EC%8A%A4.png?updatedAt=1691020691271"></button>
+                                <button class="button daywork hdh" id="button951-9"
+                                    onclick="toggleProgressBar951(this)"><img
+                                    src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%98%A4%EB%94%94%EC%9B%80.png?updatedAt=1691020676068"></button>
+                                <button class="button daywork hdh" id="button951-10"
+                                    onclick="toggleProgressBar951(this)"><img
+                                        src="https://ik.imagekit.io/wlalafg7g/%EC%A3%BC%EA%B0%84/%ED%85%8C%EB%84%A4%EB%B8%8C%EB%A6%AC%EC%8A%A4.png?updatedAt=1687001748371"></button>
+                            </p>
+                            <p margin-bottom="50px">
+                                <button class="button1-1 daywork hdh" id="button951-11"
+                                    onclick="toggleProgressBar951(this)"></button>
+                                <button class="button1-2 daywork hdh" id="button951-12"
+                                    onclick="toggleProgressBar951(this)"></button>
+                                <button class="button1-3 daywork hdh" id="button951-13"
+                                    onclick="toggleProgressBar951(this)"></button>
+                                <button class="button1-4 daywork hdh" id="button951-14"
+                                    onclick="toggleProgressBar951(this)"></button>
+                            </p>
+                            <p margin-bottom="50px">
+                                <button class="button1-5 daywork hdh" id="button951-15"
+                                    onclick="toggleProgressBar951(this)"></button>
+                                <button class="button1-6 daywork hdh" id="button951-16"
+                                    onclick="toggleProgressBar951(this)"></button>
+                                <button class="button1-7 daywork hdh" id="button951-17"
+                                    onclick="toggleProgressBar951(this)"></button>
+                            </p>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!-- --------------------------------------------------888일일보스888------------------------------------------------ -->
+
+                <div class="container1">
+
+                    <div class="btn-area2">
+                        <div class="btn-text" onclick="toggleArea952()">일일보스</div>
+                        <div id="expand95-2" style="display: none;">
+                            <p>
+                                <button class="button2-1 daywork hdh" id="button952-1"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-2 daywork hdh" id="button952-2"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-3 daywork hdh" id="button952-3"
+                                    onclick="toggleProgressBar952(this)"></button>
+
+                            </p>
+                            <p>
+                                <button class="button2-4 daywork hdh" id="button952-4"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-5 daywork hdh" id="button952-5"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-6 daywork hdh" id="button952-6"
+                                    onclick="toggleProgressBar952(this)"></button>
+
+                            </p>
+                            <p>
+                                <button class="button2-7 daywork hdh" id="button952-7"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-8 daywork hdh" id="button952-8"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-9 daywork hdh" id="button952-9"
+                                    onclick="toggleProgressBar952(this)"></button>
+
+                            </p>
+                            <p>
+                                <button class="button2-10 daywork hdh" id="button952-10"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-11 daywork hdh" id="button952-11"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-12 daywork hdh" id="button952-12"
+                                    onclick="toggleProgressBar952(this)"></button>
+
+                            </p>
+                            <p>
+                                <button class="button2-13 daywork hdh" id="button952-13"
+                                    onclick="toggleProgressBar952(this)"></button>
+                                <button class="button2-14 daywork hdh" id="button952-14"
+                                    onclick="toggleProgressBar952(this)"></button>
+
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- --------------------------------------------------888주간퀘스트888------------------------------------------------ -->
+
+
+                <div class="container1">
+
+                    <div class="btn-area">
+                        <div class="btn-text" onclick="toggleArea953()">주간퀘스트</div>
+                        <div id="expand95-3" style="display: none;">
+                            <button class="button3-1 mondaywork hdh" id="button953-1"
+                                onclick="toggleProgressBar953(this)"></button>
+                            <button class="button3-2 mondaywork hdh" id="button953-2"
+                                onclick="toggleProgressBar953(this)"></button>
+                            <button class="button3-3 mondaywork hdh" id="button953-3"
+                                onclick="toggleProgressBar953(this)"></button>
+                            </p>
+                            <p>
+                                <button class="button3-4 mondaywork hdh" id="button953-4"
+                                    onclick="toggleProgressBar953(this)"></button>
+                                <button class="button3-5 mondaywork hdh" id="button953-5"
+                                    onclick="toggleProgressBar953(this)"></button>
+                                <button class="button3-6 mondaywork hdh" id="button953-6"
+                                    onclick="toggleProgressBar953(this)"></button>
+                            </p>
+                            <p>
+                                <button class="button3-7 mondaywork hdh" id="button953-7"
+                                    onclick="toggleProgressBar953(this)"></button>
+                                <button class="button3-8 mondaywork hdh" id="button953-8"
+                                    onclick="toggleProgressBar953(this)"></button>
+                            </p>
+                            <p>
+                                <button class="button3-9 mondaywork hdh" id="button953-9"
+                                    onclick="toggleProgressBar953(this)"></button>
+                                <button class="button3-10 mondaywork hdh" id="button953-10"
+                                    onclick="toggleProgressBar953(this)"></button>
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- --------------------------------------------------888주간보스888------------------------------------------------ -->
+
+                <div class="container1">
+
+                    <div class="btn-area4">
+                        <div class="btn-text" onclick="toggleArea954()">주간보스</div>
+                        <div id="expand95-4" style="display: none;">
+                            <p>
+                                <button class="button4-1 weekwork hdh" id="button954-1"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-2 weekwork hdh" id="button954-2"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-3 weekwork hdh" id="button954-3"
+                                    onclick="toggleProgressBar954(this)"></button>
+                            </p>
+                            <p>
+                                <button class="button4-4 weekwork hdh" id="button954-4"
+                                    onclick="toggleProgressBar954(this)">
+                                </button>
+                                <button class="button4-5 weekwork hdh" id="button954-5"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-6 weekwork hdh" id="button954-6"
+                                    onclick="toggleProgressBar954(this)"></button>
+                            </p>
+                            <p>
+                                <button class="button4-7 weekwork hdh" id="button954-7"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-8 weekwork hdh" id="button954-8"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-9 weekwork hdh" id="button954-9"
+                                    onclick="toggleProgressBar954(this)"></button>
+                            </p>
+                            <p>
+                                <button class="button4-10 weekwork hdh" id="button954-10"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-11 weekwork hdh" id="button954-11"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-12 weekwork hdh" id="button954-12"
+                                    onclick="toggleProgressBar954(this)"></button>
+                            </p>
+                            <p>
+                                <button class="button4-13 weekwork hdh" id="button954-13"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-14 weekwork hdh" id="button954-14"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-15 weekwork hdh" id="button954-15"
+                                    onclick="toggleProgressBar954(this)"></button>
+                            </p>
+                            <p>
+                                <button class="button4-16 weekwork hdh" id="button954-16"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-17 weekwork hdh" id="button954-17"
+                                    onclick="toggleProgressBar954(this)"></button>
+                                <button class="button4-18 weekwork hdh" id="button954-18"
+                                    onclick="toggleProgressBar954(this)"></button>
+                            </p>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!-- --------------------------------------------------88이벤트88------------------------------------------------ -->
+
+                <div class="container1">
+
+                    <div class="btn-area">
+                        <div class="btn-text" onclick="toggleArea955()">이벤트</div>
+                        <div id="expand95-5" style="display: none;">
+                            <p class="flex-row">
+                                <button class="button5-1 weekwork event hdh" id="button955-1"
+                                    onclick="toggleProgressBar955(this)"></button>
+                                <button class="button5-2 weekwork event hdh" id="button955-2"
+                                    onclick="toggleProgressBar955(this)"></button>
+                                <button class="button5-3 weekwork event hdh" id="button955-3"
+                                    onclick="toggleProgressBar955(this)"></button>
+                            </p>
+                            <p class="flex-row">
+                                <button class="button5-2 weekwork event hdh" id="button955-4"
+                                    onclick="toggleProgressBar955(this)"></button>
+
+                            </p>
+                            <p class="flex-row">
+                                <button class="button5-3 weekwork event hdh" id="button955-7"
+                                    onclick="toggleProgressBar955(this)"></button>
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+                <script>
+                    show_btn95()
+
+                    var clickedButtons95 = [];
+
+                    function changeColor(buttonId) {
+                        var button95 = document.getElementById(buttonId);
+                        if (!button95.classList.contains(".active")) {
+                            button95.classList.add(".active");
+                            clickedButtons95.push(buttonId);
+                        } else {
+                            button95.classList.remove(".active");
+                            clickedButtons95.splice(clickedButtons95.indexOf(buttonId), 1);
+                        }
+                        console.log(clickedButtons95)
+                    }
+
+                    function saveData() {
+                        var buttonData = {
+                            buttons: clickedButtons
+                        };
+
+                        fetch('/save', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(buttonData)
+                        })
+                            .then(response => response.text())
+                            .then(data => {
+                                console.log(data);
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                    }
+
+
+
+
+                    // -------------------------88재획 기능88----------------------------
+                    // -------------------------88재획 기능88----------------------------
+                    // -------------------------88재획 기능88----------------------------
+                    // -------------------------88재획 기능88----------------------------
+                    //  fetch('/savebtn').then(res => res.json()).then(data => {
+                    //          let rows = data['result']
+                    //          var lastDictionary = rows[rows.length - 1];
+                    //          let time33_a = lastDictionary.timea
+
+                    const decreaseButton95 = document.getElementById('decrease95');
+                    const increaseButton95 = document.getElementById('increase95');
+
+
+                    let time95 = 0
+
+                    decreaseButton95.addEventListener('click', () => {
+                        if (time95 == 0) {
+                            return;
+                        }
+                        time95 -= 30;
+                        updateDisplay95()
+                    })
+
+                    increaseButton95.addEventListener('click', () => {
+                        time95 += 30;
+                        updateDisplay95()
+                    })
+                    // })
+                    function updateDisplay95() {
+                        var hours = Math.floor((time95) / 60);
+                        var minutes = (time95) % 60;
+                        $('#time95-h').empty()
+                        $('#time95-m').empty()
+                        temp_html1 = `${hours}`
+                        temp_html2 = `${formatMinutes(minutes)}`
+                        $('#time95-h').append(temp_html1)
+                        $('#time95-m').append(temp_html2)
+
+
+
+
+
+
+                    }
+                    // -------------------------------------------------------------------------------
+
+
+
+
+
+                    function handleSaveButtonClick95() {
+                        var buttons95 = document.getElementsByClassName('hdh');
+                        var btnarr95 = [];
+                        let now95 = month + '월' + date + '일'
+                        let onlydate95 = date
+                        let name95 = '8'
+                        let text95 = $('#text95').val()
+                        var time95_h = document.getElementById("time95-h").innerHTML
+                        var time95_m = document.getElementById("time95-m").innerHTML
+                        var time95_a = Number(time95_h) * 60 + Number(time95_m)
+
+
+
+
+
+                        alert('[아기새봉붕] 저장되었습니다.')
+                        let formData = new FormData();
+
+                        Array.from(buttons95).forEach(function (button) {
+                            if (button.classList.contains('active')) {
+                                btnarr95.push(button.id)
+                            }
+                        });
+                        formData.append("name_give", name95)
+                        formData.append("btn_give", btnarr95);
+                        formData.append("date_give", now95);
+                        formData.append("onlydate_give", onlydate95)
+                        formData.append("text_give", text95)
+                        formData.append("timeh_give", time95_h);
+                        formData.append("timem_give", time95_m);
+                        formData.append("timea_give", time95_a);
+                        fetch('/savebtn95', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                            window.location.reload()
+
+                        });
+                        showTab("tab8")
+
+
+                    }
+
+                    function handleSaveButtonClick952() {
+                        let name95 = '8'
+                        var buttons = document.getElementsByClassName('hdh');
+                        var btnarr = [];
+                        let now = month + '월' + date + '일'
+                        let onlydate = date
+
+                        $('#text95').empty()
+                        let text95 = $('#text95').val()
+
+                        $('#time95-h').empty()
+                        $('#time95-m').empty()
+                        var time95_h = 0
+                        var time95_m = 0
+                        var time95_a = Number(time95_h) * 60 + Number(time95_m)
+
+
+
+
+
+                        let formData = new FormData();
+
+                        Array.from(buttons).forEach(function (button) {
+                            if (button.classList.contains('active')) {
+                                // 서버로 버튼 상태 전송 코드 작성
+                                btnarr.push(button.id)
+                            }
+                        });
+                        formData.append("name_give", name95)
+                        formData.append("btn_give", btnarr);
+                        formData.append("date_give", now);
+                        formData.append("onlydate_give", onlydate)
+                        formData.append("text_give", text95)
+                        formData.append("timeh_give", time95_h);
+                        formData.append("timem_give", time95_m);
+                        formData.append("timea_give", time95_a);
+                        fetch('/savebtn95', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                            window.location.reload()
+                        });
+
+
+
+                    }
+
+                    function handleSaveButtonClick953() {
+                        let name95 = '8'
+                        var buttons = document.getElementsByClassName('hdh');
+                        var btnarr = [];
+                        let now = month + '월' + date + '일'
+                        let onlydate = date
+                        currentProgress3 = 0;
+                        currentProgress4 = 0;
+                        week_boss_count = 0;
+                        week_quest_count = 0;
+                        let text95 = $('#text95').val()
+                        var time95_h = document.getElementById("time95-h").innerHTML
+                        var time95_m = document.getElementById("time95-m").innerHTML
+                        var time95_a = Number(time95_h) * 60 + Number(time95_m)
+
+
+
+
+                        let formData = new FormData();
+
+                        Array.from(buttons).forEach(function (button) {
+                            if (button.classList.contains('active')) {
+                                btnarr.push(button.id)
+                            }
+                        });
+                        formData.append("name_give", name95)
+                        formData.append("btn_give", btnarr);
+                        formData.append("date_give", now);
+                        formData.append("onlydate_give", onlydate)
+                        formData.append("text_give", text95)
+                        formData.append("timeh_give", time95_h);
+                        formData.append("timem_give", time95_m);
+                        formData.append("timea_give", time95_a);
+                        fetch('/savebtn95', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                            window.location.reload()
+                        })
+                    }
+
+                    function handleSaveButtonClick954() {
+                        let name95 = '8'
+                        var buttons = document.getElementsByClassName('hdh');
+                        var btnarr = [];
+                        let now = month + '월' + date + '일'
+                        let onlydate = date
+                        currentProgress3 = 0;
+                        currentProgress4 = 0;
+                        week_boss_count = 0;
+                        week_quest_count = 0;
+                        let text95 = $('#text95').val()
+                        var time95_h = document.getElementById("time95-h").innerHTML
+                        var time95_m = document.getElementById("time95-m").innerHTML
+                        var time95_a = Number(time95_h) * 60 + Number(time95_m)
+
+
+
+
+                        let formData = new FormData();
+
+                        Array.from(buttons).forEach(function (button) {
+                            if (button.classList.contains('active')) {
+                                btnarr.push(button.id)
+                            }
+                        });
+                        formData.append("name_give", name95)
+                        formData.append("btn_give", btnarr);
+                        formData.append("date_give", now);
+                        formData.append("onlydate_give", onlydate)
+                        formData.append("text_give", text95)
+                        formData.append("timeh_give", time95_h);
+                        formData.append("timem_give", time95_m);
+                        formData.append("timea_give", time95_a);
+                        fetch('/savebtn95', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                            window.location.reload()
+                        })
+                    }
+
+
+                    function show_btn95() {
+                        fetch('/savebtn95').then(res => res.json()).then(data => {
+                            let rows95 = data['result']
+                            var lastDictionary95 = rows95[rows95.length - 1];
+                            var btnIdValue95 = lastDictionary95.btn_id;
+                            var arr95 = [];
+                            var btnIdArr95 = btnIdValue95.split(",");
+                            var length95 = btnIdArr95.length
+                            $('#text95').empty()
+                            $('#time95-h').empty()
+                            $('#time95-m').empty()
+
+                            for (i = 0; i < length95; i++)
+                                arr95.push(btnIdArr95[i])
+
+                            for (j = 0; j < arr95.length; j++)
+                                pressButton95(arr95[j])
+
+                            var lasttext = lastDictionary95.text
+                            let temp_html = `${lasttext}`
+                            $('#text95').append(temp_html)
+
+
+                            var lasttime_h95 = lastDictionary95.timeh
+                            var lasttime_m95 = lastDictionary95.timem
+                            let temp_html1 = `${lasttime_h95}`
+                            let temp_html2 = `${lasttime_m95}`
+                            $('#time95-h').append(temp_html1)
+                            $('#time95-m').append(temp_html2)
+
+                        })
+                    }
+
+                    function pressButton95(buttonId) {
+                        var button95 = document.getElementById(buttonId);
+                        if (button95) {
+                            button95.click();
+                        }
+                    }
+                    function unpressButton95(buttonId) {
+                        // var buttons = document.querySelectorAll('button');
+                        var buttons95 = document.getElementsByClassName("daywork hdh");
+
+                        Array.from(buttons95).forEach(function (button) {
+                            if (button.classList.contains('active')) {
+                                button.classList.remove("active");
+
+                            }
+                        });
+                    }
+
+                    function unpressButton952() {
+                        // var buttons = document.querySelectorAll('button');
+                        var buttons95 = document.getElementsByClassName("weekwork hdh");
+
+                        Array.from(buttons95).forEach(function (button) {
+                            if (button.classList.contains('active')) {
+                                button.classList.remove("active");
+
+                            }
+                        });
+                        handleSaveButtonClick953()
+
+
+                    }
+
+
+                    function unpressButton953() {
+                        // var buttons = document.querySelectorAll('button');
+                        var buttons = document.getElementsByClassName("mondaywork hdh");
+
+                        Array.from(buttons).forEach(function (button) {
+                            if (button.classList.contains('active')) {
+                                button.classList.remove("active");
+
+                            }
+                        });
+                        handleSaveButtonClick954()
+
+
+                    }
+
+
+
+
+
+
+
+
+                </script>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             <!-- --------------------------5555555555555555555555555555---------------------------------- -->
@@ -7685,6 +8757,7 @@
                         <div>직업 : 비숍</div>
                         <div id="tab5-union">유니온 : </div>
                         <div id="tab5-mureung">무릉 : </div>
+                        <div>환산 : -</div>
                         <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
@@ -8714,6 +9787,7 @@
                         <div>직업 : 메카닉</div>
                         <div id="tab3-union">유니온 : </div>
                         <div id="tab3-mureung">무릉 : </div>
+                        <div>환산 : -</div>
                         <!-- <div>주스탯 : </div>
                     <div>보스공격력 : %</div>
                     <div>크리티컬 데미지 : %</div>
