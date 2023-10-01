@@ -447,5 +447,24 @@ def sunday_get():
 
 
 
+
+@app.route("/saveyoutube", methods=["POST"])
+def youtube_post():
+    url_receive = request.form['url_give']
+    doc = {
+        'yotube_url':url_receive
+    }
+    db.saveyoutube.insert_one(doc)
+
+    return jsonify({'msg': 'URL 저장 완료'})
+
+@app.route("/saveyoutube", methods=["GET"])
+def youtube_get():
+    all_url = list(db.saveyoutube.find({},{'_id':False}))
+    return jsonify({'result': all_url})
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
