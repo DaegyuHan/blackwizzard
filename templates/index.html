@@ -116,6 +116,8 @@
             background-size: cover;
             border: 1px solid black;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+
 
         }
 
@@ -2036,6 +2038,10 @@
         }
 
 
+        function reloading() {
+            window.location.reload();
+        }
+
 
 
 
@@ -2054,7 +2060,7 @@
 <body>
     <div class="container">
         <div class="logo-wrap">
-            <div class="logo-image"></div>
+            <div class="logo-image" onclick="reloading()"></div>
         </div>
 
         <div class="wrap">
@@ -2063,7 +2069,7 @@
                 <label name="option" value="00" id="tab00-label" class="tab-label tab00"
                     onclick="showTab('tab00')">로비</label>
                 <label name="option" value="99" id="tab99-label" class="tab-label tab99"
-                    onclick="showTab('tab99')">v1.7.2</label>
+                    onclick="showTab('tab99')">v1.7.3</label>
                 <br>
 
 
@@ -2110,7 +2116,8 @@
                     <div id="expand991-0" style="margin: 0px 0px 5px 5px;">
                         1. 추석이벤트 업데이트<br>
                         2. 성능 업그레이드<br>
-                        3. 한정규 오디움 추가
+                        3. 호떡 아케인 심볼 졸업 반영<br>
+                        4. 로고 버튼에 새로고침 기능 추가
 
                     </div>
                 </div>
@@ -2264,6 +2271,11 @@
                     <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용 확인하기</div>
                     <div id="expand77" style="display: none;">
                         <div style="margin-left: 5px;">
+                            2023.10.03 v1.7.3
+                            <p>
+                                tab5 아케인지역 심볼 졸업,
+                                로고 버튼에 새로고침 기능 추가
+                            </p>
                             2023.10.01 v1.7.2
                             <p>
                                 tab6 일일퀘스트 오디움 추가
@@ -8820,25 +8832,25 @@
                         <div class="btn-text" onclick="toggleArea631()">일일퀘스트</div>
                         <div id="expand63-1" style="display: none;">
                             <p>
-                                <button class="button daywork kjb" id="button631-1"
+                                <button class="button finish" id="button631-1"
                                     onclick="toggleProgressBar631(this)"><img
                                         src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%AC%EB%A1%9C.png?updatedAt=1691020680021"></button>
-                                <button class="button daywork kjb" id="button631-2"
+                                <button class="button finish" id="button631-2"
                                     onclick="toggleProgressBar631(this)"><img
                                         src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%B8%84%EC%B8%84.png?updatedAt=1691020687286"></button>
-                                <button class="button daywork kjb" id="button631-3"
+                                <button class="button finish" id="button631-3"
                                     onclick="toggleProgressBar631(this)"><img
                                         src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%A0%88%ED%97%AC%EB%A5%B8.png?updatedAt=1691020672080"></button>
-                                <button class="button daywork kjb" id="button631-4"
+                                <button class="button finish" id="button631-4"
                                     onclick="toggleProgressBar631(this)"><img
                                         src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%95%84%EB%A5%B4%EC%B9%B4%EB%82%98.png?updatedAt=1691020664458"></button>
-                                <button class="button daywork kjb" id="button631-5"
+                                <button class="button finish" id="button631-5"
                                     onclick="toggleProgressBar631(this)"><img
                                         src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EB%AA%A8%EB%9D%BC%EC%8A%A4.png?updatedAt=1691020668112"></button>
                             </p>
                             <p>
 
-                                <button class="button daywork kjb" id="button631-6"
+                                <button class="button finish" id="button631-6"
                                     onclick="toggleProgressBar631(this)"><img
                                         src="https://ik.imagekit.io/wlalafg7g/%EC%9D%BC%EA%B0%84/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9D%BC.png?updatedAt=1691020683677"></button>
                                 <button class="button daywork kjb" id="button631-7"
@@ -8942,19 +8954,19 @@
                     <div class="btn-area">
                         <div class="btn-text" onclick="toggleArea633()">주간퀘스트</div>
                         <div id="expand63-3" style="display: none;">
-                            <button class="button3-1 mondaywork kjb" id="button633-1"
+                            <button class="button3-1 finish" id="button633-1"
                                 onclick="toggleProgressBar633(this)"></button>
-                            <button class="button3-2 mondaywork kjb" id="button633-2"
+                            <button class="button3-2 finish" id="button633-2"
                                 onclick="toggleProgressBar633(this)"></button>
-                            <button class="button3-3 mondaywork kjb" id="button633-3"
+                            <button class="button3-3 finish" id="button633-3"
                                 onclick="toggleProgressBar633(this)"></button>
                             </p>
                             <p>
-                                <button class="button3-4 mondaywork kjb" id="button633-4"
+                                <button class="button3-4 finish" id="button633-4"
                                     onclick="toggleProgressBar633(this)"></button>
-                                <button class="button3-5 mondaywork kjb" id="button633-5"
+                                <button class="button3-5 finish" id="button633-5"
                                     onclick="toggleProgressBar633(this)"></button>
-                                <button class="button3-6 mondaywork kjb" id="button633-6"
+                                <button class="button3-6 finish" id="button633-6"
                                     onclick="toggleProgressBar633(this)"></button>
                             </p>
                             <p>
