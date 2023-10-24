@@ -14,7 +14,7 @@ ca = certifi.where()
 client = MongoClient('mongodb+srv://sparta:test@cluster0.edvfknb.mongodb.net/?retryWrites=true&w=majority',tlsCAFile=ca)
 db = client.blackwizzard
 
-application = app = Flask(__name__)
+app = application = Flask(__name__)
 
 
 @app.route('/')
@@ -100,15 +100,21 @@ def chrstat_post():
     # mureung6 = soup6.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
 
 
-    URL7 = "https://maple.gg/u/%EB%80%A8%EB%AF%B8%EB%BB%AC%EC%96%B4"
+    URL7 = "https://maple.gg/u/%EA%BE%B8%EB%AF%B8%EA%B2%BD%EC%95%84"
     headers7 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     data7 = requests.get(URL7,headers=headers5)
     soup7 = BeautifulSoup(data7.text, 'html.parser')
 
     image7 = soup7.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level7 = soup7.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
-    union7 = soup7.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
+    # union7 = soup7.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     # mureung7 = soup7.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
+
+    URL71 = "https://maple.gg/u/%EB%80%A8%EB%AF%B8%EB%BB%AC%EC%96%B4"
+    headers71 = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    data71 = requests.get(URL71,headers=headers5)
+    soup71 = BeautifulSoup(data71.text, 'html.parser')
+    union71 = soup71.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
 
 
     URL8 = "https://maple.gg/u/%EC%95%84%EA%B8%B0%EC%83%88%EB%B4%89%EB%B6%95"
@@ -123,7 +129,7 @@ def chrstat_post():
 
 
     level = [level1, level2, level27, level4, level5, level6, level7, level8]
-    union = [union1, union2, union3, union4, union5, union6, union7, union8]
+    union = [union1, union2, union3, union4, union5, union6, union71, union8]
     image = [image1, image2, image27, image4, image5, image6, image7, image8]
     mureung = [mureung1, mureung2, mureung27, mureung4, mureung5, '-', '-', mureung8]
 
@@ -443,6 +449,25 @@ def sunday_post():
 def sunday_get():
     all_sunday = list(db.sundaymaple.find({},{'_id':False}))
     return jsonify({'result': all_sunday})
+
+
+
+
+
+@app.route("/saveyoutube", methods=["POST"])
+def youtube_post():
+    url_receive = request.form['url_give']
+    doc = {
+        'yotube_url':url_receive
+    }
+    db.saveyoutube.insert_one(doc)
+
+    return jsonify({'msg': 'URL 저장 완료'})
+
+@app.route("/saveyoutube", methods=["GET"])
+def youtube_get():
+    all_url = list(db.saveyoutube.find({},{'_id':False}))
+    return jsonify({'result': all_url})
 
 
 
