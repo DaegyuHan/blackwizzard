@@ -470,6 +470,12 @@ def youtube_get():
     return jsonify({'result': all_url})
 
 
+@app.route('/getServerTime')
+def get_server_time():
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    return jsonify({'time': current_time})
+
+
 
 
 if __name__ == "__main__":
