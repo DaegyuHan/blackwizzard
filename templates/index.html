@@ -1500,7 +1500,7 @@
         $(document).ready(function () {
 
             showTab("tab00")
-            checkedMidnight()
+            checkMidnight()
             finish_pressButton()
 
         });
@@ -1756,53 +1756,86 @@
 
 
 
-        // 오늘의 날짜를 가져오는 함수
-        function getTodayDate() {
-            const now = new Date();
-            return now.toISOString().split('T')[0]; // YYYY-MM-DD 형식
+        // function checkedMidnight() {
+        //     // 이전에 저장한 날짜와 요일을 가져오거나 초기화
+        //     let lastVisitedDate = localStorage.getItem('lastVisitedDate');
+        //     if (!lastVisitedDate) {
+        //         lastVisitedDate = getTodayDate();
+        //         localStorage.setItem('lastVisitedDate', lastVisitedDate);
+        //     }
+
+        //     let lastVisitedDay = localStorage.getItem('lastVisitedDay');
+        //     if (!lastVisitedDay) {
+        //         lastVisitedDay = new Date().getDay();
+        //         localStorage.setItem('lastVisitedDay', lastVisitedDay);
+        //     }
+
+        //     // 오늘의 날짜와 요일을 가져옵니다.
+        //     const todayDate = getTodayDate();
+        //     const todayDay = new Date().getDay();
+
+        //     // 이전 방문일과 오늘의 날짜를 비교하여 초기화 여부를 확인
+        //     if (lastVisitedDate !== todayDate) {
+        //         unpressButton()
+        //         handleSaveButtonClick2()
+        //         unpressButton14()
+        //         handleSaveButtonClick142()
+        //         unpressButton27()
+        //         handleSaveButtonClick272()
+        //         unpressButton71()
+        //         handleSaveButtonClick712()
+        //         unpressButton63()
+        //         handleSaveButtonClick632()
+        //         unpressButton35()
+        //         handleSaveButtonClick352()
+        //         unpressButton45()
+        //         handleSaveButtonClick452()
+        //         unpressButton95()
+        //         handleSaveButtonClick952()
+        //         localStorage.setItem('lastVisitedDate', todayDate);
+        //     }
+        // }
+
+
+        function checkMidnight() {
+            fetch('/savebtn').then(res => res.json()).then(data => {
+                let rows = data['result']
+                let lastDictionary = rows[rows.length - 1]
+                var btndateValue = lastDictionary.onlydate;
+
+
+                console.log(btndateValue)
+                console.log(today)
+
+                if (btndateValue != date) {
+                    unpressButton()
+                    handleSaveButtonClick2()
+                    unpressButton14()
+                    handleSaveButtonClick142()
+                    unpressButton27()
+                    handleSaveButtonClick272()
+                    unpressButton71()
+                    handleSaveButtonClick712()
+                    unpressButton63()
+                    handleSaveButtonClick632()
+                    unpressButton35()
+                    handleSaveButtonClick352()
+                    unpressButton45()
+                    handleSaveButtonClick452()
+                    unpressButton95()
+                    handleSaveButtonClick952()
+
+
+                }
+
+            }
+            )
+
+
+
+
+
         }
-        function checkedMidnight() {
-            // 이전에 저장한 날짜와 요일을 가져오거나 초기화
-            let lastVisitedDate = localStorage.getItem('lastVisitedDate');
-            if (!lastVisitedDate) {
-                lastVisitedDate = getTodayDate();
-                localStorage.setItem('lastVisitedDate', lastVisitedDate);
-            }
-
-            let lastVisitedDay = localStorage.getItem('lastVisitedDay');
-            if (!lastVisitedDay) {
-                lastVisitedDay = new Date().getDay();
-                localStorage.setItem('lastVisitedDay', lastVisitedDay);
-            }
-
-            // 오늘의 날짜와 요일을 가져옵니다.
-            const todayDate = getTodayDate();
-            const todayDay = new Date().getDay();
-
-            // 이전 방문일과 오늘의 날짜를 비교하여 초기화 여부를 확인
-            if (lastVisitedDate !== todayDate) {
-                unpressButton()
-                handleSaveButtonClick2()
-                unpressButton14()
-                handleSaveButtonClick142()
-                unpressButton27()
-                handleSaveButtonClick272()
-                unpressButton71()
-                handleSaveButtonClick712()
-                unpressButton63()
-                handleSaveButtonClick632()
-                unpressButton35()
-                handleSaveButtonClick352()
-                unpressButton45()
-                handleSaveButtonClick452()
-                unpressButton95()
-                handleSaveButtonClick952()
-                localStorage.setItem('lastVisitedDate', todayDate);
-            }
-        }
-
-
-
 
 
 
@@ -2139,7 +2172,8 @@
                         ( 일일퀘스트 빨강단풍잎, 보물찾기 버튼 삭제, 레범몬 버튼 추가, 이벤트탭 펀치킹 제외 삭제 )<br>
                         2. 일일초기화 방식 개선<br>
                         3. 제41대 → 이름판매자 사용자 변경<br>
-                        4. 웹 로고 적용
+                        4. 웹 로고 적용<br>
+                        5. 일일초기화 방식 롤백
 
 
                     </div>
@@ -2297,6 +2331,10 @@
                     <div class="btn-text" onclick="toggleArea77()" style="text-align: center;">업데이트 내용</div>
                     <div id="expand77" style="display: none;">
                         <div style="margin-left: 5px;">
+                            2023.10.28 v1.8.2
+                            <p>
+                               일일초기화 방식 롤백
+                            </p>
                             2023.10.25 v1.8.1
                             <p>
                                 web logo 적용, tab27 사용자 변경 (서버 주소 변경 URL27 삭제), 일일초기화 구현 코드 변경 ( localStorage 사용, 안정성 향상 ),
