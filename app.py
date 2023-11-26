@@ -53,7 +53,7 @@ def chrstat_post():
     data3 = requests.get(URL3,headers=headers3)
     soup3 = BeautifulSoup(data3.text, 'html.parser')
 
-    union3 = soup3.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
+    # union3 = soup3.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(3) > section > div > div > span").string
     image3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-4.pt-1.pt-sm-0.pb-1.pb-sm-0.text-center.mt-2.mt-lg-0 > div > div.col-6.col-md-8.col-lg-6 > img").get("src")
     level3 = soup3.select_one("#user-profile > section > div.row.row-normal > div.col-lg-8 > div > div.user-summary > ul > li:nth-child(2)").string
     # mureung3 = soup3.select_one("#app > div.card.border-bottom-0 > div > section > div.row.text-center > div:nth-child(1) > section > div > div > div > h1").string
@@ -123,7 +123,7 @@ def chrstat_post():
 
 
     level = [level1, level2, level3, level4, level5, level6, level7, level8]
-    union = [union1, union2, union3, union4, union5, union6, union71, union8]
+    union = [union1, union2, '-', union4, union5, union6, union71, union8]
     image = [image1, image2, image3, image4, image5, image6, image7, image8]
     mureung = [mureung1, mureung2, '-', mureung4, mureung5, '-', '-', mureung8]
 
